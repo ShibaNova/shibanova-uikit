@@ -1,14 +1,17 @@
 {
-  "name": "@pancakeswap-libs/uikit",
+  "name": "@shibanova/uikit",
   "version": "0.10.2",
-  "description": "Set of UI components for pancake projects",
+  "description": "Set of UI components for Shibanova projects",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/goosedefi/goose-uikit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goosedefi/goose-uikit.git"
+  },
   "license": "MIT",
   "scripts": {
     "build": "rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist",
@@ -81,5 +84,10 @@
     "lodash": "^4.17.20",
     "react-transition-group": "^4.4.1",
     "styled-system": "^5.1.5"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/goosedefi/goose-uikit/issues"
+  },
+  "homepage": "https://github.com/goosedefi/goose-uikit#readme",
+  "author": ""
 }
