@@ -8,10 +8,7 @@
   "files": [
     "dist"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/goosedefi/goose-uikit.git"
-  },
+  "repository": "https://github.com/ShibaNova/shibanova-uikit",
   "license": "MIT",
   "scripts": {
     "build": "rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist",
