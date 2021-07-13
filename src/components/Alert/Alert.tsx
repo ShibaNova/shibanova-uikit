@@ -9,6 +9,7 @@ import { IconButton } from "../Button";
 import { CloseIcon } from "../Svg";
 import { Flex } from "../Flex";
 import { AlertProps, variants } from "./types";
+import { shadows } from "../../theme/base";
 
 interface ThemedIconLabel {
   variant: AlertProps["variant"];
@@ -67,18 +68,18 @@ const CloseHandler = styled.div`
   top: 8px;
 `;
 
-const StyledAlert = styled(Flex)`
+const StyledAlert = styled(Flex)<{ variant: string }>`
   position: relative;
   background-color: ${({ theme }) => theme.alert.background};
   border-radius: 16px;
-  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: ${({ variant }) => shadows[variant]};
 `;
 
 const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick }) => {
   const Icon = getIcon(variant);
 
   return (
-    <StyledAlert>
+    <StyledAlert variant={variant}>
       <IconLabel variant={variant} hasDescription={!!children}>
         <Icon color="currentColor" width="24px" />
       </IconLabel>

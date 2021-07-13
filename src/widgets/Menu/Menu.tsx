@@ -4,16 +4,32 @@ import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
 import { Flex } from "../../components/Flex";
 import { useMatchBreakpoints } from "../../hooks";
-import Logo from "./Logo";
-import Panel from "./Panel";
+// import Logo from "./Logo";
+import PanelBody from "./PanelBody";
 import UserBlock from "./UserBlock";
 import { NavProps } from "./types";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
 import Avatar from "./Avatar";
+import { NovaRoundIcon } from "../../components/Svg";
+import Skeleton from "../../components/Skeleton/Skeleton";
+import Text from "../../components/Text/Text";
 
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+`;
+
+const PriceLink = styled.a`
+  display: flex;
+  align-items: center;
+  svg {
+    transition: transform 0.3s;
+  }
+  :hover {
+    svg {
+      transform: scale(1.2);
+    }
+  }
 `;
 
 const StyledNav = styled.nav<{ showMenu: boolean }>`
@@ -29,7 +45,6 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   width: 100%;
   height: ${MENU_HEIGHT}px;
   background-color: ${({ theme }) => theme.nav.background};
-  border-bottom: solid 2px rgba(133, 133, 133, 0.1);
   z-index: 20;
   transform: translate3d(0, 0, 0);
 `;
@@ -44,9 +59,6 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
   transition: margin-top 0.2s;
   transform: translate3d(0, 0, 0);
-  ${({ theme }) => theme.mediaQueries.nav} {
-    margin-left: ${({ isPushed }) => `${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px`};
-  }
 `;
 
 const MobileOnlyOverlay = styled(Overlay)`
@@ -114,22 +126,33 @@ const Menu: React.FC<NavProps> = ({
   return (
     <Wrapper>
       <StyledNav showMenu={showMenu}>
-        <Logo
+        {/* <Logo
           isPushed={isPushed}
           togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
           isDark={isDark}
           href={homeLink?.href ?? "/"}
-        />
+        /> */}
+        <Flex></Flex>
+        <Flex>
+          {cakePriceUsd ? (
+            <PriceLink href={priceLink} target="_blank">
+              <NovaRoundIcon width="24px" mr="8px" />
+              <Text color="textSubtle" bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
+            </PriceLink>
+          ) : (
+            <Skeleton width={80} height={24} />
+          )}
+        </Flex>
         <Flex>
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
         </Flex>
       </StyledNav>
       <BodyWrapper>
-        <Panel
+        {/* <PanelBody
           isPushed={isPushed}
           isMobile={isMobile}
-          showMenu={showMenu}
+          // showMenu={showMenu}
           isDark={isDark}
           toggleTheme={toggleTheme}
           langs={langs}
@@ -139,7 +162,7 @@ const Menu: React.FC<NavProps> = ({
           pushNav={setIsPushed}
           links={links}
           priceLink={priceLink}
-        />
+        /> */}
         <Inner isPushed={isPushed} showMenu={showMenu}>
           {children}
         </Inner>

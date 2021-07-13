@@ -1,11 +1,11 @@
 export const links = [
   {
-    label: "Home",
+    label: "Dashboard",
     icon: "HomeIcon",
     href: "/",
   },
   {
-    label: "Trade",
+    label: "Exchange",
     icon: "TradeIcon",
     items: [
       {
@@ -26,69 +26,69 @@ export const links = [
   {
     label: "Pools",
     icon: "PoolIcon",
-    href: "/syrup",
+    href: "/pools",
   },
-  {
-    label: "Lottery",
-    icon: "TicketIcon",
-    href: "/lottery",
-  },
-  {
-    label: "NFT",
-    icon: "NftIcon",
-    href: "/nft",
-  },
-  {
-    label: "Profile & Teams",
-    icon: "GroupsIcon",
-    items: [
-      {
-        label: "Leaderboard",
-        href: "/",
-      },
-      {
-        label: "YourProfile",
-        href: "/",
-      },
-    ],
-    calloutClass: "rainbow",
-  },
-  {
-    label: "Info",
-    icon: "InfoIcon",
-    items: [
-      {
-        label: "Overview",
-        href: "https://pancakeswap.info",
-      },
-      {
-        label: "Tokens",
-        href: "https://pancakeswap.info/tokens",
-      },
-      {
-        label: "Pairs",
-        href: "https://pancakeswap.info/pairs",
-      },
-      {
-        label: "Accounts",
-        href: "https://pancakeswap.info/accounts",
-      },
-    ],
-  },
-  {
-    label: "IFO",
-    icon: "IfoIcon",
-    items: [
-      {
-        label: "Next",
-        href: "/ifo",
-      },
-      {
-        label: "History",
-        href: "/ifo/history",
-      },
-    ],
-  },
+  // {
+  //   label: "Lottery",
+  //   icon: "TicketIcon",
+  //   href: "/lottery",
+  // },
+  // {
+  //   label: "NFT",
+  //   icon: "NftIcon",
+  //   href: "/nft",
+  // },
+  // {
+  //   label: "Profile & Teams",
+  //   icon: "GroupsIcon",
+  //   items: [
+  //     {
+  //       label: "Leaderboard",
+  //       href: "/",
+  //     },
+  //     {
+  //       label: "YourProfile",
+  //       href: "/",
+  //     },
+  //   ],
+  //   calloutClass: "rainbow",
+  // },
+  // {
+  //   label: "Info",
+  //   icon: "InfoIcon",
+  //   items: [
+  //     {
+  //       label: "Overview",
+  //       href: "https://pancakeswap.info",
+  //     },
+  //     {
+  //       label: "Tokens",
+  //       href: "https://pancakeswap.info/tokens",
+  //     },
+  //     {
+  //       label: "Pairs",
+  //       href: "https://pancakeswap.info/pairs",
+  //     },
+  //     {
+  //       label: "Accounts",
+  //       href: "https://pancakeswap.info/accounts",
+  //     },
+  //   ],
+  // },
+  // {
+  //   label: "IFO",
+  //   icon: "IfoIcon",
+  //   items: [
+  //     {
+  //       label: "Next",
+  //       href: "/ifo",
+  //     },
+  //     {
+  //       label: "History",
+  //       href: "/ifo/history",
+  //     },
+  //   ],
+  // },
   {
     label: "More",
     icon: "MoreIcon",

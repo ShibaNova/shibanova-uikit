@@ -21,9 +21,11 @@ const mediaQueries: MediaQueries = {
 
 export const shadows = {
   level1: "0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05)",
-  active: "0px 0px 0px 1px #0098A1, 0px 0px 4px 8px rgba(31, 199, 212, 0.4)",
-  success: "0px 0px 0px 1px #31D0AA, 0px 0px 0px 4px rgba(49, 208, 170, 0.2)",
-  warning: "0px 0px 0px 1px #ED4B9E, 0px 0px 0px 4px rgba(237, 75, 158, 0.2)",
+  active: "0px 0px 5px 0px #1a82cd, 0px 0px 20px 0px #05b6ff",
+  info: "0px 0px 5px 0px #9a6aff,0px 0px 20px 0px #6b2bf0",
+  success: "0px 0px 5px 0px #1F6012,0px 0px 20px 0px #0FFF08",
+  warning: "0px 0px 5px 0px #FFB237,0px 0px 20px 0px #FF661B",
+  danger: "0px 0px 5px 0px #ed4b9e,0px 0px 20px 0px #DF0808",
   focus: "0px 0px 0px 1px #7645D9, 0px 0px 0px 4px rgba(118, 69, 217, 0.6)",
   inset: "inset 0px 2px 2px -1px rgba(74, 74, 104, 0.1)",
 };
