@@ -1,6 +1,7 @@
 import { MouseEvent, ReactNode } from "react";
 export declare type AlertTheme = {
     background: string;
+    boxShadow: string;
 };
 export declare const variants: {
     readonly INFO: "info";
