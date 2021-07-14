@@ -5,10 +5,10 @@ import Overlay from "../../components/Overlay/Overlay";
 import { Flex } from "../../components/Flex";
 import { useMatchBreakpoints } from "../../hooks";
 // import Logo from "./Logo";
-import PanelBody from "./PanelBody";
+// import PanelBody from "./PanelBody";
 import UserBlock from "./UserBlock";
 import { NavProps } from "./types";
-import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
+import { MENU_HEIGHT /* SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL */ } from "./config";
 import Avatar from "./Avatar";
 import { NovaRoundIcon } from "../../components/Svg";
 import Skeleton from "../../components/Skeleton/Skeleton";
@@ -74,13 +74,13 @@ const Menu: React.FC<NavProps> = ({
   account,
   login,
   logout,
-  isDark,
-  toggleTheme,
-  langs,
-  setLang,
-  currentLang,
+  // isDark,
+  // toggleTheme,
+  // langs,
+  // setLang,
+  // currentLang,
   cakePriceUsd,
-  links,
+  // links,
   priceLink,
   profile,
   children,
@@ -121,7 +121,7 @@ const Menu: React.FC<NavProps> = ({
   }, []);
 
   // Find the home link if provided
-  const homeLink = links.find((link) => link.label === "Home");
+  // const homeLink = links.find((link) => link.label === "Home");
 
   return (
     <Wrapper>
@@ -132,7 +132,7 @@ const Menu: React.FC<NavProps> = ({
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         /> */}
-        <Flex></Flex>
+        <Flex> </Flex>
         <Flex>
           {cakePriceUsd ? (
             <PriceLink href={priceLink} target="_blank">

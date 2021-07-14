@@ -2202,7 +2202,15 @@ var MobileOnlyOverlay = styled(Overlay)(templateObject_6 || (templateObject_6 = 
     return theme.mediaQueries.nav;
 });
 var Menu = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; _a.langs; _a.setLang; _a.currentLang; var cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink, profile = _a.profile, children = _a.children;
+    var account = _a.account, login = _a.login, logout = _a.logout, 
+    // isDark,
+    // toggleTheme,
+    // langs,
+    // setLang,
+    // currentLang,
+    cakePriceUsd = _a.cakePriceUsd, 
+    // links,
+    priceLink = _a.priceLink, profile = _a.profile, children = _a.children;
     var isXl = useMatchBreakpoints().isXl;
     var isMobile = isXl === false;
     var _b = useState(!isMobile), isPushed = _b[0], setIsPushed = _b[1];
@@ -2237,10 +2245,10 @@ var Menu = function (_a) {
         };
     }, []);
     // Find the home link if provided
-    links.find(function (link) { return link.label === "Home"; });
+    // const homeLink = links.find((link) => link.label === "Home");
     return (React.createElement(Wrapper$1, null,
         React.createElement(StyledNav, { showMenu: showMenu },
-            React.createElement(Flex, null),
+            React.createElement(Flex, null, " "),
             React.createElement(Flex, null, cakePriceUsd ? (React.createElement(PriceLink, { href: priceLink, target: "_blank" },
                 React.createElement(Icon$v, { width: "24px", mr: "8px" }),
                 React.createElement(Text, { color: "textSubtle", bold: true }, "$" + cakePriceUsd.toFixed(3)))) : (React.createElement(Skeleton, { width: 80, height: 24 }))),
