@@ -5,7 +5,7 @@ const { PRIMARY, SECONDARY, TERTIARY, TEXT, DANGER, SUBTLE, SUCCESS } = variants
 
 export const light: ButtonTheme = {
   [PRIMARY]: {
-    background: lightColors.primary,
+    background: `linear-gradient(90deg, ${lightColors.background} 0%, ${lightColors.primary} 100%)`,
     backgroundActive: lightColors.primaryDark,
     backgroundHover: lightColors.primaryBright,
     border: 0,
@@ -79,6 +79,7 @@ export const light: ButtonTheme = {
 export const dark: ButtonTheme = {
   [PRIMARY]: {
     ...light.primary,
+    background: `linear-gradient(90deg, ${darkColors.background} 30%, ${darkColors.primary} 100%)`,
   },
   [SECONDARY]: {
     ...light.secondary,
