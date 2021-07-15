@@ -172,7 +172,7 @@ var getButtonVariantProp = function (prop) { return function (_a) {
     var theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? variants.PRIMARY : _b;
     return theme.button[variant][prop];
 }; };
-var StyledButton = styled__default['default'].button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background-color: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background-color: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), getButtonVariantProp("boxShadow"), getButtonVariantProp("color"), function (_a) {
+var StyledButton = styled__default['default'].button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background: ", ";\n  border: ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background-color: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background: ", ";\n  border: ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background-color: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), getButtonVariantProp("boxShadow"), getButtonVariantProp("color"), function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "100%" : "max-content");
 }, function (_a) {
@@ -563,11 +563,11 @@ var mediaQueries = {
 };
 var shadows = {
     level1: "0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05)",
-    active: "0px 0px 5px 0px #1a82cd, 0px 0px 20px 0px #05b6ff",
-    info: "0px 0px 5px 0px #9a6aff,0px 0px 20px 0px #6b2bf0",
-    success: "0px 0px 5px 0px #1F6012,0px 0px 20px 0px #0FFF08",
-    warning: "0px 0px 5px 0px #FFB237,0px 0px 20px 0px #FF661B",
-    danger: "0px 0px 5px 0px #ed4b9e,0px 0px 20px 0px #DF0808",
+    active: "0px 0px 3px 0px #1a82cd, 0px 0px 15px 0px #05b6ff",
+    info: "0px 0px 3px 0px #2b0e68,0px 0px 15px 0px #9a6aff",
+    success: "0px 0px 3px 0px #185E0A,0px 0px 15px 0px #0ba223",
+    warning: "0px 0px 3px 0px #8A5C14,0px 0px 15px 0px #ffb237",
+    danger: "0px 0px 3px 0px #8a1010,0px 0px 15px 0px #f74500",
     focus: "0px 0px 0px 1px #7645D9, 0px 0px 0px 4px rgba(118, 69, 217, 0.6)",
     inset: "inset 0px 2px 2px -1px rgba(74, 74, 104, 0.1)",
 };
@@ -2361,12 +2361,12 @@ var ResetCSS = styled.createGlobalStyle(templateObject_1$D || (templateObject_1$
 var templateObject_1$D;
 
 var baseColors = {
-    failure: "#ED4B9E",
+    failure: "#a20b0b",
     primary: "#1f9ce4",
     primaryBright: "#1f9ce4",
     primaryDark: "#1f9ce4",
     secondary: "#7645D9",
-    success: "#31D0AA",
+    success: "#0ba223",
     warning: "#FFB237",
 };
 var brandColors = {
@@ -2375,8 +2375,9 @@ var brandColors = {
 var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", text: "#452A7A", textDisabled: "#BDC2C4", textSubtle: "#8f80ba", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
         bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
     } });
-var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#9A6AFF", background: "linear-gradient(90deg, rgba(1,3,46,1) 0%, rgba(4,14,81,1) 10%, rgba(7,24,114,1) 50%, rgba(4,14,81,1) 90%, rgba(1,3,46,1) 100%)", backgroundDisabled: "#2f2f3c", contrast: "#FFFFFF", invertedContrast: "#191326", input: "#483f5a", primaryDark: "#0098A1", tertiary: "#040547", text: "#FFFFFF", textDisabled: "#666171", textSubtle: "#c9c4d4", borderColor: "#524B63", card: "#040547", gradients: {
+var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#9A6AFF", background: "#0b23a2", backgroundDisabled: "#2f2f3c", contrast: "#FFFFFF", invertedContrast: "#191326", input: "#483f5a", primaryDark: "#0098A1", tertiary: "#040547", text: "#FFFFFF", textDisabled: "#4d547b", textSubtle: "#c9c4d4", borderColor: "#524B63", card: "#040547", gradients: {
         bubblegum: "linear-gradient(90deg, rgba(4,5,71,1) 0%, rgba(31,156,228,1) 100%)",
+        background: "linear-gradient(139deg, rgb(11, 35, 162) 0%, rgb(4, 2, 68) 100%)",
     } });
 
 var light = {
@@ -2392,7 +2393,7 @@ var _a$2, _b;
 var PRIMARY = variants.PRIMARY, SECONDARY = variants.SECONDARY, TERTIARY = variants.TERTIARY, TEXT = variants.TEXT, DANGER = variants.DANGER, SUBTLE = variants.SUBTLE, SUCCESS = variants.SUCCESS;
 var light$1 = (_a$2 = {},
     _a$2[PRIMARY] = {
-        background: lightColors.primary,
+        background: "linear-gradient(90deg, " + lightColors.background + " 0%, " + lightColors.primary + " 100%)",
         backgroundActive: lightColors.primaryDark,
         backgroundHover: lightColors.primaryBright,
         border: 0,
@@ -2463,7 +2464,7 @@ var light$1 = (_a$2 = {},
     },
     _a$2);
 var dark$1 = (_b = {},
-    _b[PRIMARY] = __assign({}, light$1.primary),
+    _b[PRIMARY] = __assign(__assign({}, light$1.primary), { background: "linear-gradient(90deg, " + darkColors.background + " 30%, " + darkColors.primary + " 100%)" }),
     _b[SECONDARY] = __assign({}, light$1.secondary),
     _b[TERTIARY] = __assign(__assign({}, light$1.tertiary), { background: darkColors.tertiary, backgroundActive: darkColors.tertiary, backgroundHover: darkColors.tertiary, color: darkColors.primary }),
     _b[TEXT] = __assign(__assign({}, light$1.text), { backgroundHover: darkColors.tertiary }),

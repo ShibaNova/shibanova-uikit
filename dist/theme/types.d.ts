@@ -24,6 +24,7 @@ export declare type Shadows = {
 };
 export declare type Gradients = {
     bubblegum: string;
+    background?: string;
 };
 export declare type Colors = {
     primary: string;
