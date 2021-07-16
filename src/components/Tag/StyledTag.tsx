@@ -11,9 +11,15 @@ const getThemeTextColor = ({ outline, variant = "primary", theme }: ThemedProps)
 
 export const StyledTag = styled.div<ThemedProps>`
   align-items: center;
-  background-color: ${({ outline, theme, variant = "primary" }) =>
-    outline ? "transparent" : getColor(variant, theme)};
-  border: 2px solid ${({ variant = "primary", theme }) => getColor(variant, theme)};
+  background: ${
+    /* eslint-disable */
+    ({ outline, theme, variant = "primary" }) =>
+      outline ? "transparent" : variant === "primary" ? theme.button.primary.background : getColor(variant, theme)
+
+    /* eslint-enable */
+  };
+  border: ${({ variant = "primary" }) => (variant === "primary" ? "0px" : "2px")} solid
+    ${({ variant = "primary", theme }) => getColor(variant, theme)};
   border-radius: 16px;
   color: ${getThemeTextColor};
   display: inline-flex;
