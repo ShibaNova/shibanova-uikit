@@ -823,7 +823,7 @@ var Checkbox = styled__default['default'].input.attrs({ type: "checkbox" })(temp
     return theme.shadows.focus;
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.success;
+    return theme.colors.primary;
 });
 Checkbox.defaultProps = {
     scale: scales.MD,
@@ -1008,7 +1008,7 @@ var getHeight = function (_a) {
             return "40px";
     }
 };
-var Input = styled__default['default'].input(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"], ["\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"])), function (_a) {
+var Input = styled__default['default'].input(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  background-color: ", ";\n  border: 2px solid #ffffff75;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"], ["\n  background-color: ", ";\n  border: 2px solid #ffffff75;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.input;
 }, getBoxShadow$1, function (_a) {
@@ -1110,10 +1110,20 @@ var getThemeTextColor = function (_a) {
     var outline = _a.outline, _b = _a.variant, variant = _b === void 0 ? "primary" : _b, theme = _a.theme;
     return outline ? getColor$1(variant, theme) : "#ffffff";
 };
-var StyledTag = styled__default['default'].div(templateObject_1$n || (templateObject_1$n = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: 2px solid ", ";\n  border-radius: 16px;\n  color: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  font-weight: 400;\n  height: 28px;\n  line-height: 1.5;\n  padding: 0 8px;\n  white-space: nowrap;\n\n  svg {\n    fill: ", ";\n  }\n"], ["\n  align-items: center;\n  background-color: ",
-    ";\n  border: 2px solid ", ";\n  border-radius: 16px;\n  color: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  font-weight: 400;\n  height: 28px;\n  line-height: 1.5;\n  padding: 0 8px;\n  white-space: nowrap;\n\n  svg {\n    fill: ", ";\n  }\n"])), function (_a) {
+var StyledTag = styled__default['default'].div(templateObject_1$n || (templateObject_1$n = __makeTemplateObject(["\n  align-items: center;\n  background: ", ";\n  border: ", " solid\n    ", ";\n  border-radius: 16px;\n  color: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  font-weight: 400;\n  height: 28px;\n  line-height: 1.5;\n  padding: 0 8px;\n  white-space: nowrap;\n\n  svg {\n    fill: ", ";\n  }\n"], ["\n  align-items: center;\n  background: "
+    /* eslint-disable */
+    ,
+    /* eslint-enable */
+    ";\n  border: ", " solid\n    ", ";\n  border-radius: 16px;\n  color: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  font-weight: 400;\n  height: 28px;\n  line-height: 1.5;\n  padding: 0 8px;\n  white-space: nowrap;\n\n  svg {\n    fill: ", ";\n  }\n"])), 
+/* eslint-disable */
+function (_a) {
     var outline = _a.outline, theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? "primary" : _b;
-    return outline ? "transparent" : getColor$1(variant, theme);
+    return outline ? "transparent" : variant === "primary" ? theme.button.primary.background : getColor$1(variant, theme);
+}
+/* eslint-enable */
+, function (_a) {
+    var _b = _a.variant, variant = _b === void 0 ? "primary" : _b;
+    return (variant === "primary" ? "0px" : "2px");
 }, function (_a) {
     var _b = _a.variant, variant = _b === void 0 ? "primary" : _b, theme = _a.theme;
     return getColor$1(variant, theme);
@@ -1160,9 +1170,9 @@ var Bar = styled__default['default'].div(templateObject_1$p || (templateObject_1
 Bar.defaultProps = {
     primary: false,
 };
-var StyledProgress = styled__default['default'].div(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  position: relative;\n  background-color: ", ";\n  border-radius: 32px;\n  box-shadow: ", ";\n  height: 16px;\n  overflow: hidden;\n"], ["\n  position: relative;\n  background-color: ", ";\n  border-radius: 32px;\n  box-shadow: ", ";\n  height: 16px;\n  overflow: hidden;\n"])), function (_a) {
+var StyledProgress = styled__default['default'].div(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  position: relative;\n  background-color: ", "e3;\n  border-radius: 32px;\n  box-shadow: ", ";\n  height: 16px;\n  overflow: hidden;\n"], ["\n  position: relative;\n  background-color: ", "e3;\n  border-radius: 32px;\n  box-shadow: ", ";\n  height: 16px;\n  overflow: hidden;\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.input;
+    return theme.colors.backgroundDisabled;
 }, function (_a) {
     var theme = _a.theme;
     return theme.shadows.inset;
@@ -1246,7 +1256,7 @@ var Input$1 = styled__default['default'].input(templateObject_2$8 || (templateOb
 });
 var StyledToggle = styled__default['default'].div(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: 40px;\n  position: relative;\n  transition: background-color 200ms;\n  width: 72px;\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: 40px;\n  position: relative;\n  transition: background-color 200ms;\n  width: 72px;\n"])), function (_a) {
     var theme = _a.theme, checked = _a.checked;
-    return theme.colors[checked ? "success" : "input"];
+    return theme.colors[checked ? "success" : "backgroundDisabled"];
 }, function (_a) {
     var theme = _a.theme;
     return theme.shadows.inset;
@@ -2375,7 +2385,7 @@ var brandColors = {
 var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", text: "#452A7A", textDisabled: "#BDC2C4", textSubtle: "#8f80ba", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
         bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
     } });
-var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#9A6AFF", background: "#0b23a2", backgroundDisabled: "#2f2f3c", contrast: "#FFFFFF", invertedContrast: "#191326", input: "#483f5a", primaryDark: "#0098A1", tertiary: "#040547", text: "#FFFFFF", textDisabled: "#4d547b", textSubtle: "#c9c4d4", borderColor: "#524B63", card: "#040547", gradients: {
+var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#9A6AFF", background: "#0b23a2", backgroundDisabled: "#2f2f3c", contrast: "#FFFFFF", invertedContrast: "#191326", input: "transparent", primaryDark: "#0098A1", tertiary: "#040547", text: "#FFFFFF", textDisabled: "#4d547b", textSubtle: "#c9c4d4", borderColor: "#524B63", card: "#040547", gradients: {
         bubblegum: "linear-gradient(90deg, rgba(4,5,71,1) 0%, rgba(31,156,228,1) 100%)",
         background: "linear-gradient(139deg, rgb(11, 35, 162) 0%, rgb(4, 2, 68) 100%)",
     } });
@@ -2488,7 +2498,7 @@ var dark$2 = {
     boxShadowActive: shadows.active,
     boxShadowSuccess: shadows.success,
     boxShadowWarning: shadows.warning,
-    cardHeaderBackground: "linear-gradient(166.77deg, #3B4155 0%, #3A3045 100%)",
+    cardHeaderBackground: "transparent",
     dropShadow: "drop-shadow(0px 1px 4px rgba(25, 19, 38, 0.15))",
 };
 
