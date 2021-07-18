@@ -5,7 +5,7 @@ import Overlay from "../../components/Overlay/Overlay";
 import { Flex } from "../../components/Flex";
 import { useMatchBreakpoints } from "../../hooks";
 // import Logo from "./Logo";
-// import PanelBody from "./PanelBody";
+import PanelBody from "./PanelBody";
 import UserBlock from "./UserBlock";
 import { NavProps } from "./types";
 import { MENU_HEIGHT /* SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL */ } from "./config";
@@ -74,13 +74,13 @@ const Menu: React.FC<NavProps> = ({
   account,
   login,
   logout,
-  // isDark,
-  // toggleTheme,
-  // langs,
-  // setLang,
-  // currentLang,
+  isDark,
+  toggleTheme,
+  langs,
+  setLang,
+  currentLang,
   cakePriceUsd,
-  // links,
+  links,
   priceLink,
   profile,
   children,
@@ -132,7 +132,23 @@ const Menu: React.FC<NavProps> = ({
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         /> */}
-        <Flex> </Flex>
+        <Flex>
+          {" "}
+          <PanelBody
+            isPushed={isPushed}
+            isMobile={isMobile}
+            // showMenu={showMenu}
+            isDark={isDark}
+            toggleTheme={toggleTheme}
+            langs={langs}
+            setLang={setLang}
+            currentLang={currentLang}
+            cakePriceUsd={cakePriceUsd}
+            pushNav={setIsPushed}
+            links={links}
+            priceLink={priceLink}
+          />{" "}
+        </Flex>
         <Flex>
           {cakePriceUsd ? (
             <PriceLink href={priceLink} target="_blank">

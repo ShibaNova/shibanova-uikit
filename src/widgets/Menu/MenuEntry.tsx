@@ -18,9 +18,11 @@ const rainbowAnimation = keyframes`
 `;
 
 const LinkLabel = styled.div<{ isPushed: boolean }>`
-  color: ${({ isPushed, theme }) => (isPushed ? theme.colors.textSubtle : "transparent")};
+  color: ${"inherit" /* ({ isPushed, theme }) => (isPushed ? theme.colors.textSubtle : "transparent") */};
   transition: color 0.4s;
   flex-grow: 1;
+  font-weight: bold;
+  text-transform: uppercase;
 `;
 
 const MenuEntry = styled.div<Props>`
@@ -29,10 +31,10 @@ const MenuEntry = styled.div<Props>`
   align-items: center;
   height: ${MENU_ENTRY_HEIGHT}px;
   padding: ${({ secondary }) => (secondary ? "0 32px" : "0 16px")};
-  font-size: ${({ secondary }) => (secondary ? "14px" : "16px")};
+  font-size: 14px;
   background-color: ${({ secondary, theme }) => (secondary ? theme.colors.background : "transparent")};
-  color: ${({ theme }) => theme.colors.textSubtle};
-  box-shadow: ${({ isActive, theme }) => (isActive ? `inset 4px 0px 0px ${theme.colors.primary}` : "none")};
+  color: ${({ theme, isActive }) => (isActive ? theme.colors.primary : "#FFF")};
+  // box-shadow: ${({ isActive, theme }) => (isActive ? `inset 4px 0px 0px ${theme.colors.primary}` : "none")};
 
   a {
     display: flex;
@@ -43,10 +45,6 @@ const MenuEntry = styled.div<Props>`
 
   svg {
     fill: ${({ theme }) => theme.colors.textSubtle};
-  }
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.tertiary};
   }
 
   // Safari fix
@@ -63,7 +61,7 @@ const MenuEntry = styled.div<Props>`
 MenuEntry.defaultProps = {
   secondary: false,
   isActive: false,
-  role: "button",
+  // role: "button",
 };
 
 export { MenuEntry, LinkLabel };
