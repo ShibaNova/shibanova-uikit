@@ -51,6 +51,6 @@ export const darkColors: Colors = {
   card: "#040547",
   gradients: {
     bubblegum: "linear-gradient(90deg, rgba(4,5,71,1) 0%, rgba(31,156,228,1) 100%)",
-    background: "linear-gradient(139deg, #081f7a 0%, #040242 100%)",
+    background: "linear-gradient(139deg, rgb(8, 31, 122) 0%, rgb(2, 1, 47) 100%)",
   },
 };

@@ -17,13 +17,12 @@ const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  overflow-y: auto;
-  overflow-x: hidden;
   height: 100%;
 `;
 
 const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
   const location = useLocation();
+  // const [open, setOpen] = useState(false);
 
   // Close the menu when a user clicks a link on mobile
   const handleClick = isMobile ? () => pushNav(false) : undefined;

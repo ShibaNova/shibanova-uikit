@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import throttle from "lodash/throttle";
-import Overlay from "../../components/Overlay/Overlay";
+// import Overlay from "../../components/Overlay/Overlay";
 import { Flex } from "../../components/Flex";
 import { useMatchBreakpoints } from "../../hooks";
 // import Logo from "./Logo";
@@ -40,8 +40,7 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 8px;
-  padding-right: 16px;
+  padding: 0px 20px;
   width: 100%;
   height: ${MENU_HEIGHT}px;
   background-color: ${({ theme }) => theme.nav.background};
@@ -61,14 +60,14 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   transform: translate3d(0, 0, 0);
 `;
 
-const MobileOnlyOverlay = styled(Overlay)`
-  position: fixed;
-  height: 100%;
-
-  ${({ theme }) => theme.mediaQueries.nav} {
-    display: none;
-  }
-`;
+// const MobileOnlyOverlay = styled(Overlay)`
+//   position: fixed;
+//   height: 100%;
+//
+//   ${({ theme }) => theme.mediaQueries.nav} {
+//     display: none;
+//   }
+// `;
 
 const Menu: React.FC<NavProps> = ({
   account,
@@ -133,7 +132,6 @@ const Menu: React.FC<NavProps> = ({
           href={homeLink?.href ?? "/"}
         /> */}
         <Flex>
-          {" "}
           <PanelBody
             isPushed={isPushed}
             isMobile={isMobile}
@@ -147,7 +145,7 @@ const Menu: React.FC<NavProps> = ({
             pushNav={setIsPushed}
             links={links}
             priceLink={priceLink}
-          />{" "}
+          />
         </Flex>
         <Flex>
           {cakePriceUsd ? (
@@ -165,24 +163,10 @@ const Menu: React.FC<NavProps> = ({
         </Flex>
       </StyledNav>
       <BodyWrapper>
-        {/* <PanelBody
-          isPushed={isPushed}
-          isMobile={isMobile}
-          // showMenu={showMenu}
-          isDark={isDark}
-          toggleTheme={toggleTheme}
-          langs={langs}
-          setLang={setLang}
-          currentLang={currentLang}
-          cakePriceUsd={cakePriceUsd}
-          pushNav={setIsPushed}
-          links={links}
-          priceLink={priceLink}
-        /> */}
         <Inner isPushed={isPushed} showMenu={showMenu}>
           {children}
         </Inner>
-        <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" />
+        {/* <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" /> */}
       </BodyWrapper>
     </Wrapper>
   );
