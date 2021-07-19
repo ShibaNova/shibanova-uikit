@@ -17,8 +17,8 @@ const rainbowAnimation = keyframes`
   }
 `;
 
-const LinkLabel = styled.div<{ isPushed: boolean }>`
-  color: ${"inherit" /* ({ isPushed, theme }) => (isPushed ? theme.colors.textSubtle : "transparent") */};
+const LinkLabel = styled.div`
+  color: inherit;
   transition: color 0.4s;
   flex-grow: 1;
   font-weight: bold;
@@ -32,7 +32,7 @@ const MenuEntry = styled.div<Props>`
   height: ${MENU_ENTRY_HEIGHT}px;
   padding: ${({ secondary }) => (secondary ? "0 32px" : "0 16px")};
   font-size: 14px;
-  background-color: ${({ secondary, theme }) => (secondary ? theme.colors.background : "transparent")};
+  background-color: ${({ secondary, theme }) => (secondary ? theme.colors.card : "transparent")};
   color: ${({ theme, isActive }) => (isActive ? theme.colors.primary : "#FFF")};
   // box-shadow: ${({ isActive, theme }) => (isActive ? `inset 4px 0px 0px ${theme.colors.primary}` : "none")};
 
@@ -45,6 +45,10 @@ const MenuEntry = styled.div<Props>`
 
   svg {
     fill: ${({ theme }) => theme.colors.textSubtle};
+  }
+
+  &:hover {
+    background-color: ${({ secondary, theme }) => (secondary ? theme.colors.primary : "transparent")};
   }
 
   // Safari fix
