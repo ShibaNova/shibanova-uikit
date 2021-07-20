@@ -30,24 +30,28 @@ const NavBar: React.FC<Props> = ({ isXl, links }) => {
     <Flex>
       <Container>
         {links.map((entry) => {
-          const Icon = Icons[entry.icon];
-          const iconElement = <Icon width="24px" mr="8px" />;
           const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
 
           if (entry.items) {
             return (
               <Accordion
                 key={entry.label}
-                icon={iconElement}
                 label={entry.label}
                 initialOpenState={entry.initialOpenState}
                 className={calloutClass}
               >
-                {entry.items.map((item) => (
-                  <MenuEntry key={item.href} secondary isActive={item.href === location.pathname}>
-                    <MenuLink href={item.href}>{item.label}</MenuLink>
-                  </MenuEntry>
-                ))}
+                {entry.items.map((item) => {
+                  const Icon = Icons[item.icon!];
+                  const iconProps = { width: "24px", color: "textSubtle" };
+                  console.log("Icon: ", Icon);
+
+                  return (
+                    <MenuEntry key={item.href} secondary isActive={item.href === location.pathname}>
+                      {typeof Icon !== "undefined" ? <Icon {...iconProps} mr="5px" /> : null}
+                      <MenuLink href={item.href}>{item.label}</MenuLink>
+                    </MenuEntry>
+                  );
+                })}
               </Accordion>
             );
           }

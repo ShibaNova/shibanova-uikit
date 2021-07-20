@@ -76,7 +76,7 @@ const Menu: React.FC<NavProps> = ({
 }) => {
   const { isXl, isSm, isXs } = useMatchBreakpoints();
   const isMobile = isSm || isXs;
-  const [isPushed, setIsPushed] = useState(!isMobile);
+  // const [isPushed, setIsPushed] = useState(!isMobile);
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(window.pageYOffset);
 
@@ -110,7 +110,7 @@ const Menu: React.FC<NavProps> = ({
   }, []);
 
   // Find the home link if provided
-  const homeLink = links.find((link) => link.label === "Home");
+  const homeLink = links.find((link) => link.label === "Dashboard");
 
   const renderPrice = () => {
     if (isMobile) return null;
@@ -130,7 +130,7 @@ const Menu: React.FC<NavProps> = ({
       <StyledNav showMenu={showMenu}>
         <Logo
           isXl={isXl}
-          showSideBar={() => setIsPushed((prevState: boolean) => !prevState)}
+          // showSideBar={() => setIsPushed((prevState: boolean) => !prevState)}
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         />

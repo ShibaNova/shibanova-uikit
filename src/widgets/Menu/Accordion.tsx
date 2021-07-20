@@ -5,7 +5,6 @@ import { MenuEntry, LinkLabel } from "./MenuEntry";
 
 interface Props {
   label: string;
-  icon: React.ReactElement;
   initialOpenState?: boolean;
   className?: string;
 }
