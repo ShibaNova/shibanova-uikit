@@ -9,7 +9,7 @@ import MenuButton from "./MenuButton";
 interface Props {
   isXl: boolean;
   isDark: boolean;
-  // showSideBar: () => void;
+  showSideBar: () => void;
   href: string;
 }
 
@@ -31,7 +31,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Logo: React.FC<Props> = ({ /* showSideBar, */ isDark, href, isXl }) => {
+const Logo: React.FC<Props> = ({ showSideBar, isDark, href, isXl }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
@@ -43,7 +43,7 @@ const Logo: React.FC<Props> = ({ /* showSideBar, */ isDark, href, isXl }) => {
   return (
     <Flex>
       {isXl ? null : (
-        <MenuButton aria-label="Toggle menu" /* onClick={showSideBar} */ mr="24px">
+        <MenuButton aria-label="Toggle menu" onClick={showSideBar} mr="24px">
           <HamburgerIcon width="24px" color="textSubtle" />
         </MenuButton>
       )}

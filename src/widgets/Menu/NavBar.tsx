@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { SvgProps } from "../../components/Svg";
 import * as IconModule from "./icons";
 import Accordion from "./Accordion";
-import { MenuEntry, LinkLabel } from "./MenuEntry";
+import { MenuEntry, LinkLabel, ButtonLabel } from "./MenuEntry";
 import MenuLink from "./MenuLink";
 import { PanelProps } from "./types";
 import Flex from "../../components/Flex/Flex";
@@ -43,7 +43,6 @@ const NavBar: React.FC<Props> = ({ isXl, links }) => {
                 {entry.items.map((item) => {
                   const Icon = Icons[item.icon!];
                   const iconProps = { width: "24px", color: "textSubtle" };
-                  console.log("Icon: ", Icon);
 
                   return (
                     <MenuEntry key={item.href} secondary isActive={item.href === location.pathname}>
@@ -58,7 +57,11 @@ const NavBar: React.FC<Props> = ({ isXl, links }) => {
           return (
             <MenuEntry key={entry.label} isActive={entry.href === location.pathname} className={calloutClass}>
               <MenuLink href={entry.href}>
-                <LinkLabel>{entry.label}</LinkLabel>
+                {entry.button ? (
+                  <ButtonLabel size="sm">{entry.label}</ButtonLabel>
+                ) : (
+                  <LinkLabel>{entry.label}</LinkLabel>
+                )}
               </MenuLink>
             </MenuEntry>
           );

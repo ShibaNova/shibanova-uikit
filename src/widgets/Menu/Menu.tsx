@@ -12,6 +12,7 @@ import Avatar from "./Avatar";
 import { NovaRoundIcon } from "../../components/Svg";
 import Skeleton from "../../components/Skeleton/Skeleton";
 import Text from "../../components/Text/Text";
+import SideBar from "./SideBar";
 
 const Wrapper = styled.div`
   position: relative;
@@ -44,7 +45,6 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   height: ${MENU_HEIGHT}px;
   background-color: ${({ theme }) => theme.nav.background};
   z-index: 20;
-  transform: translate3d(0, 0, 0);
 `;
 
 const BodyWrapper = styled.div`
@@ -76,7 +76,7 @@ const Menu: React.FC<NavProps> = ({
 }) => {
   const { isXl, isSm, isXs } = useMatchBreakpoints();
   const isMobile = isSm || isXs;
-  // const [isPushed, setIsPushed] = useState(!isMobile);
+  const [isPushed, setIsPushed] = useState(!isMobile);
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(window.pageYOffset);
 
@@ -110,7 +110,7 @@ const Menu: React.FC<NavProps> = ({
   }, []);
 
   // Find the home link if provided
-  const homeLink = links.find((link) => link.label === "Dashboard");
+  const homeLink = links.find((link) => link.label === "DASHBOARD");
 
   const renderPrice = () => {
     if (isMobile) return null;
@@ -130,10 +130,11 @@ const Menu: React.FC<NavProps> = ({
       <StyledNav showMenu={showMenu}>
         <Logo
           isXl={isXl}
-          // showSideBar={() => setIsPushed((prevState: boolean) => !prevState)}
+          showSideBar={() => setIsPushed((prevState: boolean) => !prevState)}
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         />
+        {isPushed && <SideBar onDismiss={() => setIsPushed(false)} links={links} />}
         <NavBar
           isXl={isXl}
           isDark={isDark}

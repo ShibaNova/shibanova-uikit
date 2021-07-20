@@ -1,5 +1,6 @@
 import styled, { keyframes, DefaultTheme } from "styled-components";
 import { MENU_ENTRY_HEIGHT } from "./config";
+import { Button } from "../../components/Button";
 
 export interface Props {
   secondary?: boolean;
@@ -17,12 +18,21 @@ const rainbowAnimation = keyframes`
   }
 `;
 
+const ButtonLabel = styled(Button)`
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0 10px;
+`;
+
 const LinkLabel = styled.div`
   color: inherit;
   transition: color 0.4s;
   flex-grow: 1;
   font-weight: bold;
-  text-transform: uppercase;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 const MenuEntry = styled.div<Props>`
@@ -30,7 +40,7 @@ const MenuEntry = styled.div<Props>`
   display: flex;
   align-items: center;
   height: ${MENU_ENTRY_HEIGHT}px;
-  padding: ${({ secondary }) => (secondary ? "0 32px" : "0 16px")};
+  padding: ${({ secondary }) => (secondary ? "0 24px" : "0 20px")};
   font-size: 14px;
   background-color: ${({ secondary, theme }) => (secondary ? theme.colors.card : "transparent")};
   color: ${({ theme, isActive }) => (isActive ? theme.colors.primary : "#FFF")};
@@ -68,4 +78,4 @@ MenuEntry.defaultProps = {
   // role: "button",
 };
 
-export { MenuEntry, LinkLabel };
+export { MenuEntry, LinkLabel, ButtonLabel };

@@ -1,35 +1,27 @@
 export const links = [
   {
-    label: "Dashboard",
+    label: "DASHBOARD",
     icon: "HomeIcon",
     href: "/",
   },
   {
-    label: "Exchange",
+    label: "EXCHANGE",
     icon: "TradeIcon",
-    items: [
-      {
-        label: "Exchange",
-        href: "https://exchange.pancakeswap.finance",
-      },
-      {
-        label: "Liquidity",
-        href: "https://exchange.pancakeswap.finance/#/pool",
-      },
-    ],
+    href: "https://exchange.pancakeswap.finance",
+    button: true,
   },
   {
-    label: "Farms",
+    label: "FARMS",
     icon: "FarmIcon",
     href: "/farms",
   },
   {
-    label: "Pools",
+    label: "POOLS",
     icon: "PoolIcon",
     href: "/pools",
   },
   {
-    label: "Socials",
+    label: "SOCIALS",
     icon: "MoreIcon",
     items: [
       {
@@ -47,6 +39,16 @@ export const links = [
         icon: "MediumIcon",
         href: "https://shibanova.medium.com/",
       },
+      {
+        label: "Github",
+        icon: "GithubIcon",
+        href: "https://github.com/ShibaNova",
+      },
+      {
+        label: "Docs",
+        icon: "BookIcon",
+        href: "https://goosedefi.gitbook.io/goose-finance/",
+      },
     ],
   },
 ];
@@ -54,7 +56,7 @@ export const links = [
 export const more = [
   {
     label: "Github",
-    href: "https://github.com/goosedefi/",
+    href: "https://github.com/ShibaNova",
   },
   {
     label: "Docs",
