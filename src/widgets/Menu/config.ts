@@ -1,27 +1,27 @@
 export const links = [
   {
-    label: "DASHBOARD",
+    label: "Dashboard",
     icon: "HomeIcon",
     href: "/",
   },
   {
-    label: "EXCHANGE",
+    label: "Exchange",
     icon: "TradeIcon",
     href: "https://exchange.pancakeswap.finance",
     button: true,
   },
   {
-    label: "FARMS",
+    label: "Farms",
     icon: "FarmIcon",
     href: "/farms",
   },
   {
-    label: "POOLS",
+    label: "Pools",
     icon: "PoolIcon",
     href: "/pools",
   },
   {
-    label: "SOCIALS",
+    label: "Socials",
     icon: "MoreIcon",
     items: [
       {

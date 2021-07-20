@@ -36,7 +36,7 @@ const NavBar: React.FC<Props> = ({ isXl, links }) => {
             return (
               <Accordion
                 key={entry.label}
-                label={entry.label}
+                label={entry.label.toUpperCase()}
                 initialOpenState={entry.initialOpenState}
                 className={calloutClass}
               >
@@ -58,9 +58,9 @@ const NavBar: React.FC<Props> = ({ isXl, links }) => {
             <MenuEntry key={entry.label} isActive={entry.href === location.pathname} className={calloutClass}>
               <MenuLink href={entry.href}>
                 {entry.button ? (
-                  <ButtonLabel size="sm">{entry.label}</ButtonLabel>
+                  <ButtonLabel size="sm">{entry.label.toUpperCase()}</ButtonLabel>
                 ) : (
-                  <LinkLabel>{entry.label}</LinkLabel>
+                  <LinkLabel>{entry.label.toUpperCase()}</LinkLabel>
                 )}
               </MenuLink>
             </MenuEntry>

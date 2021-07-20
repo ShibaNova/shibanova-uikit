@@ -32,7 +32,7 @@ const PriceLink = styled.a`
   }
 `;
 
-const StyledNav = styled.nav<{ showMenu: boolean }>`
+const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
   position: fixed;
   top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT}px`)};
   left: 0;
@@ -43,7 +43,12 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   padding: 0px 20px;
   width: 100%;
   height: ${MENU_HEIGHT}px;
-  background-color: ${({ theme }) => theme.nav.background};
+  background: ${({ theme, isMobile }) =>
+    isMobile
+      ? "linear-gradient(90deg, rgba(6,26,84,1) 0%, rgba(6,28,124,1) 40%, rgba(6,28,124,1) 60%, rgba(4,2,66,1) 100%);"
+      : theme.nav.background};
+  border-bottom: ${({ theme, isMobile }) => (isMobile ? `1px solid ${theme.colors.textSubtle}4f` : "none")};
+
   z-index: 20;
 `;
 
@@ -76,7 +81,7 @@ const Menu: React.FC<NavProps> = ({
 }) => {
   const { isXl, isSm, isXs } = useMatchBreakpoints();
   const isMobile = isSm || isXs;
-  const [isPushed, setIsPushed] = useState(!isMobile);
+  const [showSideBar, setShowSideBar] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(window.pageYOffset);
 
@@ -127,14 +132,14 @@ const Menu: React.FC<NavProps> = ({
 
   return (
     <Wrapper>
-      <StyledNav showMenu={showMenu}>
+      <StyledNav isMobile={isMobile} showMenu={showMenu}>
         <Logo
           isXl={isXl}
-          showSideBar={() => setIsPushed((prevState: boolean) => !prevState)}
+          showSideBar={() => setShowSideBar((prevState: boolean) => !prevState)}
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         />
-        {isPushed && <SideBar onDismiss={() => setIsPushed(false)} links={links} />}
+        <SideBar open={showSideBar} onDismiss={() => setShowSideBar(false)} links={links} />
         <NavBar
           isXl={isXl}
           isDark={isDark}

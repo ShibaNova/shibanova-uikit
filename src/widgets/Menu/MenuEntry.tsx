@@ -6,6 +6,7 @@ export interface Props {
   secondary?: boolean;
   isActive?: boolean;
   theme: DefaultTheme;
+  isMobile?: boolean;
 }
 
 const rainbowAnimation = keyframes`
@@ -39,11 +40,18 @@ const MenuEntry = styled.div<Props>`
   cursor: pointer;
   display: flex;
   align-items: center;
-  height: ${MENU_ENTRY_HEIGHT}px;
+  height: ${({ isMobile }) => (isMobile ? "auto" : `${MENU_ENTRY_HEIGHT}px`)};
   padding: ${({ secondary }) => (secondary ? "0 24px" : "0 20px")};
-  font-size: 14px;
-  background-color: ${({ secondary, theme }) => (secondary ? theme.colors.card : "transparent")};
-  color: ${({ theme, isActive }) => (isActive ? theme.colors.primary : "#FFF")};
+  font-size: ${
+    /* eslint-disable */
+    ({ isMobile, secondary }) => (isMobile ? (secondary ? 16 : 18) : 14)
+    /* eslint-enable */
+  }px;
+  background-color: ${({ secondary, theme, isMobile }) => (secondary && !isMobile ? theme.colors.card : "transparent")};
+  color: ${({ theme, isActive }) => (isActive ? theme.colors.primary : theme.colors.text)};
+  opacity: ${({ isMobile }) => (isMobile ? "0.8" : "1")};
+  line-height: ${({ isMobile }) => (isMobile ? "1.5" : "inherit")};
+  margin: ${({ isMobile }) => (isMobile ? "10px 0" : "0")};
   // box-shadow: ${({ isActive, theme }) => (isActive ? `inset 4px 0px 0px ${theme.colors.primary}` : "none")};
 
   a {
@@ -58,7 +66,9 @@ const MenuEntry = styled.div<Props>`
   }
 
   &:hover {
-    background-color: ${({ secondary, theme }) => (secondary ? theme.colors.primary : "transparent")};
+    background-color: ${({ secondary, theme, isMobile }) =>
+      secondary && !isMobile ? theme.colors.primary : "transparent"};
+    opacity: 1;
   }
 
   // Safari fix

@@ -51,6 +51,12 @@ export interface PanelProps {
   priceLink: string;
 }
 
+export interface SideBarProps {
+  onDismiss?: () => void;
+  links: MenuEntry[];
+  open: boolean;
+}
+
 export interface NavProps extends PanelProps {
   account?: string;
   login: Login;

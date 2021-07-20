@@ -1,8 +1,4 @@
 import React from "react";
-import { MenuEntry } from "./types";
-interface NavMobileProps {
-    onDismiss?: () => void;
-    links: Array<MenuEntry>;
-}
-declare const SideBar: React.FC<NavMobileProps>;
+import { SideBarProps } from "./types";
+declare const SideBar: React.FC<SideBarProps>;
 export default SideBar;

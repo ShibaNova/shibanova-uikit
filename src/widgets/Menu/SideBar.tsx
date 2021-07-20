@@ -1,21 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import CloseButton from "../../components/Svg/Icons/Close";
-import { MenuEntry } from "./types";
+import { SideBarProps, MenuSubEntry } from "./types";
+import * as IconModule from "./icons";
+import { SvgProps } from "../../components/Svg";
+import { MenuEntry } from "./MenuEntry";
+import MenuLink from "./MenuLink";
 
-interface NavMobileProps {
-  onDismiss?: () => void;
-  links: Array<MenuEntry>;
-}
+const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 
-const StyledNav = styled.nav`
+const StyledNav = styled.nav<{ open: boolean }>`
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: #000;
+  background-color: ${({ theme }) => theme.colors.card};
   display: block;
   z-index: 100;
   margin: 0;
@@ -23,6 +24,8 @@ const StyledNav = styled.nav`
   align-items: center;
   flex-direction: column;
   padding: 30px 20px 30px;
+  transform: ${({ open }) => (open ? "translateX(0px)" : "translateX(-100%)")};
+  transition: transform 0.2s linear 0s;
 `;
 
 const StyledCloseButton = styled.div`
@@ -32,79 +35,45 @@ const StyledCloseButton = styled.div`
 `;
 
 const StyledLinkList = styled.div`
-  margin-top: 30px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 30px;
 `;
 
 const StyledLinkSeparator = styled.hr`
-  width: 50%;
-  border-color: ${(props) => props.theme.colors.textSubtle};
+  width: 200px;
+  border-color: ${({ theme }) => theme.colors.textSubtle};
 `;
 
-const StyledLink = styled(NavLink)`
-  color: ${(props) => props.theme.colors.secondary};
-  font-weight: 500;
-  font-size: 1.3rem;
-  margin: 6px 0;
-  text-decoration: none;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  &:hover {
-    color: ${(props) => props.theme.colors.primary};
-  }
-  &.active {
-    color: ${(props) => props.theme.colors.primary};
-    font-weight: 500;
-  }
-  .on {
-    color: ${(props) => props.theme.colors.primary};
-  }
-`;
-
-const StyledExternalLink = styled.a`
-  color: ${(props) => props.theme.colors.secondary};
-  font-weight: 500;
-  font-size: 1.3rem;
-  margin: 6px 0;
-  text-decoration: none;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  &:hover {
-    color: ${(props) => props.theme.colors.primary};
-  }
-  &.active {
-    color: ${(props) => props.theme.colors.primary};
-    font-weight: 500;
-  }
-`;
-
-const SideBar: React.FC<NavMobileProps> = ({ onDismiss, links }) => {
-  const [, , , , socials] = links;
+const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open }) => {
+  const location = useLocation();
+  const socials = links[links.length - 1];
 
   return (
-    <StyledNav>
+    <StyledNav open={open}>
       <StyledCloseButton>
         <CloseButton onClick={onDismiss} />
       </StyledCloseButton>
       <StyledLinkList>
-        {links.map((entry) => (
-          <StyledLink onClick={onDismiss} exact to="/">
-            {entry.label}
-          </StyledLink>
+        {links.slice(0, links.length - 1).map((entry) => (
+          <MenuEntry onClick={onDismiss} isMobile key={entry.href} isActive={entry.href === location.pathname}>
+            <MenuLink href={entry.href}>{entry.label}</MenuLink>
+          </MenuEntry>
         ))}
-      </StyledLinkList>
-      <StyledLinkSeparator />
-      <StyledLinkList>
-        {socials.items?.map((entry) => (
-          <StyledExternalLink onClick={onDismiss} href={entry.href} target="_blank" rel="noopener noreferrer">
-            Docs
-          </StyledExternalLink>
-        ))}
+        <StyledLinkSeparator />
+        {socials?.items?.map((item: MenuSubEntry) => {
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          const Icon = Icons[item.icon!];
+          const iconProps = { width: "24px", color: "textSubtle" };
+
+          return (
+            <MenuEntry isMobile key={item.href} secondary isActive={item.href === location.pathname}>
+              {typeof Icon !== "undefined" ? <Icon {...iconProps} mr="5px" /> : null}
+              <MenuLink href={item.href}>{item.label}</MenuLink>
+            </MenuEntry>
+          );
+        })}
       </StyledLinkList>
     </StyledNav>
   );

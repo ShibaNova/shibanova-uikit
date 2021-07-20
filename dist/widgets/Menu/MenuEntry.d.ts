@@ -4,6 +4,7 @@ export interface Props {
     secondary?: boolean;
     isActive?: boolean;
     theme: DefaultTheme;
+    isMobile?: boolean;
 }
 declare const ButtonLabel: import("styled-components").StyledComponent<import("react").FC<import("../../components/Button").ButtonProps>, DefaultTheme, {}, never>;
 declare const LinkLabel: import("styled-components").StyledComponent<"div", DefaultTheme, {}, never>;
