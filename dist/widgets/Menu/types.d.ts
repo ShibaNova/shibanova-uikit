@@ -22,10 +22,12 @@ export interface MenuSubEntry {
     label: string;
     href: string;
     calloutClass?: string;
+    icon?: string;
 }
 export interface MenuEntry {
     label: string;
     icon: string;
+    button?: boolean;
     items?: MenuSubEntry[];
     href?: string;
     calloutClass?: string;

@@ -1,8 +1,6 @@
 import React from "react";
-import { PushedProps } from "./types";
-interface Props extends PushedProps {
+interface Props {
     label: string;
-    icon: React.ReactElement;
     initialOpenState?: boolean;
     className?: string;
 }
