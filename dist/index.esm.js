@@ -109,13 +109,17 @@ var getFontSize = function (_a) {
     var fontSize = _a.fontSize, small = _a.small;
     return small ? "14px" : fontSize || "16px";
 };
-var Text = styled.div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n"])), getColor, getFontSize, function (_a) {
+var Text = styled.div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n  text-shadow: ", ";\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n  text-shadow: ",
+    ";\n"])), getColor, getFontSize, function (_a) {
     var bold = _a.bold;
     return (bold ? 600 : 400);
 }, function (_a) {
     var textTransform = _a.textTransform;
     return textTransform && "text-transform: " + textTransform + ";";
-}, space);
+}, space, function (_a) {
+    var glowing = _a.glowing;
+    return glowing ? "rgba(0, 170, 255, 0.584)0 0 10px, rgba(0, 170, 255, 0.584) 0 0 10px" : "none";
+});
 Text.defaultProps = {
     color: "text",
     small: false,
@@ -886,13 +890,9 @@ var style = (_a = {},
         fontSize: "64px",
     },
     _a);
-var Heading = styled(Text).attrs({ bold: true })(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  ", "\n  font-weight:600;\n  line-height: 1.1;\n  text-shadow: ", ";\n"], ["\n  ", "\n  font-weight:600;\n  line-height: 1.1;\n  text-shadow: ",
-    ";\n"])), function (_a) {
+var Heading = styled(Text).attrs({ bold: true })(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  ", "\n  font-weight:600;\n  line-height: 1.1;\n"], ["\n  ", "\n  font-weight:600;\n  line-height: 1.1;\n"])), function (_a) {
     var size = _a.size;
     return style[size || sizes$1.MD];
-}, function (_a) {
-    var glowing = _a.glowing;
-    return glowing ? "rgba(0, 170, 255, 0.584)0 0 10px, rgba(0, 170, 255, 0.584) 0 0 10px" : "none";
 });
 Heading.defaultProps = {
     as: tags.H2,
@@ -2141,7 +2141,7 @@ var links = [
     {
         label: "Exchange",
         icon: "TradeIcon",
-        href: "https://exchange.pancakeswap.finance",
+        href: "https://swap.shibanova.io",
         button: true,
     },
     {
