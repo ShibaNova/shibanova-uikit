@@ -11,6 +11,7 @@ export declare const shadows: {
     danger: string;
     focus: string;
     inset: string;
+    text: string;
 };
 declare const _default: {
     siteWidth: number;
@@ -26,6 +27,7 @@ declare const _default: {
         danger: string;
         focus: string;
         inset: string;
+        text: string;
     };
     radii: {
         small: string;

@@ -122,16 +122,15 @@ var getFontSize = function (_a) {
     var fontSize = _a.fontSize, small = _a.small;
     return small ? "14px" : fontSize || "16px";
 };
-var Text = styled__default['default'].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n  text-shadow: ", ";\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n  text-shadow: ",
-    ";\n"])), getColor, getFontSize, function (_a) {
+var Text = styled__default['default'].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n  text-shadow: ", ";\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n  text-shadow: ", ";\n"])), getColor, getFontSize, function (_a) {
     var bold = _a.bold;
     return (bold ? 600 : 400);
 }, function (_a) {
     var textTransform = _a.textTransform;
     return textTransform && "text-transform: " + textTransform + ";";
 }, styledSystem.space, function (_a) {
-    var glowing = _a.glowing;
-    return glowing ? "rgba(0, 170, 255, 0.584)0 0 10px, rgba(0, 170, 255, 0.584) 0 0 10px" : "none";
+    var glowing = _a.glowing, theme = _a.theme;
+    return (glowing ? theme.shadows.text : "none");
 });
 Text.defaultProps = {
     color: "text",
@@ -574,6 +573,7 @@ var shadows = {
     danger: "0px 0px 3px 0px #8a1010,0px 0px 15px 0px #f74500",
     focus: "0px 0px 0px 1px #7645D9, 0px 0px 0px 4px rgba(118, 69, 217, 0.6)",
     inset: "inset 0px 2px 2px -1px rgba(74, 74, 104, 0.1)",
+    text: "rgba(0, 170, 255, 0.584)0 0 10px, rgba(0, 170, 255, 0.584) 0 0 10px",
 };
 var spacing = [0, 4, 8, 16, 24, 32, 48, 64];
 var radii = {
@@ -2204,13 +2204,16 @@ var MENU_ENTRY_HEIGHT = 48;
 
 var rainbowAnimation = styled.keyframes(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"], ["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"])));
 var ButtonLabel = styled__default['default'](Button)(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  font-size: 14px;\n  font-weight: 700;\n  padding: 0 10px;\n"], ["\n  font-size: 14px;\n  font-weight: 700;\n  padding: 0 10px;\n"])));
-var LinkLabel = styled__default['default'].div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  color: inherit;\n  transition: color 0.4s;\n  flex-grow: 1;\n  font-weight: bold;\n\n  &:hover {\n    opacity: 0.8;\n  }\n"], ["\n  color: inherit;\n  transition: color 0.4s;\n  flex-grow: 1;\n  font-weight: bold;\n\n  &:hover {\n    opacity: 0.8;\n  }\n"])));
-var MenuEntry = styled__default['default'].div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: ", "px;\n  background-color: ", ";\n  color: ", ";\n  opacity: ", ";\n  line-height: ", ";\n  margin: ", ";\n  // box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n    opacity: 1;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: "
+var LinkLabel = styled__default['default'].div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  color: inherit;\n  transition: color 0.4s;\n  flex-grow: 1;\n  font-weight: bold;\n  text-shadow: ", ";\n\n  &:hover {\n    opacity: 0.8;\n  }\n"], ["\n  color: inherit;\n  transition: color 0.4s;\n  flex-grow: 1;\n  font-weight: bold;\n  text-shadow: ", ";\n\n  &:hover {\n    opacity: 0.8;\n  }\n"])), function (_a) {
+    var glowing = _a.glowing, theme = _a.theme;
+    return (glowing ? theme.shadows.text : "none");
+});
+var MenuEntry = styled__default['default'].div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: ", "px;\n  background-color: ", ";\n  color: ", ";\n  line-height: ", ";\n  margin: ", ";\n  // box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: "
     /* eslint-disable */
     ,
     /* eslint-enable */
-    "px;\n  background-color: ", ";\n  color: ", ";\n  opacity: ", ";\n  line-height: ", ";\n  margin: ", ";\n  // box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ",
-    ";\n    opacity: 1;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"])), function (_a) {
+    "px;\n  background-color: ", ";\n  color: ", ";\n  line-height: ", ";\n  margin: ", ";\n  // box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ",
+    ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"])), function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? "auto" : MENU_ENTRY_HEIGHT + "px");
 }, function (_a) {
@@ -2229,9 +2232,6 @@ function (_a) {
 }, function (_a) {
     var theme = _a.theme, isActive = _a.isActive;
     return (isActive ? theme.colors.primary : theme.colors.text);
-}, function (_a) {
-    var isMobile = _a.isMobile;
-    return (isMobile ? "0.8" : "1");
 }, function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? "1.5" : "inherit");
@@ -2554,11 +2554,14 @@ var StyledNav = styled__default['default'].nav(templateObject_1$F || (templateOb
     var open = _a.open;
     return (open ? "translateX(0px)" : "translateX(-100%)");
 });
-var StyledCloseButton = styled__default['default'].div(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  position: absolute;\n  right: 20px;\n  top: 20px;\n"], ["\n  position: absolute;\n  right: 20px;\n  top: 20px;\n"])));
+var StyledCloseButton = styled__default['default'].div(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  position: absolute;\n  right: 20px;\n  top: 20px;\n  filter: drop-shadow(1px 1px 3px rgba(0, 170, 255, 0.584));\n"], ["\n  position: absolute;\n  right: 20px;\n  top: 20px;\n  filter: drop-shadow(1px 1px 3px rgba(0, 170, 255, 0.584));\n"])));
 var StyledLinkList = styled__default['default'].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  margin-top: 40px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"], ["\n  margin-top: 40px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"])));
-var StyledLinkSeparator = styled__default['default'].hr(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  width: 200px;\n  border-color: ", ";\n"], ["\n  width: 200px;\n  border-color: ", ";\n"])), function (_a) {
+var StyledLinkSeparator = styled__default['default'].hr(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  width: 200px;\n  border-color: ", ";\n  box-shadow: ", ";\n"], ["\n  width: 200px;\n  border-color: ", ";\n  box-shadow: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textSubtle;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.shadows.text;
 });
 var SideBar = function (_a) {
     var _b;
@@ -2570,7 +2573,8 @@ var SideBar = function (_a) {
             React__default['default'].createElement(Icon$k, { onClick: onDismiss })),
         React__default['default'].createElement(StyledLinkList, null,
             links.slice(0, links.length - 1).map(function (entry) { return (React__default['default'].createElement(MenuEntry, { onClick: onDismiss, isMobile: true, key: entry.href, isActive: entry.href === location.pathname },
-                React__default['default'].createElement(MenuLink, { href: entry.href }, entry.label))); }),
+                React__default['default'].createElement(MenuLink, { href: entry.href },
+                    React__default['default'].createElement(LinkLabel, { glowing: true }, entry.label)))); }),
             React__default['default'].createElement(StyledLinkSeparator, null), (_b = socials === null || socials === void 0 ? void 0 : socials.items) === null || _b === void 0 ? void 0 :
             _b.map(function (item) {
                 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -2578,7 +2582,8 @@ var SideBar = function (_a) {
                 var iconProps = { width: "24px", color: "textSubtle" };
                 return (React__default['default'].createElement(MenuEntry, { isMobile: true, key: item.href, secondary: true, isActive: item.href === location.pathname },
                     typeof Icon !== "undefined" ? React__default['default'].createElement(Icon, __assign({}, iconProps, { mr: "5px" })) : null,
-                    React__default['default'].createElement(MenuLink, { href: item.href }, item.label)));
+                    React__default['default'].createElement(MenuLink, { href: item.href },
+                        React__default['default'].createElement(LinkLabel, { glowing: true }, item.label))));
             }))));
 };
 var templateObject_1$F, templateObject_2$e, templateObject_3$7, templateObject_4$3;

@@ -22,8 +22,7 @@ const Text = styled.div<TextProps>`
   line-height: 1.5;
   ${({ textTransform }) => textTransform && `text-transform: ${textTransform};`}
   ${space}
-  text-shadow: ${({ glowing }) =>
-    glowing ? "rgba(0, 170, 255, 0.584)0 0 10px, rgba(0, 170, 255, 0.584) 0 0 10px" : "none"};
+  text-shadow: ${({ glowing, theme }) => (glowing ? theme.shadows.text : "none")};
 `;
 
 Text.defaultProps = {

@@ -28,6 +28,7 @@ export const shadows = {
   danger: "0px 0px 3px 0px #8a1010,0px 0px 15px 0px #f74500",
   focus: "0px 0px 0px 1px #7645D9, 0px 0px 0px 4px rgba(118, 69, 217, 0.6)",
   inset: "inset 0px 2px 2px -1px rgba(74, 74, 104, 0.1)",
+  text: "rgba(0, 170, 255, 0.584)0 0 10px, rgba(0, 170, 255, 0.584) 0 0 10px",
 };
 
 const spacing: Spacing = [0, 4, 8, 16, 24, 32, 48, 64];

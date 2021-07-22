@@ -1,6 +1,7 @@
 import styled, { keyframes, DefaultTheme } from "styled-components";
 import { MENU_ENTRY_HEIGHT } from "./config";
 import { Button } from "../../components/Button";
+import { TextProps } from "../../components/Text/types";
 
 export interface Props {
   secondary?: boolean;
@@ -25,11 +26,12 @@ const ButtonLabel = styled(Button)`
   padding: 0 10px;
 `;
 
-const LinkLabel = styled.div`
+const LinkLabel = styled.div<TextProps>`
   color: inherit;
   transition: color 0.4s;
   flex-grow: 1;
   font-weight: bold;
+  text-shadow: ${({ glowing, theme }) => (glowing ? theme.shadows.text : "none")};
 
   &:hover {
     opacity: 0.8;
@@ -49,7 +51,6 @@ const MenuEntry = styled.div<Props>`
   }px;
   background-color: ${({ secondary, theme, isMobile }) => (secondary && !isMobile ? theme.colors.card : "transparent")};
   color: ${({ theme, isActive }) => (isActive ? theme.colors.primary : theme.colors.text)};
-  opacity: ${({ isMobile }) => (isMobile ? "0.8" : "1")};
   line-height: ${({ isMobile }) => (isMobile ? "1.5" : "inherit")};
   margin: ${({ isMobile }) => (isMobile ? "10px 0" : "0")};
   // box-shadow: ${({ isActive, theme }) => (isActive ? `inset 4px 0px 0px ${theme.colors.primary}` : "none")};
@@ -68,7 +69,6 @@ const MenuEntry = styled.div<Props>`
   &:hover {
     background-color: ${({ secondary, theme, isMobile }) =>
       secondary && !isMobile ? theme.colors.primary : "transparent"};
-    opacity: 1;
   }
 
   // Safari fix

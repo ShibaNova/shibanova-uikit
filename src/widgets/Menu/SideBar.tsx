@@ -5,7 +5,7 @@ import CloseButton from "../../components/Svg/Icons/Close";
 import { SideBarProps, MenuSubEntry } from "./types";
 import * as IconModule from "./icons";
 import { SvgProps } from "../../components/Svg";
-import { MenuEntry } from "./MenuEntry";
+import { MenuEntry, LinkLabel } from "./MenuEntry";
 import MenuLink from "./MenuLink";
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
@@ -32,6 +32,7 @@ const StyledCloseButton = styled.div`
   position: absolute;
   right: 20px;
   top: 20px;
+  filter: drop-shadow(1px 1px 3px rgba(0, 170, 255, 0.584));
 `;
 
 const StyledLinkList = styled.div`
@@ -44,6 +45,7 @@ const StyledLinkList = styled.div`
 const StyledLinkSeparator = styled.hr`
   width: 200px;
   border-color: ${({ theme }) => theme.colors.textSubtle};
+  box-shadow: ${({ theme }) => theme.shadows.text};
 `;
 
 const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open }) => {
@@ -58,7 +60,9 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open }) => {
       <StyledLinkList>
         {links.slice(0, links.length - 1).map((entry) => (
           <MenuEntry onClick={onDismiss} isMobile key={entry.href} isActive={entry.href === location.pathname}>
-            <MenuLink href={entry.href}>{entry.label}</MenuLink>
+            <MenuLink href={entry.href}>
+              <LinkLabel glowing>{entry.label}</LinkLabel>
+            </MenuLink>
           </MenuEntry>
         ))}
         <StyledLinkSeparator />
@@ -70,7 +74,9 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open }) => {
           return (
             <MenuEntry isMobile key={item.href} secondary isActive={item.href === location.pathname}>
               {typeof Icon !== "undefined" ? <Icon {...iconProps} mr="5px" /> : null}
-              <MenuLink href={item.href}>{item.label}</MenuLink>
+              <MenuLink href={item.href}>
+                <LinkLabel glowing>{item.label}</LinkLabel>
+              </MenuLink>
             </MenuEntry>
           );
         })}
