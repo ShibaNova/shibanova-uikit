@@ -899,9 +899,13 @@ var style = (_a = {},
         fontSize: "64px",
     },
     _a);
-var Heading = styled__default['default'](Text).attrs({ bold: true })(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  ", "\n  font-weight:600;\n  line-height: 1.1;\n"], ["\n  ", "\n  font-weight:600;\n  line-height: 1.1;\n"])), function (_a) {
+var Heading = styled__default['default'](Text).attrs({ bold: true })(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  ", "\n  font-weight:600;\n  line-height: 1.1;\n  text-shadow: ", ";\n"], ["\n  ", "\n  font-weight:600;\n  line-height: 1.1;\n  text-shadow: ",
+    ";\n"])), function (_a) {
     var size = _a.size;
     return style[size || sizes$1.MD];
+}, function (_a) {
+    var glowing = _a.glowing;
+    return glowing ? "rgba(0, 170, 255, 0.584)0 0 10px, rgba(0, 170, 255, 0.584) 0 0 10px" : "none";
 });
 Heading.defaultProps = {
     as: tags.H2,
