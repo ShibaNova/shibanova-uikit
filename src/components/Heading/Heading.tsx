@@ -21,6 +21,8 @@ const Heading = styled(Text).attrs({ bold: true })<HeadingProps>`
   ${({ size }) => style[size || sizes.MD]}
   font-weight:600;
   line-height: 1.1;
+  text-shadow: ${({ glowing }) =>
+    glowing ? "rgba(0, 170, 255, 0.584)0 0 10px, rgba(0, 170, 255, 0.584) 0 0 10px" : "none"};
 `;
 
 Heading.defaultProps = {
