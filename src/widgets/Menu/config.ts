@@ -7,7 +7,7 @@ export const links = [
   {
     label: "Exchange",
     icon: "TradeIcon",
-    href: "https://exchange.pancakeswap.finance",
+    href: "https://swap.shibanova.io",
     button: true,
   },
   {
