@@ -47,7 +47,7 @@ export const links = [
       {
         label: "Docs",
         icon: "BookIcon",
-        href: "https://goosedefi.gitbook.io/goose-finance/",
+        href: "https://docs.shibanova.io",
       },
     ],
   },
@@ -64,7 +64,7 @@ export const more = [
   },
 ];
 
-export const MENU_HEIGHT = 100;
+export const MENU_HEIGHT = 110;
 export const MENU_ENTRY_HEIGHT = 48;
 export const SIDEBAR_WIDTH_FULL = 240;
 export const SIDEBAR_WIDTH_REDUCED = 56;

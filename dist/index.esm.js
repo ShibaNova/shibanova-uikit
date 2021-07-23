@@ -403,7 +403,7 @@ var Icon$u = function (props) {
 
 var Icon$v = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 90 90" }, props),
-        React.createElement("image", { width: 90, height: 90, href: "/images/coins/nova_token.png" })));
+        React.createElement("image", { width: 90, height: 90, href: "/images/coins/nova.png" })));
 };
 
 var Icon$w = function (props) {
@@ -2181,12 +2181,12 @@ var links = [
             {
                 label: "Docs",
                 icon: "BookIcon",
-                href: "https://goosedefi.gitbook.io/goose-finance/",
+                href: "https://docs.shibanova.io",
             },
         ],
     },
 ];
-var MENU_HEIGHT = 100;
+var MENU_HEIGHT = 110;
 var MENU_ENTRY_HEIGHT = 48;
 
 var rainbowAnimation = keyframes(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"], ["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"])));
@@ -2752,7 +2752,7 @@ var baseColors = {
 var brandColors = {
     binance: "#F0B90B",
 };
-var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", text: "#452A7A", textDisabled: "#BDC2C4", textSubtle: "#8f80ba", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
+var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", text: "#0000a4", textDisabled: "#BDC2C4", textSubtle: "#46e3f4", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
         bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
     } });
 var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#00aaff", background: "#0b23a2", backgroundDisabled: "#2f2f3c", contrast: "#FFFFFF", invertedContrast: "#191326", input: "transparent", primaryDark: "#0098A1", tertiary: "#040547", text: "#FFFFFF", textDisabled: "#4d547b", textSubtle: "#c4c7d4", borderColor: "#00aaff", card: "#040547", gradients: {
@@ -2888,11 +2888,11 @@ var dark$4 = {
 
 var light$5 = {
     background: lightColors.card,
-    hover: "#EEEAF4",
+    hover: "#abf2f8",
 };
 var dark$5 = {
     background: "transparent",
-    hover: "#473d5d",
+    hover: "#000e8c",
 };
 
 var light$6 = {
