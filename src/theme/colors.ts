@@ -5,7 +5,7 @@ export const baseColors = {
   primary: "#1f9ce4",
   primaryBright: "#1f9ce4",
   primaryDark: "#1f9ce4",
-  secondary: "#7645D9",
+  secondary: "#00aaff",
   success: "#0ba223",
   warning: "#FFB237",
 };
@@ -36,7 +36,7 @@ export const lightColors: Colors = {
 export const darkColors: Colors = {
   ...baseColors,
   ...brandColors,
-  secondary: "#9A6AFF",
+  secondary: "#00aaff",
   background: "#0b23a2",
   backgroundDisabled: "#2f2f3c",
   contrast: "#FFFFFF",
@@ -47,7 +47,7 @@ export const darkColors: Colors = {
   text: "#FFFFFF",
   textDisabled: "#4d547b",
   textSubtle: "#c4c7d4",
-  borderColor: "#524B63",
+  borderColor: "#00aaff",
   card: "#040547",
   gradients: {
     bubblegum: "linear-gradient(90deg, rgba(4,5,71,1) 0%, rgba(31,156,228,1) 100%)",
