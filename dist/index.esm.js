@@ -2112,7 +2112,7 @@ MenuButton.defaultProps = {
 };
 var templateObject_1$x;
 
-var StyledLink$1 = styled(Link$1)(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 156px;\n    display: none;\n    ", " {\n      display: block;\n      margin-top: 15px;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 156px;\n    display: none;\n    ", " {\n      display: block;\n      margin-top: 15px;\n    }\n  }\n"])), function (_a) {
+var StyledLink$1 = styled(Link$1)(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 190px;\n    display: none;\n    ", " {\n      display: block;\n      margin-top: 5px;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 190px;\n    display: none;\n    ", " {\n      display: block;\n      margin-top: 5px;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 }, function (_a) {
@@ -2186,7 +2186,7 @@ var links = [
         ],
     },
 ];
-var MENU_HEIGHT = 185;
+var MENU_HEIGHT = 203;
 var MENU_HEIGHT_MOBILE = 64;
 var MENU_ENTRY_HEIGHT = 48;
 
@@ -2486,14 +2486,14 @@ var useWalletModal = function (login, logout, account) {
 };
 
 var UserBlock = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout;
+    var account = _a.account, login = _a.login, logout = _a.logout, isMobile = _a.isMobile;
     var _b = useWalletModal(login, logout, account), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
     var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 4) : null;
-    return (React.createElement("div", { style: { marginLeft: 8 } }, account ? (React.createElement(Button, { size: "sm", variant: "tertiary", onClick: function () {
+    return (React.createElement("div", { style: { marginLeft: 16 } }, account ? (React.createElement(Button, { size: "sm", variant: "tertiary", onClick: function () {
             onPresentAccountModal();
-        } }, accountEllipsis)) : (React.createElement(Button, { size: "sm", onClick: function () {
+        } }, accountEllipsis)) : (React.createElement(Button, { size: "sm", style: { fontWeight: "bold", padding: 10, borderRadius: 18, height: "auto" }, onClick: function () {
             onPresentConnectModal();
-        } }, "Connect"))));
+        } }, isMobile ? "Connect" : "CONNECT WALLET"))));
 };
 
 var Icon$1f = function (props) {
@@ -2587,7 +2587,7 @@ var StyledNav$1 = styled.nav(templateObject_3$8 || (templateObject_3$8 = __makeT
     return (showMenu ? 0 : "-" + MENU_HEIGHT + "px");
 }, function (_a) {
     var isMobile = _a.isMobile;
-    return (isMobile ? "0 10px" : "45px 75px 95px");
+    return (isMobile ? "0 10px" : "45px 75px 113px");
 }, function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT);
@@ -2655,9 +2655,9 @@ var Menu = function (_a) {
             React.createElement(Logo$1, { isMobile: isMobile, showSideBar: function () { return setShowSideBar(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             React.createElement(SideBar, { open: showSideBar, onDismiss: function () { return setShowSideBar(false); }, links: links }),
             React.createElement(NavBar, { isMobile: isMobile, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, links: links, priceLink: priceLink }),
-            React.createElement(Flex, { ml: "auto" },
+            React.createElement(Flex, { ml: "auto", alignItems: "center" },
                 renderPrice(),
-                React.createElement(UserBlock, { account: account, login: login, logout: logout }),
+                React.createElement(UserBlock, { isMobile: isMobile, account: account, login: login, logout: logout }),
                 profile && React.createElement(Avatar, { profile: profile }))),
         React.createElement(BodyWrapper, null,
             React.createElement(Inner, { isMobile: isMobile, showMenu: showMenu }, children))));

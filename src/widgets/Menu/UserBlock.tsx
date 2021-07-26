@@ -7,13 +7,14 @@ interface Props {
   account?: string;
   login: Login;
   logout: () => void;
+  isMobile: boolean;
 }
 
-const UserBlock: React.FC<Props> = ({ account, login, logout }) => {
+const UserBlock: React.FC<Props> = ({ account, login, logout, isMobile }) => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(login, logout, account);
   const accountEllipsis = account ? `${account.substring(0, 4)}...${account.substring(account.length - 4)}` : null;
   return (
-    <div style={{ marginLeft: 8 }}>
+    <div style={{ marginLeft: 16 }}>
       {account ? (
         <Button
           size="sm"
@@ -27,11 +28,12 @@ const UserBlock: React.FC<Props> = ({ account, login, logout }) => {
       ) : (
         <Button
           size="sm"
+          style={{ fontWeight: "bold", padding: 10, borderRadius: 18, height: "auto" }}
           onClick={() => {
             onPresentConnectModal();
           }}
         >
-          Connect
+          {isMobile ? "Connect" : "CONNECT WALLET"}
         </Button>
       )}
     </div>

@@ -23,11 +23,11 @@ const StyledLink = styled(Link)`
     }
   }
   .desktop-icon {
-    width: 156px;
+    width: 190px;
     display: none;
     ${({ theme }) => theme.mediaQueries.nav} {
       display: block;
-      margin-top: 15px;
+      margin-top: 5px;
     }
   }
 `;

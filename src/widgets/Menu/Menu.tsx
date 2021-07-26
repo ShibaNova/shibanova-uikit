@@ -40,7 +40,7 @@ const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
   display: flex;
   // justify-content: space-between;
   align-items: center;
-  padding: ${({ isMobile }) => (isMobile ? "0 10px" : "45px 75px 95px")};
+  padding: ${({ isMobile }) => (isMobile ? "0 10px" : "45px 75px 113px")};
   width: 100%;
   height: ${({ isMobile }) => (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT)}px;
   background: ${({ theme, isMobile }) =>
@@ -151,9 +151,9 @@ const Menu: React.FC<NavProps> = ({
           links={links}
           priceLink={priceLink}
         />
-        <Flex ml="auto">
+        <Flex ml="auto" alignItems="center">
           {renderPrice()}
-          <UserBlock account={account} login={login} logout={logout} />
+          <UserBlock isMobile={isMobile} account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
         </Flex>
       </StyledNav>
