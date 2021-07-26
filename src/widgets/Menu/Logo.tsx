@@ -41,7 +41,7 @@ const Logo: React.FC<Props> = ({ showSideBar, isDark, href, isMobile }) => {
   );
 
   return (
-    <Flex alignItems="center">
+    <Flex alignItems="center" mt={isMobile ? "0" : "auto"}>
       {!isMobile ? null : (
         <MenuButton aria-label="Toggle menu" onClick={showSideBar}>
           <HamburgerIcon width="24px" color="textSubtle" />
