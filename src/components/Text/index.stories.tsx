@@ -50,6 +50,7 @@ export const Default: React.FC = () => {
       <Text color="secondary" textTransform="uppercase">
         with text transform
       </Text>
+      <Text glowing>with glowing effect</Text>
     </div>
   );
 };

@@ -24,7 +24,7 @@ const themes = [
   },
   {
     name: "Dark",
-    backgroundColor: dark.colors.background,
+    backgroundColor: dark.colors.gradients.background + " repeat scroll 0% 0%",
     ...dark,
   },
 ];

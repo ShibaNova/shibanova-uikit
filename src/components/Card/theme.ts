@@ -18,6 +18,6 @@ export const dark: CardTheme = {
   boxShadowActive: shadows.active,
   boxShadowSuccess: shadows.success,
   boxShadowWarning: shadows.warning,
-  cardHeaderBackground: "linear-gradient(166.77deg, #3B4155 0%, #3A3045 100%)",
+  cardHeaderBackground: "transparent",
   dropShadow: "drop-shadow(0px 1px 4px rgba(25, 19, 38, 0.15))",
 };

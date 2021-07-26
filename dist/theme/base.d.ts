@@ -5,10 +5,13 @@ export declare const breakpointMap: {
 export declare const shadows: {
     level1: string;
     active: string;
+    info: string;
     success: string;
     warning: string;
+    danger: string;
     focus: string;
     inset: string;
+    text: string;
 };
 declare const _default: {
     siteWidth: number;
@@ -18,10 +21,13 @@ declare const _default: {
     shadows: {
         level1: string;
         active: string;
+        info: string;
         success: string;
         warning: string;
+        danger: string;
         focus: string;
         inset: string;
+        text: string;
     };
     radii: {
         small: string;

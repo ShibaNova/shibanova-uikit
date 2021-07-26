@@ -21,9 +21,11 @@ export declare type Shadows = {
     warning: string;
     focus: string;
     inset: string;
+    text: string;
 };
 export declare type Gradients = {
     bubblegum: string;
+    background?: string;
 };
 export declare type Colors = {
     primary: string;

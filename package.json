@@ -1,7 +1,7 @@
 {
   "name": "@pancakeswap-libs/uikit",
   "version": "0.10.2",
-  "description": "Set of UI components for pancake projects",
+  "description": "Set of UI components for Shibanova projects",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -81,5 +81,6 @@
     "lodash": "^4.17.20",
     "react-transition-group": "^4.4.1",
     "styled-system": "^5.1.5"
-  }
+  },
+  "proxy": "http://localhost:3000"
 }

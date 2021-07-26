@@ -3,13 +3,13 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { LogoIcon } from "../../components/Svg";
 import Flex from "../../components/Flex/Flex";
-import { HamburgerIcon, HamburgerCloseIcon, LogoIcon as LogoWithText } from "./icons";
+import { HamburgerIcon, LogoIcon as LogoWithText } from "./icons";
 import MenuButton from "./MenuButton";
 
 interface Props {
-  isPushed: boolean;
+  isMobile: boolean;
   isDark: boolean;
-  togglePush: () => void;
+  showSideBar: () => void;
   href: string;
 }
 
@@ -17,21 +17,22 @@ const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   .mobile-icon {
-    width: 32px;
+    width: 50px;
     ${({ theme }) => theme.mediaQueries.nav} {
       display: none;
     }
   }
   .desktop-icon {
-    width: 156px;
+    width: 185px;
     display: none;
     ${({ theme }) => theme.mediaQueries.nav} {
       display: block;
+      margin-top: 10px;
     }
   }
 `;
 
-const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
+const Logo: React.FC<Props> = ({ showSideBar, isDark, href, isMobile }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
@@ -41,14 +42,12 @@ const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
   );
 
   return (
-    <Flex>
-      <MenuButton aria-label="Toggle menu" onClick={togglePush} mr="24px">
-        {isPushed ? (
-          <HamburgerCloseIcon width="24px" color="textSubtle" />
-        ) : (
+    <Flex alignItems="center" mt={isMobile ? "0" : "auto"} mr="45px">
+      {!isMobile ? null : (
+        <MenuButton aria-label="Toggle menu" onClick={showSideBar}>
           <HamburgerIcon width="24px" color="textSubtle" />
-        )}
-      </MenuButton>
+        </MenuButton>
+      )}
       {isAbsoluteUrl ? (
         <StyledLink as="a" href={href} aria-label="Pancake home page">
           {innerLogo}
