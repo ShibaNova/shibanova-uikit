@@ -19,6 +19,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   height: 100%;
+  width: 100%;
 `;
 
 const NavBar: React.FC<Props> = ({ isMobile, links }) => {
@@ -27,7 +28,7 @@ const NavBar: React.FC<Props> = ({ isMobile, links }) => {
   if (isMobile) return null;
 
   return (
-    <Flex>
+    <Flex style={{ maxWidth: "50%" }}>
       <Container>
         {links.map((entry) => {
           const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;

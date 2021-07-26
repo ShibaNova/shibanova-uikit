@@ -23,11 +23,11 @@ const StyledLink = styled(Link)`
     }
   }
   .desktop-icon {
-    width: 190px;
+    width: 185px;
     display: none;
     ${({ theme }) => theme.mediaQueries.nav} {
       display: block;
-      margin-top: 5px;
+      margin-top: 10px;
     }
   }
 `;
@@ -42,7 +42,7 @@ const Logo: React.FC<Props> = ({ showSideBar, isDark, href, isMobile }) => {
   );
 
   return (
-    <Flex alignItems="center" mt={isMobile ? "0" : "auto"} mr="30px">
+    <Flex alignItems="center" mt={isMobile ? "0" : "auto"} mr="45px">
       {!isMobile ? null : (
         <MenuButton aria-label="Toggle menu" onClick={showSideBar}>
           <HamburgerIcon width="24px" color="textSubtle" />

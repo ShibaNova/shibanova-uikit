@@ -21,9 +21,10 @@ const rainbowAnimation = keyframes`
 `;
 
 const ButtonLabel = styled(Button)`
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
-  padding: 0 10px;
+  padding: 9px 7px;
+  height: auto;
 `;
 
 const LinkLabel = styled.div<TextProps>`
@@ -46,7 +47,7 @@ const MenuEntry = styled.div<Props>`
   padding: ${({ secondary }) => (secondary ? "0 24px" : "0 1.35vw")};
   font-size: ${
     /* eslint-disable */
-    ({ isMobile, secondary }) => (isMobile ? (secondary ? 16 : 18) : 14)
+    ({ isMobile, secondary }) => (isMobile ? (secondary ? 16 : 18) : 15)
     /* eslint-enable */
   }px;
   background-color: ${({ secondary, theme, isMobile }) => (secondary && !isMobile ? theme.colors.card : "transparent")};

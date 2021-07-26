@@ -40,7 +40,7 @@ const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
   display: flex;
   // justify-content: space-between;
   align-items: center;
-  padding: ${({ isMobile }) => (isMobile ? "0 10px" : "45px 75px 113px")};
+  padding: ${({ isMobile }) => (isMobile ? "0 10px" : "40px 110px 110px 85px")};
   width: 100%;
   height: ${({ isMobile }) => (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT)}px;
   background: ${({ theme, isMobile }) =>
@@ -123,7 +123,7 @@ const Menu: React.FC<NavProps> = ({
     return cakePriceUsd ? (
       <PriceLink href={priceLink} target="_blank">
         <NovaRoundIcon width="24px" mr="5px" />
-        <Text small bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
+        <Text fontSize="15px" small bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
       </PriceLink>
     ) : (
       <Skeleton width={80} height={24} />
