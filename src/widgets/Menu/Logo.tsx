@@ -17,7 +17,7 @@ const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   .mobile-icon {
-    width: 32px;
+    width: 50px;
     ${({ theme }) => theme.mediaQueries.nav} {
       display: none;
     }
@@ -41,9 +41,9 @@ const Logo: React.FC<Props> = ({ showSideBar, isDark, href, isMobile }) => {
   );
 
   return (
-    <Flex>
+    <Flex alignItems="center">
       {!isMobile ? null : (
-        <MenuButton aria-label="Toggle menu" onClick={showSideBar} mr="24px">
+        <MenuButton aria-label="Toggle menu" onClick={showSideBar}>
           <HamburgerIcon width="24px" color="textSubtle" />
         </MenuButton>
       )}
