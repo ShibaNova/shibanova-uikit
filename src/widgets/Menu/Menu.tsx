@@ -7,7 +7,7 @@ import Logo from "./Logo";
 import NavBar from "./NavBar";
 import UserBlock from "./UserBlock";
 import { NavProps } from "./types";
-import { MENU_HEIGHT } from "./config";
+import { MENU_HEIGHT, MENU_HEIGHT_MOBILE } from "./config";
 import Avatar from "./Avatar";
 import { NovaRoundIcon } from "../../components/Svg";
 import Skeleton from "../../components/Skeleton/Skeleton";
@@ -40,9 +40,9 @@ const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
   display: flex;
   // justify-content: space-between;
   align-items: center;
-  padding: 0px 20px;
+  padding: ${({ isMobile }) => (isMobile ? 0 : 40)}px 20px 0px;
   width: 100%;
-  height: ${MENU_HEIGHT}px;
+  height: ${({ isMobile }) => (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT)}px;
   background: ${({ theme, isMobile }) =>
     isMobile
       ? "linear-gradient(90deg, rgba(6,26,84,1) 0%, rgba(6,28,124,1) 40%, rgba(6,28,124,1) 60%, rgba(4,2,66,1) 100%);"
@@ -79,8 +79,8 @@ const Menu: React.FC<NavProps> = ({
   profile,
   children,
 }) => {
-  const { isXl, isSm, isXs } = useMatchBreakpoints();
-  const isMobile = isSm || isXs;
+  const { isXl } = useMatchBreakpoints();
+  const isMobile = !isXl;
   const [showSideBar, setShowSideBar] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(window.pageYOffset);
@@ -96,7 +96,7 @@ const Menu: React.FC<NavProps> = ({
       }
       // Avoid triggering anything at the bottom because of layout shift
       else if (!isBottomOfPage) {
-        if (currentOffset < refPrevOffset.current) {
+        if (currentOffset < refPrevOffset.current && isMobile) {
           // Has scroll up
           setShowMenu(true);
         } else {
@@ -134,14 +134,14 @@ const Menu: React.FC<NavProps> = ({
     <Wrapper>
       <StyledNav isMobile={isMobile} showMenu={showMenu}>
         <Logo
-          isXl={isXl}
+          isMobile={isMobile}
           showSideBar={() => setShowSideBar((prevState: boolean) => !prevState)}
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         />
         <SideBar open={showSideBar} onDismiss={() => setShowSideBar(false)} links={links} />
         <NavBar
-          isXl={isXl}
+          isMobile={isMobile}
           isDark={isDark}
           toggleTheme={toggleTheme}
           langs={langs}

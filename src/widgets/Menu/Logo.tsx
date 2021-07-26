@@ -7,7 +7,7 @@ import { HamburgerIcon, LogoIcon as LogoWithText } from "./icons";
 import MenuButton from "./MenuButton";
 
 interface Props {
-  isXl: boolean;
+  isMobile: boolean;
   isDark: boolean;
   showSideBar: () => void;
   href: string;
@@ -23,7 +23,7 @@ const StyledLink = styled(Link)`
     }
   }
   .desktop-icon {
-    width: 400px;
+    width: 156px;
     display: none;
     ${({ theme }) => theme.mediaQueries.nav} {
       display: block;
@@ -31,7 +31,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Logo: React.FC<Props> = ({ showSideBar, isDark, href, isXl }) => {
+const Logo: React.FC<Props> = ({ showSideBar, isDark, href, isMobile }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
@@ -42,7 +42,7 @@ const Logo: React.FC<Props> = ({ showSideBar, isDark, href, isXl }) => {
 
   return (
     <Flex>
-      {isXl ? null : (
+      {!isMobile ? null : (
         <MenuButton aria-label="Toggle menu" onClick={showSideBar} mr="24px">
           <HamburgerIcon width="24px" color="textSubtle" />
         </MenuButton>

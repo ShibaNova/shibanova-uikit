@@ -10,7 +10,7 @@ import { PanelProps } from "./types";
 import Flex from "../../components/Flex/Flex";
 
 interface Props extends PanelProps {
-  isXl: boolean;
+  isMobile: boolean;
 }
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
@@ -21,10 +21,10 @@ const Container = styled.div`
   height: 100%;
 `;
 
-const NavBar: React.FC<Props> = ({ isXl, links }) => {
+const NavBar: React.FC<Props> = ({ isMobile, links }) => {
   const location = useLocation();
 
-  if (!isXl) return null;
+  if (isMobile) return null;
 
   return (
     <Flex>
