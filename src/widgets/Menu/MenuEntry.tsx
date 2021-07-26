@@ -23,8 +23,9 @@ const rainbowAnimation = keyframes`
 const ButtonLabel = styled(Button)`
   font-size: 15px;
   font-weight: 700;
-  padding: 9px 7px;
+  padding: 10px;
   height: auto;
+  border-radius: 18px;
 `;
 
 const LinkLabel = styled.div<TextProps>`

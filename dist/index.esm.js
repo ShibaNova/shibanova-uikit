@@ -2191,7 +2191,7 @@ var MENU_HEIGHT_MOBILE = 64;
 var MENU_ENTRY_HEIGHT = 48;
 
 var rainbowAnimation = keyframes(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"], ["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"])));
-var ButtonLabel = styled(Button)(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  font-size: 15px;\n  font-weight: 700;\n  padding: 9px 7px;\n  height: auto;\n"], ["\n  font-size: 15px;\n  font-weight: 700;\n  padding: 9px 7px;\n  height: auto;\n"])));
+var ButtonLabel = styled(Button)(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  font-size: 15px;\n  font-weight: 700;\n  padding: 10px;\n  height: auto;\n  border-radius: 18px;\n"], ["\n  font-size: 15px;\n  font-weight: 700;\n  padding: 10px;\n  height: auto;\n  border-radius: 18px;\n"])));
 var LinkLabel = styled.div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  color: inherit;\n  transition: color 0.4s;\n  flex-grow: 1;\n  font-weight: bold;\n  text-shadow: ", ";\n\n  &:hover {\n    opacity: 0.8;\n  }\n"], ["\n  color: inherit;\n  transition: color 0.4s;\n  flex-grow: 1;\n  font-weight: bold;\n  text-shadow: ", ";\n\n  &:hover {\n    opacity: 0.8;\n  }\n"])), function (_a) {
     var glowing = _a.glowing, theme = _a.theme;
     return (glowing ? theme.shadows.text : "none");
@@ -2493,7 +2493,7 @@ var UserBlock = function (_a) {
     var account = _a.account, login = _a.login, logout = _a.logout, isMobile = _a.isMobile;
     var _b = useWalletModal(login, logout, account), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
     var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 4) : null;
-    return (React.createElement("div", { style: { marginLeft: 64 } }, account ? (React.createElement(Button, { size: "sm", variant: "tertiary", onClick: function () {
+    return (React.createElement("div", { style: { marginLeft: isMobile ? 32 : 64 } }, account ? (React.createElement(Button, { size: "sm", variant: "tertiary", onClick: function () {
             onPresentAccountModal();
         } }, accountEllipsis)) : (React.createElement(ConnectButton, { size: "sm", onClick: function () {
             onPresentConnectModal();

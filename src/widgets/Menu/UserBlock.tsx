@@ -23,7 +23,7 @@ const UserBlock: React.FC<Props> = ({ account, login, logout, isMobile }) => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(login, logout, account);
   const accountEllipsis = account ? `${account.substring(0, 4)}...${account.substring(account.length - 4)}` : null;
   return (
-    <div style={{ marginLeft: 64 }}>
+    <div style={{ marginLeft: isMobile ? 32 : 64 }}>
       {account ? (
         <Button
           size="sm"
