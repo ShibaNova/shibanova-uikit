@@ -1,6 +1,6 @@
 import React from "react";
 interface Props {
-    isXl: boolean;
+    isMobile: boolean;
     isDark: boolean;
     showSideBar: () => void;
     href: string;
