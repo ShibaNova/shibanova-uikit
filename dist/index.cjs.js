@@ -2125,7 +2125,7 @@ MenuButton.defaultProps = {
 };
 var templateObject_1$x;
 
-var StyledLink$1 = styled__default['default'](reactRouterDom.Link)(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 156px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 156px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n"])), function (_a) {
+var StyledLink$1 = styled__default['default'](reactRouterDom.Link)(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 156px;\n    display: none;\n    ", " {\n      display: block;\n      margin-top: 15px;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 156px;\n    display: none;\n    ", " {\n      display: block;\n      margin-top: 15px;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 }, function (_a) {
@@ -2138,7 +2138,7 @@ var Logo$1 = function (_a) {
     var innerLogo = (React__default['default'].createElement(React__default['default'].Fragment, null,
         React__default['default'].createElement(Icon$q, { className: "mobile-icon" }),
         React__default['default'].createElement(Logo, { className: "desktop-icon", isDark: isDark })));
-    return (React__default['default'].createElement(Flex, { alignItems: "center", mt: isMobile ? "0" : "auto" },
+    return (React__default['default'].createElement(Flex, { alignItems: "center", mt: isMobile ? "0" : "auto", mr: "30px" },
         !isMobile ? null : (React__default['default'].createElement(MenuButton, { "aria-label": "Toggle menu", onClick: showSideBar },
             React__default['default'].createElement(Icon$K, { width: "24px", color: "textSubtle" }))),
         isAbsoluteUrl ? (React__default['default'].createElement(StyledLink$1, { as: "a", href: href, "aria-label": "Pancake home page" }, innerLogo)) : (React__default['default'].createElement(StyledLink$1, { to: href, "aria-label": "Pancake home page" }, innerLogo))));
@@ -2199,7 +2199,7 @@ var links = [
         ],
     },
 ];
-var MENU_HEIGHT = 85;
+var MENU_HEIGHT = 185;
 var MENU_HEIGHT_MOBILE = 64;
 var MENU_ENTRY_HEIGHT = 48;
 
@@ -2219,7 +2219,7 @@ var MenuEntry = styled__default['default'].div(templateObject_4$2 || (templateOb
     return (isMobile ? "auto" : MENU_ENTRY_HEIGHT + "px");
 }, function (_a) {
     var secondary = _a.secondary;
-    return (secondary ? "0 24px" : "0 20px");
+    return (secondary ? "0 24px" : "0 1.35vw");
 }, 
 /* eslint-disable */
 function (_a) {
@@ -2591,13 +2591,16 @@ var templateObject_1$F, templateObject_2$e, templateObject_3$7, templateObject_4
 
 var Wrapper$1 = styled__default['default'].div(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
 var PriceLink = styled__default['default'].a(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
-var StyledNav$1 = styled__default['default'].nav(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  align-items: center;\n  padding: ", "px 20px 0px;\n  width: 100%;\n  height: ", "px;\n  background: ", ";\n  border-bottom: ", ";\n\n  z-index: 20;\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  align-items: center;\n  padding: ", "px 20px 0px;\n  width: 100%;\n  height: ", "px;\n  background: ",
+var StyledNav$1 = styled__default['default'].nav(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  align-items: center;\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ", ";\n  border-bottom: ", ";\n\n  z-index: 20;\n"], ["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  align-items: center;\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ",
     ";\n  border-bottom: ", ";\n\n  z-index: 20;\n"])), function (_a) {
+    var isMobile = _a.isMobile;
+    return (isMobile ? "fixed" : "inherit");
+}, function (_a) {
     var showMenu = _a.showMenu;
     return (showMenu ? 0 : "-" + MENU_HEIGHT + "px");
 }, function (_a) {
     var isMobile = _a.isMobile;
-    return (isMobile ? 0 : 40);
+    return (isMobile ? "0 10px" : "45px 75px 95px");
 }, function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT);
@@ -2612,16 +2615,16 @@ var StyledNav$1 = styled__default['default'].nav(templateObject_3$8 || (template
 });
 var BodyWrapper = styled__default['default'].div(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
 var Inner = styled__default['default'].div(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n"], ["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
-    var showMenu = _a.showMenu;
-    return (showMenu ? MENU_HEIGHT + "px" : 0);
+    var showMenu = _a.showMenu, isMobile = _a.isMobile;
+    return (isMobile && showMenu ? MENU_HEIGHT_MOBILE + "px" : 0);
 });
 var Menu = function (_a) {
     var _b;
     var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink, profile = _a.profile, children = _a.children;
-    var isXl = useMatchBreakpoints().isXl;
+    var _c = useMatchBreakpoints(), isXl = _c.isXl, isXs = _c.isXs, isSm = _c.isSm;
     var isMobile = !isXl;
-    var _c = React.useState(false), showSideBar = _c[0], setShowSideBar = _c[1];
-    var _d = React.useState(true), showMenu = _d[0], setShowMenu = _d[1];
+    var _d = React.useState(false), showSideBar = _d[0], setShowSideBar = _d[1];
+    var _e = React.useState(true), showMenu = _e[0], setShowMenu = _e[1];
     var refPrevOffset = React.useRef(window.pageYOffset);
     React.useEffect(function () {
         var handleScroll = function () {
@@ -2650,14 +2653,14 @@ var Menu = function (_a) {
         return function () {
             window.removeEventListener("scroll", throttledHandleScroll);
         };
-    }, []);
+    }, [isMobile]);
     // Find the home link if provided
     var homeLink = links.find(function (link) { return link.label === "DASHBOARD"; });
     var renderPrice = function () {
-        if (isMobile)
+        if (isXs || isSm)
             return null;
         return cakePriceUsd ? (React__default['default'].createElement(PriceLink, { href: priceLink, target: "_blank" },
-            React__default['default'].createElement(Icon$v, { width: "24px", mr: 0 }),
+            React__default['default'].createElement(Icon$v, { width: "24px", mr: "5px" }),
             React__default['default'].createElement(Text, { small: true, bold: true }, "$" + cakePriceUsd.toFixed(3)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 }));
     };
     return (React__default['default'].createElement(Wrapper$1, null,
@@ -2670,7 +2673,7 @@ var Menu = function (_a) {
                 React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }),
                 profile && React__default['default'].createElement(Avatar, { profile: profile }))),
         React__default['default'].createElement(BodyWrapper, null,
-            React__default['default'].createElement(Inner, { showMenu: showMenu }, children))));
+            React__default['default'].createElement(Inner, { isMobile: isMobile, showMenu: showMenu }, children))));
 };
 var templateObject_1$G, templateObject_2$f, templateObject_3$8, templateObject_4$4, templateObject_5$1;
 

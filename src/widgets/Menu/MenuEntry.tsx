@@ -43,7 +43,7 @@ const MenuEntry = styled.div<Props>`
   display: flex;
   align-items: center;
   height: ${({ isMobile }) => (isMobile ? "auto" : `${MENU_ENTRY_HEIGHT}px`)};
-  padding: ${({ secondary }) => (secondary ? "0 24px" : "0 20px")};
+  padding: ${({ secondary }) => (secondary ? "0 24px" : "0 1.35vw")};
   font-size: ${
     /* eslint-disable */
     ({ isMobile, secondary }) => (isMobile ? (secondary ? 16 : 18) : 14)

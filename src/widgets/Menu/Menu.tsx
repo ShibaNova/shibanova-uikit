@@ -33,14 +33,14 @@ const PriceLink = styled.a`
 `;
 
 const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
-  position: fixed;
+  position: ${({ isMobile }) => (isMobile ? "fixed" : "inherit")};
   top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT}px`)};
   left: 0;
   transition: top 0.2s;
   display: flex;
   // justify-content: space-between;
   align-items: center;
-  padding: ${({ isMobile }) => (isMobile ? 0 : 40)}px 20px 0px;
+  padding: ${({ isMobile }) => (isMobile ? "0 10px" : "45px 75px 95px")};
   width: 100%;
   height: ${({ isMobile }) => (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT)}px;
   background: ${({ theme, isMobile }) =>
@@ -57,9 +57,9 @@ const BodyWrapper = styled.div`
   display: flex;
 `;
 
-const Inner = styled.div<{ showMenu: boolean }>`
+const Inner = styled.div<{ showMenu: boolean; isMobile: boolean }>`
   flex-grow: 1;
-  margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
+  margin-top: ${({ showMenu, isMobile }) => (isMobile && showMenu ? `${MENU_HEIGHT_MOBILE}px` : 0)};
   transition: margin-top 0.2s;
   transform: translate3d(0, 0, 0);
 `;
@@ -79,7 +79,7 @@ const Menu: React.FC<NavProps> = ({
   profile,
   children,
 }) => {
-  const { isXl } = useMatchBreakpoints();
+  const { isXl, isXs, isSm } = useMatchBreakpoints();
   const isMobile = !isXl;
   const [showSideBar, setShowSideBar] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
@@ -112,17 +112,17 @@ const Menu: React.FC<NavProps> = ({
     return () => {
       window.removeEventListener("scroll", throttledHandleScroll);
     };
-  }, []);
+  }, [isMobile]);
 
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "DASHBOARD");
 
   const renderPrice = () => {
-    if (isMobile) return null;
+    if (isXs || isSm) return null;
 
     return cakePriceUsd ? (
       <PriceLink href={priceLink} target="_blank">
-        <NovaRoundIcon width="24px" mr={0} />
+        <NovaRoundIcon width="24px" mr="5px" />
         <Text small bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
       </PriceLink>
     ) : (
@@ -158,7 +158,9 @@ const Menu: React.FC<NavProps> = ({
         </Flex>
       </StyledNav>
       <BodyWrapper>
-        <Inner showMenu={showMenu}>{children}</Inner>
+        <Inner isMobile={isMobile} showMenu={showMenu}>
+          {children}
+        </Inner>
       </BodyWrapper>
     </Wrapper>
   );
