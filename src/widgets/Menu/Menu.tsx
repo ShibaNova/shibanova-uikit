@@ -33,7 +33,7 @@ const PriceLink = styled.a`
 `;
 
 const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
-  position: ${({ isMobile }) => (isMobile ? "fixed" : "inherit")};
+  position: ${({ isMobile }) => (isMobile ? "fixed" : "initial")};
   top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT}px`)};
   left: 0;
   transition: top 0.2s;
@@ -87,6 +87,7 @@ const Menu: React.FC<NavProps> = ({
 
   useEffect(() => {
     const handleScroll = () => {
+      if (!isMobile) return;
       const currentOffset = window.pageYOffset;
       const isBottomOfPage = window.document.body.clientHeight === currentOffset + window.innerHeight;
       const isTopOfPage = currentOffset === 0;
@@ -96,7 +97,7 @@ const Menu: React.FC<NavProps> = ({
       }
       // Avoid triggering anything at the bottom because of layout shift
       else if (!isBottomOfPage) {
-        if (currentOffset < refPrevOffset.current && isMobile) {
+        if (currentOffset < refPrevOffset.current) {
           // Has scroll up
           setShowMenu(true);
         } else {

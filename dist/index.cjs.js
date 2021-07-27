@@ -2599,7 +2599,7 @@ var PriceLink = styled__default['default'].a(templateObject_2$f || (templateObje
 var StyledNav$1 = styled__default['default'].nav(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  align-items: center;\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ", ";\n  border-bottom: ", ";\n\n  z-index: 20;\n"], ["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  align-items: center;\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ",
     ";\n  border-bottom: ", ";\n\n  z-index: 20;\n"])), function (_a) {
     var isMobile = _a.isMobile;
-    return (isMobile ? "fixed" : "inherit");
+    return (isMobile ? "fixed" : "initial");
 }, function (_a) {
     var showMenu = _a.showMenu;
     return (showMenu ? 0 : "-" + MENU_HEIGHT + "px");
@@ -2633,6 +2633,8 @@ var Menu = function (_a) {
     var refPrevOffset = React.useRef(window.pageYOffset);
     React.useEffect(function () {
         var handleScroll = function () {
+            if (!isMobile)
+                return;
             var currentOffset = window.pageYOffset;
             var isBottomOfPage = window.document.body.clientHeight === currentOffset + window.innerHeight;
             var isTopOfPage = currentOffset === 0;
@@ -2642,7 +2644,7 @@ var Menu = function (_a) {
             }
             // Avoid triggering anything at the bottom because of layout shift
             else if (!isBottomOfPage) {
-                if (currentOffset < refPrevOffset.current && isMobile) {
+                if (currentOffset < refPrevOffset.current) {
                     // Has scroll up
                     setShowMenu(true);
                 }
