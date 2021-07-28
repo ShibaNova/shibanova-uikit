@@ -49,10 +49,9 @@ const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
       : theme.nav.background};
   border-bottom: ${({ theme, isMobile }) => (isMobile ? `1px solid ${theme.colors.textSubtle}4f` : "none")};
 
-  ${({ theme }) => theme.mediaQueries.xl} {
+  @media screen and (min-width: 1333px) {
     padding: 40px 110px 110px 85px;
   }
-
   z-index: 20;
 `;
 

@@ -2592,8 +2592,8 @@ var templateObject_1$G, templateObject_2$e, templateObject_3$7, templateObject_4
 
 var Wrapper$1 = styled.div(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
 var PriceLink = styled.a(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
-var StyledNav$1 = styled.nav(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  align-items: center;\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ", ";\n  border-bottom: ", ";\n\n  ", " {\n    padding: 40px 110px 110px 85px;\n  }\n\n  z-index: 20;\n"], ["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  align-items: center;\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ",
-    ";\n  border-bottom: ", ";\n\n  ", " {\n    padding: 40px 110px 110px 85px;\n  }\n\n  z-index: 20;\n"])), function (_a) {
+var StyledNav$1 = styled.nav(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  align-items: center;\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ", ";\n  border-bottom: ", ";\n\n  @media screen and (min-width: 1333px) {\n    padding: 40px 110px 110px 85px;\n  }\n  z-index: 20;\n"], ["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  align-items: center;\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ",
+    ";\n  border-bottom: ", ";\n\n  @media screen and (min-width: 1333px) {\n    padding: 40px 110px 110px 85px;\n  }\n  z-index: 20;\n"])), function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? "fixed" : "initial");
 }, function (_a) {
@@ -2613,9 +2613,6 @@ var StyledNav$1 = styled.nav(templateObject_3$8 || (templateObject_3$8 = __makeT
 }, function (_a) {
     var theme = _a.theme, isMobile = _a.isMobile;
     return (isMobile ? "1px solid " + theme.colors.textSubtle + "4f" : "none");
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.xl;
 });
 var BodyWrapper = styled.div(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
 var Inner = styled.div(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n"], ["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
