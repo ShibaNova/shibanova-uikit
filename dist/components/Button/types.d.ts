@@ -28,6 +28,7 @@ export declare type ButtonProps = {
     external?: boolean;
     isLoading?: boolean;
     disabled?: boolean;
+    glowing?: boolean;
 } & ButtonTypes & SpaceProps;
 export declare type ButtonThemeVariant = {
     background: string;

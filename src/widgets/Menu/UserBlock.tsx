@@ -2,7 +2,6 @@ import React from "react";
 import Button from "../../components/Button/Button";
 import { useWalletModal } from "../WalletModal";
 import { Login } from "../WalletModal/types";
-import styled from "styled-components";
 
 interface Props {
   account?: string;
@@ -10,14 +9,6 @@ interface Props {
   logout: () => void;
   isMobile: boolean;
 }
-
-const ConnectButton = styled(Button)`
-  font-weight: bold;
-  padding: 10px;
-  border-radius: 18px;
-  height: auto;
-  box-shadow: 0px 0px 10px ${({ theme }) => theme.colors.primary};
-`;
 
 const UserBlock: React.FC<Props> = ({ account, login, logout, isMobile }) => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(login, logout, account);
@@ -35,14 +26,15 @@ const UserBlock: React.FC<Props> = ({ account, login, logout, isMobile }) => {
           {accountEllipsis}
         </Button>
       ) : (
-        <ConnectButton
+        <Button
           size="sm"
+          glowing
           onClick={() => {
             onPresentConnectModal();
           }}
         >
           {isMobile ? "Connect" : "CONNECT WALLET"}
-        </ConnectButton>
+        </Button>
       )}
     </div>
   );
