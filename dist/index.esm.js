@@ -1107,11 +1107,11 @@ var getThemeTextColor = function (_a) {
     var outline = _a.outline, _b = _a.variant, variant = _b === void 0 ? "primary" : _b, theme = _a.theme;
     return outline ? getColor$1(variant, theme) : "#ffffff";
 };
-var StyledTag = styled.div(templateObject_1$n || (templateObject_1$n = __makeTemplateObject(["\n  align-items: center;\n  background: ", ";\n  border: ", " solid\n    ", ";\n  border-radius: 16px;\n  color: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  font-weight: 400;\n  height: 28px;\n  line-height: 1.5;\n  padding: 0 8px;\n  white-space: nowrap;\n\n  svg {\n    fill: ", ";\n  }\n"], ["\n  align-items: center;\n  background: "
+var StyledTag = styled.div(templateObject_1$n || (templateObject_1$n = __makeTemplateObject(["\n  align-items: center;\n  background: ", ";\n  border: ", " solid\n    ", ";\n  border-radius: 16px;\n  color: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  font-weight: ", ";\n  line-height: 1.5;\n  padding: 5px 12px;\n  white-space: nowrap;\n  box-shadow: ", ";\n\n  svg {\n    fill: ", ";\n  }\n"], ["\n  align-items: center;\n  background: "
     /* eslint-disable */
     ,
     /* eslint-enable */
-    ";\n  border: ", " solid\n    ", ";\n  border-radius: 16px;\n  color: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  font-weight: 400;\n  height: 28px;\n  line-height: 1.5;\n  padding: 0 8px;\n  white-space: nowrap;\n\n  svg {\n    fill: ", ";\n  }\n"])), 
+    ";\n  border: ", " solid\n    ", ";\n  border-radius: 16px;\n  color: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  font-weight: ", ";\n  line-height: 1.5;\n  padding: 5px 12px;\n  white-space: nowrap;\n  box-shadow: ", ";\n\n  svg {\n    fill: ", ";\n  }\n"])), 
 /* eslint-disable */
 function (_a) {
     var outline = _a.outline, theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? "primary" : _b;
@@ -1124,7 +1124,13 @@ function (_a) {
 }, function (_a) {
     var _b = _a.variant, variant = _b === void 0 ? "primary" : _b, theme = _a.theme;
     return getColor$1(variant, theme);
-}, getThemeTextColor, getThemeTextColor);
+}, getThemeTextColor, function (_a) {
+    var bold = _a.bold;
+    return (bold ? 700 : 400);
+}, function (_a) {
+    var glowing = _a.glowing, theme = _a.theme;
+    return (glowing ? "0px 0px 10px " + theme.colors.primary : "none");
+}, getThemeTextColor);
 var templateObject_1$n;
 
 var Tag = function (_a) {

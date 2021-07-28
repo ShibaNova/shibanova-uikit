@@ -29,6 +29,8 @@ export const Default: React.FC = () => {
             {variant}
           </Tag>
         ))}
+        <Tag glowing>Glowing</Tag>
+        <Tag bold>BoldText</Tag>
       </Row>
       <Row>
         {Object.keys(variants).map((variant) => (
