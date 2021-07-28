@@ -52,6 +52,12 @@ export const Default: React.FC = () => {
           <CardFooter>Footer</CardFooter>
         </Card>
       </Row>
+      <Row>
+        <Card gradientBorder>
+          <CardBody>Gradient Border</CardBody>
+          <CardFooter>Footer</CardFooter>
+        </Card>
+      </Row>
     </div>
   );
 };
