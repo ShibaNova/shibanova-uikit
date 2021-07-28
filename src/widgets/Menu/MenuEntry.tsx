@@ -41,7 +41,7 @@ const MenuEntry = styled.div<Props>`
   display: flex;
   align-items: center;
   height: ${({ isMobile }) => (isMobile ? "auto" : `${MENU_ENTRY_HEIGHT}px`)};
-  padding: ${({ secondary }) => (secondary ? "0 24px" : "0 1.35vw")};
+  padding: ${({ secondary }) => (secondary ? "0 24px" : "0 10px")};
   font-size: ${
     /* eslint-disable */
     ({ isMobile, secondary }) => (isMobile ? (secondary ? 16 : 18) : 15)
@@ -67,6 +67,10 @@ const MenuEntry = styled.div<Props>`
   &:hover {
     background-color: ${({ secondary, theme, isMobile }) =>
       secondary && !isMobile ? theme.colors.primary : "transparent"};
+  }
+
+  ${({ theme }) => theme.mediaQueries.xl} {
+    padding: 0 20px;
   }
 
   // Safari fix

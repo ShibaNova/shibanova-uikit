@@ -49,6 +49,10 @@ const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
       : theme.nav.background};
   border-bottom: ${({ theme, isMobile }) => (isMobile ? `1px solid ${theme.colors.textSubtle}4f` : "none")};
 
+  ${({theme }) => theme.mediaQueries.lg} {
+    padding: 40px 15px 110px 15px;
+  }
+
   z-index: 20;
 `;
 

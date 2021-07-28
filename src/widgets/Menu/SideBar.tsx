@@ -73,7 +73,9 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open }) => {
 
           return (
             <MenuEntry isMobile key={item.href} secondary isActive={item.href === location.pathname}>
-              {typeof Icon !== "undefined" ? <Icon {...iconProps} mr="5px" /> : null}
+              {typeof Icon !== "undefined" ? (
+                <Icon {...iconProps} style={{ filter: "drop-shadow(0px 0px 3px rgba(0,170,255,0.584))" }} mr="5px" />
+              ) : null}
               <MenuLink href={item.href}>
                 <LinkLabel glowing>{item.label}</LinkLabel>
               </MenuLink>
