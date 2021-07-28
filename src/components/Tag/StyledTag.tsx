@@ -24,11 +24,11 @@ export const StyledTag = styled.div<ThemedProps>`
   color: ${getThemeTextColor};
   display: inline-flex;
   font-size: 14px;
-  font-weight: 400;
-  height: 28px;
+  font-weight: ${({ bold }) => (bold ? 700 : 400)};
   line-height: 1.5;
-  padding: 0 8px;
+  padding: 5px 12px;
   white-space: nowrap;
+  box-shadow: ${({ glowing, theme }) => (glowing ? `0px 0px 10px ${theme.colors.primary}` : "none")};
 
   svg {
     fill: ${getThemeTextColor};
