@@ -2513,7 +2513,7 @@ var useWalletModal = function (login, logout, account) {
     return { onPresentConnectModal: onPresentConnectModal, onPresentAccountModal: onPresentAccountModal };
 };
 
-var Container$4 = styled__default['default'].div(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  margin-left: 8px;\n  ", " {\n    margin-left: 64px;\n  }\n"], ["\n  margin-left: 8px;\n  ", " {\n    margin-left: 64px;\n  }\n"])), function (_a) {
+var Container$4 = styled__default['default'].div(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  margin-left: 8px;\n  ", " {\n    margin-left: 32px;\n  }\n"], ["\n  margin-left: 8px;\n  ", " {\n    margin-left: 32px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xl;
 });
