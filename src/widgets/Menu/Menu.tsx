@@ -73,7 +73,7 @@ const Menu: React.FC<NavProps> = ({
   langs,
   setLang,
   currentLang,
-  cakePriceUsd,
+  novaPriceUsd,
   links,
   priceLink,
   profile,
@@ -120,10 +120,10 @@ const Menu: React.FC<NavProps> = ({
   const renderPrice = () => {
     if (isXs || isSm) return null;
 
-    return cakePriceUsd ? (
+    return novaPriceUsd ? (
       <PriceLink href={priceLink} target="_blank">
         <NovaRoundIcon width="24px" mr="5px" />
-        <Text fontSize="15px" small bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
+        <Text fontSize="15px" small bold>{`$${novaPriceUsd.toFixed(3)}`}</Text>
       </PriceLink>
     ) : (
       <Skeleton width={80} height={24} />
@@ -147,7 +147,7 @@ const Menu: React.FC<NavProps> = ({
           langs={langs}
           setLang={setLang}
           currentLang={currentLang}
-          cakePriceUsd={cakePriceUsd}
+          novaPriceUsd={novaPriceUsd}
           links={links}
           priceLink={priceLink}
         />
