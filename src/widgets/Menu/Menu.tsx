@@ -65,6 +65,7 @@ const Inner = styled.div<{ showMenu: boolean; isMobile: boolean }>`
   margin-top: ${({ showMenu, isMobile }) => (isMobile && showMenu ? `${MENU_HEIGHT_MOBILE}px` : 0)};
   transition: margin-top 0.2s;
   transform: translate3d(0, 0, 0);
+  max-width: 100%;
 `;
 
 const Menu: React.FC<NavProps> = ({

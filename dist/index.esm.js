@@ -2621,7 +2621,7 @@ var StyledNav$1 = styled.nav(templateObject_3$8 || (templateObject_3$8 = __makeT
     return (isMobile ? "1px solid " + theme.colors.textSubtle + "4f" : "none");
 });
 var BodyWrapper = styled.div(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
-var Inner = styled.div(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n"], ["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
+var Inner = styled.div(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"], ["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"])), function (_a) {
     var showMenu = _a.showMenu, isMobile = _a.isMobile;
     return (isMobile && showMenu ? MENU_HEIGHT_MOBILE + "px" : 0);
 });
