@@ -22,6 +22,8 @@ const SpinnerIcon: React.FC<SvgProps> = (props) => {
 
 const Container = styled.div`
   position: relative;
+  height: 64px;
+  width: 64px;
 `;
 
 const RotatingPancakeIcon = styled(SpinnerIcon)`
