@@ -1773,7 +1773,8 @@ var useParticleBurst = function (options) {
     return { initialize: initialize, teardown: teardown };
 };
 
-var StyledModal = styled__default['default'].div(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border: 1px solid ", ";\n  border-radius: 32px;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 360px;\n    max-width: 100%;\n  }\n"], ["\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border: 1px solid ", ";\n  border-radius: 32px;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 360px;\n    max-width: 100%;\n  }\n"])), function (_a) {
+var StyledIconButton = styled__default['default'](IconButton)(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  &:hover {\n    background: transparent;\n  }\n"], ["\n  &:hover {\n    background: transparent;\n  }\n"])));
+var StyledModal = styled__default['default'].div(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border: 1px solid ", ";\n  border-radius: 32px;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 360px;\n    max-width: 100%;\n  }\n"], ["\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border: 1px solid ", ";\n  border-radius: 32px;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 360px;\n    max-width: 100%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.modal.background;
 }, function (_a) {
@@ -1786,21 +1787,21 @@ var StyledModal = styled__default['default'].div(templateObject_1$u || (template
     var theme = _a.theme;
     return theme.mediaQueries.xs;
 });
-var ModalHeader = styled__default['default'].div(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  border-bottom: 1px solid #e9eaeb;\n  align-items: center;\n  padding: 12px 24px;\n"], ["\n  display: flex;\n  align-items: center;\n  border-bottom: 1px solid #e9eaeb;\n  align-items: center;\n  padding: 12px 24px;\n"])));
-var ModalTitle = styled__default['default'](Flex)(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  align-items: center;\n  flex: 1;\n"], ["\n  align-items: center;\n  flex: 1;\n"])));
+var ModalHeader = styled__default['default'].div(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  border-bottom: 1px solid #e9eaeb;\n  align-items: center;\n  padding: 12px 24px;\n"], ["\n  display: flex;\n  align-items: center;\n  border-bottom: 1px solid #e9eaeb;\n  align-items: center;\n  padding: 12px 24px;\n"])));
+var ModalTitle = styled__default['default'](Flex)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  align-items: center;\n  flex: 1;\n"], ["\n  align-items: center;\n  flex: 1;\n"])));
 var Modal = function (_a) {
     var title = _a.title, onDismiss = _a.onDismiss, onBack = _a.onBack, children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b, _c = _a.bodyPadding, bodyPadding = _c === void 0 ? "24px" : _c, props = __rest(_a, ["title", "onDismiss", "onBack", "children", "hideCloseButton", "bodyPadding"]);
     return (React__default['default'].createElement(StyledModal, __assign({}, props),
         React__default['default'].createElement(ModalHeader, null,
             React__default['default'].createElement(ModalTitle, null,
-                onBack && (React__default['default'].createElement(IconButton, { variant: "text", onClick: onBack, "area-label": "go back", mr: "8px" },
+                onBack && (React__default['default'].createElement(StyledIconButton, { variant: "text", onClick: onBack, "area-label": "go back", mr: "8px" },
                     React__default['default'].createElement(Icon$5, { color: "primary" }))),
                 React__default['default'].createElement(Heading, null, title)),
-            !hideCloseButton && (React__default['default'].createElement(IconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
+            !hideCloseButton && (React__default['default'].createElement(StyledIconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
                 React__default['default'].createElement(Icon$k, { color: "primary" })))),
         React__default['default'].createElement(Flex, { flexDirection: "column", p: bodyPadding }, children)));
 };
-var templateObject_1$u, templateObject_2$9, templateObject_3$5;
+var templateObject_1$u, templateObject_2$9, templateObject_3$5, templateObject_4$2;
 
 var Overlay = styled__default['default'].div.attrs({ role: "presentation" })(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: #452a7a;\n  transition: opacity 0.4s;\n  opacity: ", ";\n  z-index: ", ";\n  pointer-events: ", ";\n"], ["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: #452a7a;\n  transition: opacity 0.4s;\n  opacity: ", ";\n  z-index: ", ";\n  pointer-events: ", ";\n"])), function (_a) {
     var show = _a.show;
@@ -2221,7 +2222,7 @@ var LinkLabel = styled__default['default'].div(templateObject_3$6 || (templateOb
     var glowing = _a.glowing, theme = _a.theme;
     return (glowing ? theme.shadows.text : "none");
 });
-var MenuEntry = styled__default['default'].div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: ", "px;\n  background-color: ", ";\n  color: ", ";\n  line-height: ", ";\n  margin: ", ";\n  // box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  ", " {\n    padding: 0 20px;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: "
+var MenuEntry = styled__default['default'].div(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: ", "px;\n  background-color: ", ";\n  color: ", ";\n  line-height: ", ";\n  margin: ", ";\n  // box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  ", " {\n    padding: 0 20px;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: "
     /* eslint-disable */
     ,
     /* eslint-enable */
@@ -2271,7 +2272,7 @@ MenuEntry.defaultProps = {
     secondary: false,
     isActive: false,
 };
-var templateObject_1$z, templateObject_2$a, templateObject_3$6, templateObject_4$2;
+var templateObject_1$z, templateObject_2$a, templateObject_3$6, templateObject_4$3;
 
 var Container$2 = styled__default['default'].div(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  display: flex;\n  position: relative;\n  flex-direction: column;\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  display: flex;\n  position: relative;\n  flex-direction: column;\n  // Safari fix\n  flex-shrink: 0;\n"])));
 var AccordionContent = styled__default['default'].div(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n  position: absolute;\n  top: 100%;\n  max-height: ", ";\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n  box-shadow: ", ";\n  border-radius: 10px;\n  z-index: 1;\n"], ["\n  position: absolute;\n  top: 100%;\n  max-height: ", ";\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n  box-shadow: ", ";\n  border-radius: 10px;\n  z-index: 1;\n"])), function (_a) {
@@ -2577,7 +2578,7 @@ var StyledNav = styled__default['default'].nav(templateObject_1$G || (templateOb
 });
 var StyledCloseButton = styled__default['default'].div(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  position: absolute;\n  right: 20px;\n  top: 20px;\n  filter: drop-shadow(1px 1px 3px rgba(0, 170, 255, 0.584));\n"], ["\n  position: absolute;\n  right: 20px;\n  top: 20px;\n  filter: drop-shadow(1px 1px 3px rgba(0, 170, 255, 0.584));\n"])));
 var StyledLinkList = styled__default['default'].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  margin-top: 40px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"], ["\n  margin-top: 40px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"])));
-var StyledLinkSeparator = styled__default['default'].hr(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  width: 200px;\n  border-color: ", ";\n  box-shadow: ", ";\n"], ["\n  width: 200px;\n  border-color: ", ";\n  box-shadow: ", ";\n"])), function (_a) {
+var StyledLinkSeparator = styled__default['default'].hr(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject(["\n  width: 200px;\n  border-color: ", ";\n  box-shadow: ", ";\n"], ["\n  width: 200px;\n  border-color: ", ";\n  box-shadow: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textSubtle;
 }, function (_a) {
@@ -2607,7 +2608,7 @@ var SideBar = function (_a) {
                         React__default['default'].createElement(LinkLabel, { glowing: true }, item.label))));
             }))));
 };
-var templateObject_1$G, templateObject_2$e, templateObject_3$7, templateObject_4$3;
+var templateObject_1$G, templateObject_2$e, templateObject_3$7, templateObject_4$4;
 
 var Wrapper$1 = styled__default['default'].div(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
 var PriceLink = styled__default['default'].a(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
@@ -2633,7 +2634,7 @@ var StyledNav$1 = styled__default['default'].nav(templateObject_3$8 || (template
     var theme = _a.theme, isMobile = _a.isMobile;
     return (isMobile ? "1px solid " + theme.colors.textSubtle + "4f" : "none");
 });
-var BodyWrapper = styled__default['default'].div(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
+var BodyWrapper = styled__default['default'].div(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
 var Inner = styled__default['default'].div(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"], ["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"])), function (_a) {
     var showMenu = _a.showMenu, isMobile = _a.isMobile;
     return (isMobile && showMenu ? MENU_HEIGHT_MOBILE + "px" : 0);
@@ -2697,7 +2698,7 @@ var Menu = function (_a) {
         React__default['default'].createElement(BodyWrapper, null,
             React__default['default'].createElement(Inner, { isMobile: isMobile, showMenu: showMenu }, children))));
 };
-var templateObject_1$H, templateObject_2$f, templateObject_3$8, templateObject_4$4, templateObject_5$1;
+var templateObject_1$H, templateObject_2$f, templateObject_3$8, templateObject_4$5, templateObject_5$1;
 
 var ToastAction = function (_a) {
     var action = _a.action;

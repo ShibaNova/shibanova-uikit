@@ -13,6 +13,12 @@ interface Props extends InjectedProps {
   bodyPadding?: string;
 }
 
+const StyledIconButton = styled(IconButton)`
+  &:hover {
+    background: transparent;
+  }
+`;
+
 const StyledModal = styled.div`
   background: ${({ theme }) => theme.modal.background};
   box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);
@@ -54,16 +60,16 @@ const Modal: React.FC<Props> = ({
     <ModalHeader>
       <ModalTitle>
         {onBack && (
-          <IconButton variant="text" onClick={onBack} area-label="go back" mr="8px">
+          <StyledIconButton variant="text" onClick={onBack} area-label="go back" mr="8px">
             <ArrowBackIcon color="primary" />
-          </IconButton>
+          </StyledIconButton>
         )}
         <Heading>{title}</Heading>
       </ModalTitle>
       {!hideCloseButton && (
-        <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
+        <StyledIconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
           <CloseIcon color="primary" />
-        </IconButton>
+        </StyledIconButton>
       )}
     </ModalHeader>
     <Flex flexDirection="column" p={bodyPadding}>
