@@ -15,7 +15,7 @@ interface Props extends InjectedProps {
 
 const StyledIconButton = styled(IconButton)`
   &:hover {
-    background: transparent;
+    background: transparent !important;
   }
 `;
 

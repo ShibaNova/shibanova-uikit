@@ -1760,7 +1760,7 @@ var useParticleBurst = function (options) {
     return { initialize: initialize, teardown: teardown };
 };
 
-var StyledIconButton = styled(IconButton)(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  &:hover {\n    background: transparent;\n  }\n"], ["\n  &:hover {\n    background: transparent;\n  }\n"])));
+var StyledIconButton = styled(IconButton)(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  &:hover {\n    background: transparent !important;\n  }\n"], ["\n  &:hover {\n    background: transparent !important;\n  }\n"])));
 var StyledModal = styled.div(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border: 1px solid ", ";\n  border-radius: 32px;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 360px;\n    max-width: 100%;\n  }\n"], ["\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border: 1px solid ", ";\n  border-radius: 32px;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 360px;\n    max-width: 100%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.modal.background;
