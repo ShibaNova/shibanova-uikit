@@ -2,7 +2,7 @@ export const links = [
   {
     label: "Dashboard",
     icon: "HomeIcon",
-    href: "/",
+    href: "https://app.shibanova.io/",
   },
   {
     label: "Exchange",
@@ -13,12 +13,12 @@ export const links = [
   {
     label: "Farms",
     icon: "FarmIcon",
-    href: "/farms",
+    href: "https://app.shibanova.io/farms",
   },
   {
     label: "Pools",
     icon: "PoolIcon",
-    href: "/pools",
+    href: "https://app.shibanova.io/pools",
   },
   {
     label: "Socials",
