@@ -404,7 +404,7 @@ var Icon$u = function (props) {
 
 var Icon$v = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 90 90" }, props),
-        React.createElement("image", { width: 90, height: 90, href: "/images/coins/nova.png" })));
+        React.createElement("image", { width: 90, height: 90, href: "/images/coins/NOVA.png" })));
 };
 
 var Icon$w = function (props) {
