@@ -2158,11 +2158,12 @@ var Logo$1 = function (_a) {
 };
 var templateObject_1$y;
 
+var isSwapSubdomain = window.location.hostname.split(".")[0] === "swap";
 var links = [
     {
         label: "Dashboard",
         icon: "HomeIcon",
-        href: "/",
+        href: isSwapSubdomain ? "https://shibanova.io" : "/",
     },
     {
         label: "Exchange",

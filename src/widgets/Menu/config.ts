@@ -1,8 +1,10 @@
+const isSwapSubdomain = window.location.hostname.split(".")[0] === "swap";
+
 export const links = [
   {
     label: "Dashboard",
     icon: "HomeIcon",
-    href: "/",
+    href: isSwapSubdomain ? "https://shibanova.io" : "/",
   },
   {
     label: "Exchange",
