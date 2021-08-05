@@ -2394,36 +2394,35 @@ var Icon$1c = function (props) {
         React__default['default'].createElement("path", { d: "M6 14.6302L8.32183 15.9883V20.6244L12.3154 22.9424V25.6585L6 21.9824V14.6302Z", fill: "#F0B90B" })));
 };
 
-var ConnectorNames;
 (function (ConnectorNames) {
     ConnectorNames["Injected"] = "injected";
     ConnectorNames["WalletConnect"] = "walletconnect";
     ConnectorNames["BSC"] = "bsc";
-})(ConnectorNames || (ConnectorNames = {}));
+})(exports.ConnectorNames || (exports.ConnectorNames = {}));
 
 var connectors = [
     {
         title: "Metamask",
         icon: Icon$19,
-        connectorId: ConnectorNames.Injected,
+        connectorId: exports.ConnectorNames.Injected,
         priority: 1,
     },
     {
         title: "WalletConnect",
         icon: Icon$1b,
-        connectorId: ConnectorNames.WalletConnect,
+        connectorId: exports.ConnectorNames.WalletConnect,
         priority: 2,
     },
     {
         title: "Trust Wallet",
         icon: Icon$1a,
-        connectorId: ConnectorNames.Injected,
+        connectorId: exports.ConnectorNames.Injected,
         priority: 3,
     },
     {
         title: "Binance Chain",
         icon: Icon$1c,
-        connectorId: ConnectorNames.BSC,
+        connectorId: exports.ConnectorNames.BSC,
         priority: 999,
     },
 ];
