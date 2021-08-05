@@ -2429,46 +2429,53 @@ var Icon$1e = function (props) {
         React__default['default'].createElement("path", { d: "M6 14.6302L8.32183 15.9883V20.6244L12.3154 22.9424V25.6585L6 21.9824V14.6302Z", fill: "#F0B90B" })));
 };
 
+var ConnectorNames;
+(function (ConnectorNames) {
+    ConnectorNames["Injected"] = "injected";
+    ConnectorNames["WalletConnect"] = "walletconnect";
+    ConnectorNames["BSC"] = "bsc";
+})(ConnectorNames || (ConnectorNames = {}));
+
 var connectors = [
     {
         title: "Metamask",
         icon: Icon$19,
-        connectorId: "injected",
+        connectorId: ConnectorNames.Injected,
     },
     {
         title: "TrustWallet",
         icon: Icon$1c,
-        connectorId: "injected",
+        connectorId: ConnectorNames.Injected,
     },
     {
         title: "MathWallet",
         icon: Icon$1a,
-        connectorId: "injected",
+        connectorId: ConnectorNames.Injected,
     },
     {
         title: "TokenPocket",
         icon: Icon$1b,
-        connectorId: "injected",
+        connectorId: ConnectorNames.Injected,
     },
     {
         title: "WalletConnect",
         icon: Icon$1d,
-        connectorId: "walletconnect",
+        connectorId: ConnectorNames.WalletConnect,
     },
     {
         title: "Binance Chain Wallet",
         icon: Icon$1e,
-        connectorId: "bsc",
+        connectorId: ConnectorNames.BSC,
     },
 ];
-var localStorageKey = "accountStatus";
+var connectorLocalStorageKey = "connectorId";
 
 var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss, mb = _a.mb;
     var title = walletConfig.title, Icon = walletConfig.icon;
     return (React__default['default'].createElement(Button, { fullWidth: true, variant: "tertiary", onClick: function () {
             login(walletConfig.connectorId);
-            window.localStorage.setItem(localStorageKey, "1");
+            window.localStorage.setItem(connectorLocalStorageKey, "1");
             onDismiss();
         }, style: { justifyContent: "space-between" }, mb: mb, id: "wallet-connect-" + title.toLocaleLowerCase() },
         React__default['default'].createElement(Text, { bold: true, color: "primary", mr: "16px" }, title),
@@ -2524,9 +2531,8 @@ var AccountModal = function (_a) {
         React__default['default'].createElement(Flex, { justifyContent: "center" },
             React__default['default'].createElement(Button, { size: "sm", variant: "secondary", onClick: function () {
                     logout();
-                    window.localStorage.removeItem(localStorageKey);
+                    window.localStorage.removeItem(connectorLocalStorageKey);
                     onDismiss();
-                    window.location.reload();
                 } }, "Logout"))));
 };
 
