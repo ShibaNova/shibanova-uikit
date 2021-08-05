@@ -1,5 +1,6 @@
 // Components
 export * from "./components/Alert";
+export * from "./components/Box";
 export * from "./components/Breadcrumbs";
 export * from "./components/Button";
 export * from "./components/ButtonMenu";
@@ -11,6 +12,7 @@ export * from "./components/Heading";
 export * from "./components/Image";
 export * from "./components/Input";
 export * from "./components/Layouts";
+export * from "./components/NotificationDot";
 export * from "./components/Radio";
 export * from "./components/Svg";
 export * from "./components/Tag";
