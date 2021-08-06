@@ -1,12 +1,12 @@
-import * as Box from "./components/Box";
-import * as Flex from "./components/Flex";
 export * from "./components/Alert";
+export * from "./components/Box";
 export * from "./components/Breadcrumbs";
 export * from "./components/Button";
 export * from "./components/ButtonMenu";
 export * from "./components/Card";
 export * from "./components/Checkbox";
 export * from "./components/Dropdown";
+export * from "./components/Flex";
 export * from "./components/Heading";
 export * from "./components/Image";
 export * from "./components/Input";
@@ -29,8 +29,3 @@ export * from "./widgets/Toast";
 export * from "./widgets/WalletModal";
 export { default as ResetCSS } from "./ResetCSS";
 export * from "./theme";
-declare const _default: {
-    Box: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, Box.BoxProps, never>;
-    Flex: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, Flex.FlexProps, never>;
-};
-export default _default;

@@ -2,9 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+var React = require('react');
 var styled = require('styled-components');
 var styledSystem = require('styled-system');
-var React = require('react');
 var get = require('lodash/get');
 var noop = require('lodash/noop');
 var debounce = require('lodash/debounce');
@@ -14,8 +14,8 @@ var reactTransitionGroup = require('react-transition-group');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
 var get__default = /*#__PURE__*/_interopDefaultLegacy(get);
 var noop__default = /*#__PURE__*/_interopDefaultLegacy(noop);
 var debounce__default = /*#__PURE__*/_interopDefaultLegacy(debounce);
@@ -73,27 +73,11 @@ function __makeTemplateObject(cooked, raw) {
     return cooked;
 }
 
-var Box = styled__default['default'].div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), styledSystem.background, styledSystem.border, styledSystem.layout, styledSystem.position, styledSystem.space);
-var templateObject_1;
-
-var Box$1 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    Box: Box
-});
-
-var Flex = styled__default['default'].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  display: flex;\n  ", "\n  ", "\n"], ["\n  display: flex;\n  ", "\n  ", "\n"])), styledSystem.flexbox, styledSystem.space);
-var templateObject_1$1;
-
-var Flex$1 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    Flex: Flex
-});
-
 var getThemeValue = function (path, fallback) { return function (theme) {
     return get__default['default'](theme, path, fallback);
 }; };
 
-var rotate = styled.keyframes(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"], ["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"])));
+var rotate = styled.keyframes(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"], ["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"])));
 var spinStyle = styled.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  animation: ", " 2s linear infinite;\n"], ["\n  animation: ", " 2s linear infinite;\n"])), rotate);
 var Svg = styled__default['default'].svg(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  fill: ", ";\n  flex-shrink: 0;\n\n  ", "\n  ", "\n"], ["\n  fill: ", ";\n  flex-shrink: 0;\n\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme, color = _a.color;
@@ -108,7 +92,7 @@ Svg.defaultProps = {
     xmlns: "http://www.w3.org/2000/svg",
     spin: false,
 };
-var templateObject_1$2, templateObject_2, templateObject_3;
+var templateObject_1, templateObject_2, templateObject_3;
 
 var Icon = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
@@ -138,7 +122,7 @@ var getFontSize = function (_a) {
     var fontSize = _a.fontSize, small = _a.small;
     return small ? "14px" : fontSize || "16px";
 };
-var Text = styled__default['default'].div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n  text-shadow: ", ";\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n  text-shadow: ", ";\n"])), getColor, getFontSize, function (_a) {
+var Text = styled__default['default'].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n  text-shadow: ", ";\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n  text-shadow: ", ";\n"])), getColor, getFontSize, function (_a) {
     var bold = _a.bold;
     return (bold ? 700 : 500);
 }, function (_a) {
@@ -152,7 +136,7 @@ Text.defaultProps = {
     color: "text",
     small: false,
 };
-var templateObject_1$3;
+var templateObject_1$1;
 
 var getExternalLinkProps = function () { return ({
     target: "_blank",
@@ -191,7 +175,7 @@ var getButtonVariantProp = function (prop) { return function (_a) {
     var theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? variants.PRIMARY : _b;
     return theme.button[variant][prop];
 }; };
-var StyledButton = styled__default['default'].button(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  align-items: center;\n  background: ", ";\n  border: ", ";\n  border-radius: 18px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: bold;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background 0.15s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background: ", ";\n  border: ", ";\n  border-radius: 18px;\n  box-shadow: ",
+var StyledButton = styled__default['default'].button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background: ", ";\n  border: ", ";\n  border-radius: 18px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: bold;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background 0.15s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background: ", ";\n  border: ", ";\n  border-radius: 18px;\n  box-shadow: ",
     ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: bold;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background 0.15s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), function (_a) {
     var glowing = _a.glowing, theme = _a.theme;
     return !glowing ? getButtonVariantProp("boxShadow") : "0px 0px 10px " + theme.colors.primary;
@@ -212,7 +196,7 @@ StyledButton.defaultProps = {
     fullWidth: false,
     type: "button",
 };
-var templateObject_1$4;
+var templateObject_1$2;
 
 var Button = function (_a) {
     var startIcon = _a.startIcon, endIcon = _a.endIcon, children = _a.children, external = _a.external, isLoading = _a.isLoading, disabled = _a.disabled, props = __rest(_a, ["startIcon", "endIcon", "children", "external", "isLoading", "disabled"]);
@@ -237,11 +221,11 @@ Button.defaultProps = {
     disabled: false,
 };
 
-var IconButton = styled__default['default'](Button)(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  padding: 0;\n  width: ", ";\n"], ["\n  padding: 0;\n  width: ", ";\n"])), function (_a) {
+var IconButton = styled__default['default'](Button)(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  padding: 0;\n  width: ", ";\n"], ["\n  padding: 0;\n  width: ", ";\n"])), function (_a) {
     var size = _a.size;
     return (size === "sm" ? "32px" : "48px");
 });
-var templateObject_1$5;
+var templateObject_1$3;
 
 var Icon$4 = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
@@ -555,6 +539,9 @@ var Icon$H = function (props) {
         React__default['default'].createElement("path", { d: "M4.47 20.9999H19.53C21.07 20.9999 22.03 19.3299 21.26 17.9999L13.73 4.98993C12.96 3.65993 11.04 3.65993 10.27 4.98993L2.74 17.9999C1.97 19.3299 2.93 20.9999 4.47 20.9999ZM12 13.9999C11.45 13.9999 11 13.5499 11 12.9999V10.9999C11 10.4499 11.45 9.99993 12 9.99993C12.55 9.99993 13 10.4499 13 10.9999V12.9999C13 13.5499 12.55 13.9999 12 13.9999ZM13 17.9999H11V15.9999H13V17.9999Z" })));
 };
 
+var Flex = styled__default['default'].div(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  display: flex;\n  ", "\n  ", "\n"], ["\n  display: flex;\n  ", "\n  ", "\n"])), styledSystem.flexbox, styledSystem.space);
+var templateObject_1$4;
+
 var variants$1 = {
     INFO: "info",
     DANGER: "danger",
@@ -638,7 +625,7 @@ var getIcon = function (variant) {
             return Icon$3;
     }
 };
-var IconLabel = styled__default['default'].div(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 16px 0 0 16px;\n  color: ", ";\n  padding: 12px;\n"], ["\n  background-color: ", ";\n  border-radius: 16px 0 0 16px;\n  color: ", ";\n  padding: 12px;\n"])), getThemeColor, function (_a) {
+var IconLabel = styled__default['default'].div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 16px 0 0 16px;\n  color: ", ";\n  padding: 12px;\n"], ["\n  background-color: ", ";\n  border-radius: 16px 0 0 16px;\n  color: ", ";\n  padding: 12px;\n"])), getThemeColor, function (_a) {
     var theme = _a.theme;
     return theme.alert.background;
 });
@@ -668,7 +655,10 @@ var Alert = function (_a) {
             React__default['default'].createElement(IconButton, { size: "sm", variant: "text", onClick: onClick },
                 React__default['default'].createElement(Icon$k, { width: "24px", color: "currentColor" }))))));
 };
-var templateObject_1$6, templateObject_2$1, templateObject_3$1, templateObject_4;
+var templateObject_1$5, templateObject_2$1, templateObject_3$1, templateObject_4;
+
+var Box = styled__default['default'].div(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), styledSystem.background, styledSystem.border, styledSystem.layout, styledSystem.position, styledSystem.space);
+var templateObject_1$6;
 
 var Separator = styled__default['default'].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  align-items: center;\n  color: currentColor;\n  display: flex;\n  justify-content: center;\n  padding-left: 4px;\n  padding-right: 4px;\n\n  ", " {\n    padding-left: 8px;\n    padding-right: 8px;\n  }\n\n  ", " {\n    padding-left: 16px;\n    padding-right: 16px;\n  }\n"], ["\n  align-items: center;\n  color: currentColor;\n  display: flex;\n  justify-content: center;\n  padding-left: 4px;\n  padding-right: 4px;\n\n  ", " {\n    padding-left: 8px;\n    padding-right: 8px;\n  }\n\n  ", " {\n    padding-left: 16px;\n    padding-right: 16px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -2998,8 +2988,6 @@ var darkTheme = __assign(__assign({}, base), { isDark: true, alert: dark, button
 
 var lightTheme = __assign(__assign({}, base), { isDark: false, alert: light, button: light$1, colors: lightColors, card: light$2, toggle: light$4, nav: light$5, modal: light$6, radio: light$3 });
 
-var index = __assign(__assign({}, Flex$1), Box$1);
-
 exports.AddIcon = Icon$4;
 exports.Alert = Alert;
 exports.ArrowBackIcon = Icon$5;
@@ -3012,6 +3000,7 @@ exports.BackgroundImage = BackgroundImage;
 exports.BaseLayout = GridLayout;
 exports.BinanceIcon = Icon$b;
 exports.BlockIcon = Icon$2;
+exports.Box = Box;
 exports.Breadcrumbs = Breadcrumbs;
 exports.BunnyPlaceholderIcon = Icon$c;
 exports.Button = Button;
@@ -3086,7 +3075,6 @@ exports.byTextDescending = byTextDescending;
 exports.connectorLocalStorageKey = connectorLocalStorageKey;
 exports.dark = darkTheme;
 exports.darkColors = darkColors;
-exports.default = index;
 exports.light = lightTheme;
 exports.lightColors = lightColors;
 exports.makeRender = makeRender;
