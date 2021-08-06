@@ -7,7 +7,7 @@ import InfoIcon from "../Svg/Icons/Info";
 import { Text } from "../Text";
 import { IconButton } from "../Button";
 import { CloseIcon } from "../Svg";
-import Flex from "../Flex";
+import { Flex } from "../Flex";
 import { AlertProps, variants, Variants } from "./types";
 import { shadows } from "../../theme/base";
 

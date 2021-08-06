@@ -3028,6 +3028,7 @@ exports.CopyIcon = Icon$n;
 exports.CopyToClipboard = CopyToClipboard;
 exports.Dropdown = Dropdown;
 exports.ErrorIcon = Icon$1;
+exports.Flex = Flex;
 exports.GooseRoundIcon = Icon$w;
 exports.Heading = Heading;
 exports.HelpIcon = Icon$o;

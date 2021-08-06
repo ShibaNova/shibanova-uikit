@@ -1,3 +1,2 @@
-import Flex from "./Flex";
-
-export default Flex;
+/* eslint-disable */
+export { default as Flex } from "./Flex";
