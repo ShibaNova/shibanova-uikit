@@ -3064,6 +3064,7 @@ exports.Won = Icon$B;
 exports.alertVariants = variants$1;
 exports.byTextAscending = byTextAscending;
 exports.byTextDescending = byTextDescending;
+exports.connectorLocalStorageKey = connectorLocalStorageKey;
 exports.dark = darkTheme;
 exports.darkColors = darkColors;
 exports.light = lightTheme;
