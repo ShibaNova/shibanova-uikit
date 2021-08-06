@@ -1,4 +1,3 @@
-
 import { FC } from "react";
 import { SvgProps } from "../../components/Svg/types";
 

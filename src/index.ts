@@ -1,13 +1,14 @@
 // Components
+import * as Box from "./components/Box";
+import * as Flex from "./components/Flex";
+
 export * from "./components/Alert";
-export * from "./components/Box";
 export * from "./components/Breadcrumbs";
 export * from "./components/Button";
 export * from "./components/ButtonMenu";
 export * from "./components/Card";
 export * from "./components/Checkbox";
 export * from "./components/Dropdown";
-export * from "./components/Flex";
 export * from "./components/Heading";
 export * from "./components/Image";
 export * from "./components/Input";
@@ -36,3 +37,4 @@ export * from "./widgets/WalletModal";
 // Theme
 export { default as ResetCSS } from "./ResetCSS";
 export * from "./theme";
+export default { ...Flex, ...Box };

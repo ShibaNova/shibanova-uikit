@@ -22,4 +22,3 @@ export const Box: React.FC = () => {
     </div>
   );
 };
-
