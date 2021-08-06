@@ -36,6 +36,7 @@ const UserBlock: React.FC<Props> = ({ account, login, logout, isMobile }) => {
       ) : (
         <Button
           size="sm"
+          style={{ fontSize: isMobile ? 16 : 14 }}
           glowing
           onClick={() => {
             onPresentConnectModal();

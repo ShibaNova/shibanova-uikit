@@ -2520,7 +2520,7 @@ var UserBlock = function (_a) {
     var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 4) : null;
     return (React__default['default'].createElement(Container$4, null, account ? (React__default['default'].createElement(Button, { size: "sm", variant: "tertiary", onClick: function () {
             onPresentAccountModal();
-        } }, accountEllipsis)) : (React__default['default'].createElement(Button, { size: "sm", glowing: true, onClick: function () {
+        } }, accountEllipsis)) : (React__default['default'].createElement(Button, { size: "sm", style: { fontSize: isMobile ? 16 : 14 }, glowing: true, onClick: function () {
             onPresentConnectModal();
         } }, isMobile ? "Connect" : "CONNECT WALLET"))));
 };
