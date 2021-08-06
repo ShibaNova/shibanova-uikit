@@ -17,6 +17,12 @@ const InactiveButton = styled(Button)<InactiveButtonProps>`
   }
 `;
 
+const StyledButton = styled(Button)`
+  &:hover:not(:disabled):not(.button--disabled):not(:active) {
+    background: ${({ theme }) => theme.button.primary.background};
+  }
+`;
+
 const ButtonMenuItem: React.FC<ButtonMenuItemProps> = ({
   isActive = false,
   size = sizes.MD,
@@ -35,8 +41,8 @@ const ButtonMenuItem: React.FC<ButtonMenuItemProps> = ({
       />
     );
   }
-
-  return <Button as={as} size={size} variant={variant} {...props} />;
+  // @ts-ignore: Unreachable code error
+  return <StyledButton as={as} size={size} variant={variant} {...props} />;
 };
 
 export default ButtonMenuItem;
