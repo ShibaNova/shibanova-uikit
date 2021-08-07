@@ -123,8 +123,6 @@ const Menu: React.FC<NavProps> = ({
   const homeLink = links.find((link) => link.label === "DASHBOARD");
 
   const renderPrice = () => {
-    if (isXs || isSm) return null;
-
     return novaPriceUsd ? (
       <PriceLink href={priceLink} target="_blank">
         <NovaRoundIcon width="24px" mr="5px" />
@@ -144,7 +142,7 @@ const Menu: React.FC<NavProps> = ({
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         />
-        <SideBar open={showSideBar} onDismiss={() => setShowSideBar(false)} links={links} />
+        <SideBar open={showSideBar} price={renderPrice()} onDismiss={() => setShowSideBar(false)} links={links} />
         <NavBar
           isMobile={isMobile}
           isDark={isDark}
@@ -157,7 +155,7 @@ const Menu: React.FC<NavProps> = ({
           priceLink={priceLink}
         />
         <Flex ml="auto" alignItems="center">
-          {renderPrice()}
+          {isXs || isSm ? null : renderPrice()}
           <UserBlock isMobile={isMobile} account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
         </Flex>

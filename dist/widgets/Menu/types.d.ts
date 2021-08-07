@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import { Login } from "../WalletModal/types";
 export interface LangType {
     code: string;
@@ -47,6 +48,7 @@ export interface SideBarProps {
     onDismiss?: () => void;
     links: MenuEntry[];
     open: boolean;
+    price: ReactElement;
 }
 export interface NavProps extends PanelProps {
     account?: string;

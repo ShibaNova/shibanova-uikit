@@ -2617,15 +2617,16 @@ var StyledLinkSeparator = styled.hr(templateObject_4$4 || (templateObject_4$4 = 
 });
 var SideBar = function (_a) {
     var _b;
-    var onDismiss = _a.onDismiss, links = _a.links, open = _a.open;
+    var onDismiss = _a.onDismiss, links = _a.links, open = _a.open, price = _a.price;
     var location = useLocation();
     var socials = links[links.length - 1];
     return (React.createElement(StyledNav, { open: open },
         React.createElement(StyledCloseButton, null,
             React.createElement(Icon$k, { onClick: onDismiss })),
+        price,
         React.createElement(StyledLinkList, null,
             links.slice(0, links.length - 1).map(function (entry) { return (React.createElement(MenuEntry, { onClick: onDismiss, isMobile: true, key: entry.href, isActive: entry.href === location.pathname },
-                React.createElement(MenuLink, { href: entry.href },
+                React.createElement(MenuLink, { style: { fontSize: 16, textTransform: "uppercase" }, href: entry.href },
                     React.createElement(LinkLabel, { glowing: true }, entry.label)))); }),
             React.createElement(StyledLinkSeparator, null), (_b = socials === null || socials === void 0 ? void 0 : socials.items) === null || _b === void 0 ? void 0 :
             _b.map(function (item) {
@@ -2634,7 +2635,7 @@ var SideBar = function (_a) {
                 var iconProps = { width: "24px", color: "textSubtle" };
                 return (React.createElement(MenuEntry, { isMobile: true, key: item.href, secondary: true, isActive: item.href === location.pathname },
                     typeof Icon !== "undefined" ? (React.createElement(Icon, __assign({}, iconProps, { style: { filter: "drop-shadow(0px 0px 3px rgba(0,170,255,0.584))" }, mr: "5px" }))) : null,
-                    React.createElement(MenuLink, { href: item.href },
+                    React.createElement(MenuLink, { style: { fontSize: 14, textTransform: "uppercase" }, href: item.href },
                         React.createElement(LinkLabel, { glowing: true }, item.label))));
             }))));
 };
@@ -2710,8 +2711,6 @@ var Menu = function (_a) {
     // Find the home link if provided
     var homeLink = links.find(function (link) { return link.label === "DASHBOARD"; });
     var renderPrice = function () {
-        if (isXs || isSm)
-            return null;
         return novaPriceUsd ? (React.createElement(PriceLink, { href: priceLink, target: "_blank" },
             React.createElement(Icon$v, { width: "24px", mr: "5px" }),
             React.createElement(Text, { fontSize: "15px", small: true, bold: true }, "$" + novaPriceUsd.toFixed(3)))) : (React.createElement(Skeleton, { width: 80, height: 24 }));
@@ -2719,10 +2718,10 @@ var Menu = function (_a) {
     return (React.createElement(Wrapper$1, null,
         React.createElement(StyledNav$1, { isMobile: isMobile, showMenu: showMenu },
             React.createElement(Logo$1, { isMobile: isMobile, showSideBar: function () { return setShowSideBar(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
-            React.createElement(SideBar, { open: showSideBar, onDismiss: function () { return setShowSideBar(false); }, links: links }),
+            React.createElement(SideBar, { open: showSideBar, price: renderPrice(), onDismiss: function () { return setShowSideBar(false); }, links: links }),
             React.createElement(NavBar, { isMobile: isMobile, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, novaPriceUsd: novaPriceUsd, links: links, priceLink: priceLink }),
             React.createElement(Flex, { ml: "auto", alignItems: "center" },
-                renderPrice(),
+                isXs || isSm ? null : renderPrice(),
                 React.createElement(UserBlock, { isMobile: isMobile, account: account, login: login, logout: logout }),
                 profile && React.createElement(Avatar, { profile: profile }))),
         React.createElement(BodyWrapper, null,

@@ -48,7 +48,7 @@ const StyledLinkSeparator = styled.hr`
   box-shadow: ${({ theme }) => theme.shadows.text};
 `;
 
-const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open }) => {
+const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
   const location = useLocation();
   const socials = links[links.length - 1];
 
@@ -57,10 +57,11 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open }) => {
       <StyledCloseButton>
         <CloseButton onClick={onDismiss} />
       </StyledCloseButton>
+      {price}
       <StyledLinkList>
         {links.slice(0, links.length - 1).map((entry) => (
           <MenuEntry onClick={onDismiss} isMobile key={entry.href} isActive={entry.href === location.pathname}>
-            <MenuLink href={entry.href}>
+            <MenuLink style={{ fontSize: 16, textTransform: "uppercase" }} href={entry.href}>
               <LinkLabel glowing>{entry.label}</LinkLabel>
             </MenuLink>
           </MenuEntry>
@@ -76,7 +77,7 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open }) => {
               {typeof Icon !== "undefined" ? (
                 <Icon {...iconProps} style={{ filter: "drop-shadow(0px 0px 3px rgba(0,170,255,0.584))" }} mr="5px" />
               ) : null}
-              <MenuLink href={item.href}>
+              <MenuLink style={{ fontSize: 14, textTransform: "uppercase" }} href={item.href}>
                 <LinkLabel glowing>{item.label}</LinkLabel>
               </MenuLink>
             </MenuEntry>
