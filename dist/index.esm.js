@@ -149,7 +149,7 @@ var getDisabledStyles = function (_a) {
     if (isLoading === true) {
         return "\n      &:disabled,\n      &.button--disabled {\n        cursor: not-allowed;\n      }\n    ";
     }
-    return "\n    &:disabled,\n    &.button--disabled {\n      background: " + theme.colors.backgroundDisabled + ";\n      border-color: " + theme.colors.backgroundDisabled + ";\n      box-shadow: none;\n      color: " + theme.colors.textDisabled + ";\n      cursor: not-allowed;\n    }\n  ";
+    return "\n    &:disabled,\n    &.button--disabled {\n      background: " + theme.colors.backgroundDisabled + " !important;\n      border-color: " + theme.colors.backgroundDisabled + ";\n      box-shadow: none;\n      color: " + theme.colors.textDisabled + ";\n      cursor: not-allowed;\n    }\n  ";
 };
 var removePointerEvents = function (_a) {
     var disabled = _a.disabled, as = _a.as;

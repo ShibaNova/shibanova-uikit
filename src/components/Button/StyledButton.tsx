@@ -19,7 +19,7 @@ const getDisabledStyles = ({ isLoading, theme }: ThemedProps) => {
   return `
     &:disabled,
     &.button--disabled {
-      background: ${theme.colors.backgroundDisabled};
+      background: ${theme.colors.backgroundDisabled} !important;
       border-color: ${theme.colors.backgroundDisabled};
       box-shadow: none;
       color: ${theme.colors.textDisabled};
