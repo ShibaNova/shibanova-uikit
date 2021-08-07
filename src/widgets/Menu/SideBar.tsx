@@ -36,7 +36,7 @@ const StyledCloseButton = styled.div`
 `;
 
 const StyledLinkList = styled.div`
-  margin-top: 40px;
+  margin-top: 25vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,7 +45,6 @@ const StyledLinkList = styled.div`
 const StyledLinkSeparator = styled.hr`
   width: 200px;
   border-color: ${({ theme }) => theme.colors.textSubtle};
-  box-shadow: ${({ theme }) => theme.shadows.text};
 `;
 
 const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
@@ -57,12 +56,12 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
       <StyledCloseButton>
         <CloseButton onClick={onDismiss} />
       </StyledCloseButton>
-      {price}
+      <div style={{ marginLeft: -20 }}>{price}</div>
       <StyledLinkList>
         {links.slice(0, links.length - 1).map((entry) => (
           <MenuEntry onClick={onDismiss} isMobile key={entry.href} isActive={entry.href === location.pathname}>
             <MenuLink style={{ fontSize: 16, textTransform: "uppercase" }} href={entry.href}>
-              <LinkLabel glowing>{entry.label}</LinkLabel>
+              <LinkLabel>{entry.label}</LinkLabel>
             </MenuLink>
           </MenuEntry>
         ))}
@@ -74,11 +73,9 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
 
           return (
             <MenuEntry isMobile key={item.href} secondary isActive={item.href === location.pathname}>
-              {typeof Icon !== "undefined" ? (
-                <Icon {...iconProps} style={{ filter: "drop-shadow(0px 0px 3px rgba(0,170,255,0.584))" }} mr="5px" />
-              ) : null}
+              {typeof Icon !== "undefined" ? <Icon {...iconProps} mr="5px" /> : null}
               <MenuLink style={{ fontSize: 14, textTransform: "uppercase" }} href={item.href}>
-                <LinkLabel glowing>{item.label}</LinkLabel>
+                <LinkLabel>{item.label}</LinkLabel>
               </MenuLink>
             </MenuEntry>
           );

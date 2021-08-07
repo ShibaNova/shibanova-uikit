@@ -2619,13 +2619,10 @@ var StyledNav = styled__default['default'].nav(templateObject_1$H || (templateOb
     return (open ? "translateX(0px)" : "translateX(-100%)");
 });
 var StyledCloseButton = styled__default['default'].div(templateObject_2$g || (templateObject_2$g = __makeTemplateObject(["\n  position: absolute;\n  right: 20px;\n  top: 20px;\n  filter: drop-shadow(1px 1px 3px rgba(0, 170, 255, 0.584));\n"], ["\n  position: absolute;\n  right: 20px;\n  top: 20px;\n  filter: drop-shadow(1px 1px 3px rgba(0, 170, 255, 0.584));\n"])));
-var StyledLinkList = styled__default['default'].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  margin-top: 40px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"], ["\n  margin-top: 40px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"])));
-var StyledLinkSeparator = styled__default['default'].hr(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject(["\n  width: 200px;\n  border-color: ", ";\n  box-shadow: ", ";\n"], ["\n  width: 200px;\n  border-color: ", ";\n  box-shadow: ", ";\n"])), function (_a) {
+var StyledLinkList = styled__default['default'].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  margin-top: 25vw;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"], ["\n  margin-top: 25vw;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"])));
+var StyledLinkSeparator = styled__default['default'].hr(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject(["\n  width: 200px;\n  border-color: ", ";\n"], ["\n  width: 200px;\n  border-color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textSubtle;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.shadows.text;
 });
 var SideBar = function (_a) {
     var _b;
@@ -2635,20 +2632,20 @@ var SideBar = function (_a) {
     return (React__default['default'].createElement(StyledNav, { open: open },
         React__default['default'].createElement(StyledCloseButton, null,
             React__default['default'].createElement(Icon$k, { onClick: onDismiss })),
-        price,
+        React__default['default'].createElement("div", { style: { marginLeft: -20 } }, price),
         React__default['default'].createElement(StyledLinkList, null,
             links.slice(0, links.length - 1).map(function (entry) { return (React__default['default'].createElement(MenuEntry, { onClick: onDismiss, isMobile: true, key: entry.href, isActive: entry.href === location.pathname },
                 React__default['default'].createElement(MenuLink, { style: { fontSize: 16, textTransform: "uppercase" }, href: entry.href },
-                    React__default['default'].createElement(LinkLabel, { glowing: true }, entry.label)))); }),
+                    React__default['default'].createElement(LinkLabel, null, entry.label)))); }),
             React__default['default'].createElement(StyledLinkSeparator, null), (_b = socials === null || socials === void 0 ? void 0 : socials.items) === null || _b === void 0 ? void 0 :
             _b.map(function (item) {
                 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                 var Icon = Icons$1[item.icon];
                 var iconProps = { width: "24px", color: "textSubtle" };
                 return (React__default['default'].createElement(MenuEntry, { isMobile: true, key: item.href, secondary: true, isActive: item.href === location.pathname },
-                    typeof Icon !== "undefined" ? (React__default['default'].createElement(Icon, __assign({}, iconProps, { style: { filter: "drop-shadow(0px 0px 3px rgba(0,170,255,0.584))" }, mr: "5px" }))) : null,
+                    typeof Icon !== "undefined" ? React__default['default'].createElement(Icon, __assign({}, iconProps, { mr: "5px" })) : null,
                     React__default['default'].createElement(MenuLink, { style: { fontSize: 14, textTransform: "uppercase" }, href: item.href },
-                        React__default['default'].createElement(LinkLabel, { glowing: true }, item.label))));
+                        React__default['default'].createElement(LinkLabel, null, item.label))));
             }))));
 };
 var templateObject_1$H, templateObject_2$g, templateObject_3$7, templateObject_4$4;
