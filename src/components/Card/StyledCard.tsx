@@ -28,7 +28,7 @@ const getBoxShadow = ({ isActive, isSuccess, isWarning, theme }: StyledCardProps
 const getGradientBorder = ({ gradientBorder, theme }: StyledCardProps) =>
   gradientBorder &&
   `background-clip: padding-box;
-border: solid 2px transparent;
+border: solid 1px #00aaff;
 
 &:before {
 content: "";
@@ -40,15 +40,16 @@ left: 0;
 z-index: -1;
 margin: -2px;
 border-radius: inherit;
-background: linear-gradient(
-  to right,
-  ${theme.colors.background},
-  ${theme.colors.primary}
-);
+// background: linear-gradient(
+//   to right,
+//   ${theme.colors.background},
+//   ${theme.colors.primary}
+// );
 }`;
 
 const StyledCard = styled.div<StyledCardProps>`
-  background-color: ${({ theme }) => theme.card.background};
+  // background-color: ${({ theme }) => theme.card.background};
+  background: transparent;
   border: ${({ theme }) => theme.card.boxShadow};
   border-radius: 32px;
   box-shadow: ${getBoxShadow};

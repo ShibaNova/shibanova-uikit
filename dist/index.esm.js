@@ -740,9 +740,9 @@ var getBoxShadow = function (_a) {
 var getGradientBorder = function (_a) {
     var gradientBorder = _a.gradientBorder, theme = _a.theme;
     return gradientBorder &&
-        "background-clip: padding-box;\nborder: solid 2px transparent;\n\n&:before {\ncontent: \"\";\nposition: absolute;\ntop: 0;\nright: 0;\nbottom: 0;\nleft: 0;\nz-index: -1;\nmargin: -2px;\nborder-radius: inherit;\nbackground: linear-gradient(\n  to right,\n  " + theme.colors.background + ",\n  " + theme.colors.primary + "\n);\n}";
+        "background-clip: padding-box;\nborder: solid 1px #00aaff;\n\n&:before {\ncontent: \"\";\nposition: absolute;\ntop: 0;\nright: 0;\nbottom: 0;\nleft: 0;\nz-index: -1;\nmargin: -2px;\nborder-radius: inherit;\n// background: linear-gradient(\n//   to right,\n//   " + theme.colors.background + ",\n//   " + theme.colors.primary + "\n// );\n}";
 };
-var StyledCard = styled.div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  background-color: ", ";\n  border: ", ";\n  border-radius: 32px;\n  box-shadow: ", ";\n  color: ", ";\n  position: relative;\n\n  ", "\n\n  ", "\n"], ["\n  background-color: ", ";\n  border: ", ";\n  border-radius: 32px;\n  box-shadow: ", ";\n  color: ", ";\n  position: relative;\n\n  ", "\n\n  ", "\n"])), function (_a) {
+var StyledCard = styled.div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  // background-color: ", ";\n  background: transparent;\n  border: ", ";\n  border-radius: 32px;\n  box-shadow: ", ";\n  color: ", ";\n  position: relative;\n\n  ", "\n\n  ", "\n"], ["\n  // background-color: ", ";\n  background: transparent;\n  border: ", ";\n  border-radius: 32px;\n  box-shadow: ", ";\n  color: ", ";\n  position: relative;\n\n  ", "\n\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.card.background;
 }, function (_a) {
