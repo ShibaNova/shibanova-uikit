@@ -21,6 +21,10 @@ export const links = [
     href: "/pools",
   },
   {
+    label: "Audits",
+    href: "https://docs.shibanova.io/shibanova-documentation/security/audits",
+  },
+  {
     label: "Socials",
     icon: "MoreIcon",
     items: [
