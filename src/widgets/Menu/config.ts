@@ -1,23 +1,19 @@
 export const links = [
   {
     label: "Dashboard",
-    icon: "HomeIcon",
     href: "/",
   },
   {
     label: "Exchange",
-    icon: "TradeIcon",
     href: "https://swap.shibanova.io",
     button: true,
   },
   {
     label: "Farms",
-    icon: "FarmIcon",
     href: "/farms",
   },
   {
     label: "Pools",
-    icon: "PoolIcon",
     href: "/pools",
   },
   {
