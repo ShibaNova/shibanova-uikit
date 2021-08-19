@@ -56,7 +56,9 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
       <StyledCloseButton>
         <CloseButton onClick={onDismiss} />
       </StyledCloseButton>
+
       <div style={{ marginLeft: -20 }}>{price}</div>
+
       <StyledLinkList>
         {links.slice(0, links.length - 1).map((entry) => (
           <MenuEntry onClick={onDismiss} isMobile key={entry.href} isActive={entry.href === location.pathname}>
@@ -65,7 +67,9 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
             </MenuLink>
           </MenuEntry>
         ))}
+
         <StyledLinkSeparator />
+
         {socials?.items?.map((item: MenuSubEntry) => {
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           const Icon = Icons[item.icon!];
