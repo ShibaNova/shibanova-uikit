@@ -22,6 +22,7 @@ export const links = [
   },
   {
     label: "Audits",
+    icon: "AuditIcon",
     href: "https://docs.shibanova.io/shibanova-documentation/security/audits",
   },
   {
