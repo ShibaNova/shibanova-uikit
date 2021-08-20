@@ -3,12 +3,9 @@ import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import CloseButton from "../../components/Svg/Icons/Close";
 import { SideBarProps, MenuSubEntry } from "./types";
-import * as IconModule from "./icons";
-import { SvgProps } from "../../components/Svg";
 import { MenuEntry, LinkLabel } from "./MenuEntry";
 import MenuLink from "./MenuLink";
-
-const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
+import MenuIcon from "./MenuIcon";
 
 const StyledNav = styled.nav<{ open: boolean }>`
   position: fixed;
@@ -62,6 +59,7 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
       <StyledLinkList>
         {links.slice(0, links.length - 1).map((entry) => (
           <MenuEntry onClick={onDismiss} isMobile key={entry.href} isActive={entry.href === location.pathname}>
+            {entry.icon && <MenuIcon icon={entry.icon} />}
             <MenuLink style={{ fontSize: 16, textTransform: "uppercase" }} href={entry.href}>
               <LinkLabel>{entry.label}</LinkLabel>
             </MenuLink>
@@ -71,13 +69,9 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
         <StyledLinkSeparator />
 
         {socials?.items?.map((item: MenuSubEntry) => {
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          const Icon = Icons[item.icon!];
-          const iconProps = { width: "24px", color: "textSubtle" };
-
           return (
             <MenuEntry isMobile key={item.href} secondary isActive={item.href === location.pathname}>
-              {typeof Icon !== "undefined" ? <Icon {...iconProps} mr="5px" /> : null}
+              {item.icon && <MenuIcon icon={item.icon} />}
               <MenuLink style={{ fontSize: 14, textTransform: "uppercase" }} href={item.href}>
                 <LinkLabel>{item.label}</LinkLabel>
               </MenuLink>
