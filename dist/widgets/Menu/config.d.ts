@@ -1,14 +1,20 @@
 export declare const links: ({
     label: string;
-    icon: string;
     href: string;
     button?: undefined;
+    icon?: undefined;
+    items?: undefined;
+} | {
+    label: string;
+    href: string;
+    button: boolean;
+    icon?: undefined;
     items?: undefined;
 } | {
     label: string;
     icon: string;
     href: string;
-    button: boolean;
+    button?: undefined;
     items?: undefined;
 } | {
     label: string;

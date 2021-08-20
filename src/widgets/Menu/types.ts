@@ -33,7 +33,7 @@ export interface MenuSubEntry {
 
 export interface MenuEntry {
   label: string;
-  icon: string;
+  icon?: string;
   button?: boolean;
   items?: MenuSubEntry[];
   href?: string;
