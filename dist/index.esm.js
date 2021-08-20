@@ -2181,27 +2181,24 @@ var templateObject_1$A;
 var links = [
     {
         label: "Dashboard",
-        icon: "HomeIcon",
         href: "/",
     },
     {
         label: "Exchange",
-        icon: "TradeIcon",
         href: "https://swap.shibanova.io",
         button: true,
     },
     {
         label: "Farms",
-        icon: "FarmIcon",
         href: "/farms",
     },
     {
         label: "Pools",
-        icon: "PoolIcon",
         href: "/pools",
     },
     {
         label: "Audits",
+        icon: "AuditIcon",
         href: "https://docs.shibanova.io/shibanova-documentation/security/audits",
     },
     {
@@ -2329,6 +2326,16 @@ var MenuLink = function (_a) {
 };
 
 var Icons = IconModule;
+var MenuIcon = function (_a) {
+    var icon = _a.icon;
+    var Icon = Icons[icon];
+    var iconProps = { width: "24px", color: "textSubtle" };
+    if (typeof Icon === "undefined") {
+        return null;
+    }
+    return React.createElement(Icon, __assign({}, iconProps, { mr: "5px" }));
+};
+
 var Container$3 = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n"], ["\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n"])));
 var NavBar = function (_a) {
     var isMobile = _a.isMobile, links = _a.links;
@@ -2340,14 +2347,13 @@ var NavBar = function (_a) {
             var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
             if (entry.items) {
                 return (React.createElement(Accordion, { key: entry.label, label: entry.label.toUpperCase(), initialOpenState: entry.initialOpenState, className: calloutClass }, entry.items.map(function (item) {
-                    var Icon = Icons[item.icon];
-                    var iconProps = { width: "24px", color: "textSubtle" };
                     return (React.createElement(MenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname },
-                        typeof Icon !== "undefined" ? React.createElement(Icon, __assign({}, iconProps, { mr: "5px" })) : null,
+                        item.icon && React.createElement(MenuIcon, { icon: item.icon }),
                         React.createElement(MenuLink, { href: item.href }, item.label)));
                 })));
             }
             return (React.createElement(MenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
+                entry.icon && React.createElement(MenuIcon, { icon: entry.icon }),
                 React.createElement(MenuLink, { href: entry.href }, entry.button ? (React.createElement(ButtonLabel, { size: "sm" }, entry.label.toUpperCase())) : (React.createElement(LinkLabel, null, entry.label.toUpperCase())))));
         }))));
 };
@@ -2602,7 +2608,6 @@ var Avatar = function (_a) {
 };
 var templateObject_1$G, templateObject_2$f;
 
-var Icons$1 = IconModule;
 var StyledNav = styled.nav(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n  position: fixed;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  background-color: ", ";\n  display: block;\n  z-index: 100;\n  margin: 0;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  padding: 30px 20px 30px;\n  transform: ", ";\n  transition: transform 0.2s linear 0s;\n"], ["\n  position: fixed;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  background-color: ", ";\n  display: block;\n  z-index: 100;\n  margin: 0;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  padding: 30px 20px 30px;\n  transform: ", ";\n  transition: transform 0.2s linear 0s;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.card;
@@ -2627,15 +2632,13 @@ var SideBar = function (_a) {
         React.createElement("div", { style: { marginLeft: -20 } }, price),
         React.createElement(StyledLinkList, null,
             links.slice(0, links.length - 1).map(function (entry) { return (React.createElement(MenuEntry, { onClick: onDismiss, isMobile: true, key: entry.href, isActive: entry.href === location.pathname },
+                entry.icon && React.createElement(MenuIcon, { icon: entry.icon }),
                 React.createElement(MenuLink, { style: { fontSize: 16, textTransform: "uppercase" }, href: entry.href },
                     React.createElement(LinkLabel, null, entry.label)))); }),
             React.createElement(StyledLinkSeparator, null), (_b = socials === null || socials === void 0 ? void 0 : socials.items) === null || _b === void 0 ? void 0 :
             _b.map(function (item) {
-                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                var Icon = Icons$1[item.icon];
-                var iconProps = { width: "24px", color: "textSubtle" };
                 return (React.createElement(MenuEntry, { isMobile: true, key: item.href, secondary: true, isActive: item.href === location.pathname },
-                    typeof Icon !== "undefined" ? React.createElement(Icon, __assign({}, iconProps, { mr: "5px" })) : null,
+                    item.icon && React.createElement(MenuIcon, { icon: item.icon }),
                     React.createElement(MenuLink, { style: { fontSize: 14, textTransform: "uppercase" }, href: item.href },
                         React.createElement(LinkLabel, null, item.label))));
             }))));
