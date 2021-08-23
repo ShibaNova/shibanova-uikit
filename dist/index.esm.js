@@ -769,7 +769,7 @@ var Card = function (_a) {
 
 var CardBody = styled.div(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), space);
 CardBody.defaultProps = {
-    p: "0px 24px 24px 24px",
+    p: "12px 24px 24px 24px",
 };
 var templateObject_1$b;
 
@@ -778,7 +778,7 @@ var CardHeader = styled.div(templateObject_1$c || (templateObject_1$c = __makeTe
     return theme.card.cardHeaderBackground;
 }, space);
 CardHeader.defaultProps = {
-    p: "24px 24px 0px 24px",
+    p: "24px 24px 12px 24px",
 };
 var templateObject_1$c;
 
