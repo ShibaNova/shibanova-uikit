@@ -559,8 +559,8 @@ var breakpointMap = {
     xs: 370,
     sm: 576,
     md: 852,
-    lg: 968,
-    xl: 1080,
+    lg: 1120,
+    xl: 1420,
 };
 var breakpoints = Object.values(breakpointMap).map(function (breakpoint) { return breakpoint + "px"; });
 var mediaQueries = {
