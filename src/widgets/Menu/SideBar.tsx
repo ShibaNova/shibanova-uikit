@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
+import { Text } from "../../components/Text";
 import CloseButton from "../../components/Svg/Icons/Close";
 import { SideBarProps, MenuSubEntry } from "./types";
 import { MenuEntry, LinkLabel } from "./MenuEntry";
@@ -13,7 +14,8 @@ const StyledNav = styled.nav<{ open: boolean }>`
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: ${({ theme }) => theme.colors.card};
+  // background-color: ${({ theme }) => theme.colors.card};
+  background: linear-gradient(90deg, rgba(6,26,84,1) 0%, rgba(6,28,124,1) 40%, rgba(6,28,124,1) 60%, rgba(4,2,66,1) 100%);
   display: block;
   z-index: 100;
   margin: 0;
@@ -46,7 +48,9 @@ const StyledLinkSeparator = styled.hr`
 
 const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
   const location = useLocation();
+  const vaults = links[links.length - 2];
   const socials = links[links.length - 1];
+  
 
   return (
     <StyledNav open={open}>
@@ -57,7 +61,10 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
       <div style={{ marginLeft: -20 }}>{price}</div>
 
       <StyledLinkList>
-        {links.slice(0, links.length - 1).map((entry) => (
+      <Text glowing bold style={{ padding: '3px 0 3px 0' }} >
+        ShibaNova
+      </Text>
+        {links.slice(0, links.length - 2).map((entry) => (
           <MenuEntry onClick={onDismiss} isMobile key={entry.href} isActive={entry.href === location.pathname}>
             {entry.icon && <MenuIcon icon={entry.icon} />}
             <MenuLink style={{ fontSize: 16, textTransform: "uppercase" }} href={entry.href}>
@@ -66,9 +73,27 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
           </MenuEntry>
         ))}
 
-        <StyledLinkSeparator />
+      <StyledLinkSeparator />
 
-        {socials?.items?.map((item: MenuSubEntry) => {
+      <Text glowing bold style={{ padding: '3px 0 3px 0' }} >
+        Vault Partners
+      </Text>
+        {vaults?.items?.map((item: MenuSubEntry) => {
+          return (
+            <MenuEntry isMobile key={item.href} secondary isActive={item.href === location.pathname}>
+              {item.icon && <MenuIcon icon={item.icon} />}
+              <MenuLink style={{ fontSize: 14, textTransform: "uppercase" }} href={item.href}>
+                <LinkLabel>{item.label}</LinkLabel>
+              </MenuLink>
+            </MenuEntry>
+          );
+        })}
+
+        <StyledLinkSeparator />
+        <Text glowing bold style={{ padding: '3px 0 3px 0' }} >
+        Socials and More
+        </Text>
+        {socials.items?.map((item: MenuSubEntry) => {
           return (
             <MenuEntry isMobile key={item.href} secondary isActive={item.href === location.pathname}>
               {item.icon && <MenuIcon icon={item.icon} />}

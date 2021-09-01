@@ -16,25 +16,31 @@ export const links = [
     label: "Pools",
     href: "/pools",
   },
-  {
-    label: "Vaults",
-    href: "https://app.crudeoil.finance/#/app/vaults",
-  },
   // {
-  //   label: "Vault",
-  //   icon: "VaultsIcon",
-  //   items: [
-  //     {
-  //       label: "CrudeOil",
-  //       icon: "VaultsIcon",
-  //       href: "https://app.crudeoil.finance/#/app/vaults",
-  //     },
-  //   ],
+  //   label: "Vaults",
+  //   href: "https://app.crudeoil.finance/#/app/vaults",
   // },
+
   {
     label: "Audits",
     icon: "ShibaNovaAuditIcon",
     href: "https://docs.shibanova.io/shibanova-documentation/security/audits",
+  },
+  {
+    label: "Vault Partners",
+    icon: "MoreIcon",
+    items: [
+      {
+        label: "CrudeOil",
+        
+        href: "https://app.crudeoil.finance/#/app/vaults",
+      },
+      {
+        label: "More Coming Soon!",
+        
+        href: "/#",
+      },
+    ],
   },
   {
     label: "Socials",
