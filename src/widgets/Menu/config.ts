@@ -17,6 +17,16 @@ export const links = [
     href: "/pools",
   },
   {
+    label: "Vaults",
+    icon: "MoreIcon",
+    items: [
+      { 
+        label: "CrudeOil",
+        href: "https://app.crudeoil.finance/#/app/vaults",
+    },
+    ]
+  },
+  {
     label: "Audits",
     icon: "ShibaNovaAuditIcon",
     href: "https://docs.shibanova.io/shibanova-documentation/security/audits",
