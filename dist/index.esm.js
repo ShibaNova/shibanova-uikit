@@ -2189,7 +2189,7 @@ var Logo$1 = function (_a) {
     return (React.createElement(Flex, { alignItems: "center", mt: isMobile ? "0" : "auto", mr: "45px" },
         !isMobile ? null : (React.createElement(MenuButton, { "aria-label": "Toggle menu", onClick: showSideBar },
             React.createElement(Icon$L, { width: "24px", color: "textSubtle" }))),
-        isAbsoluteUrl ? (React.createElement(StyledLink$1, { as: "a", href: href, "aria-label": "Pancake home page" }, innerLogo)) : (React.createElement(StyledLink$1, { to: href, "aria-label": "Pancake home page" }, innerLogo))));
+        isAbsoluteUrl ? (React.createElement(StyledLink$1, { as: "a", href: href, "aria-label": "ShibaNova home page" }, innerLogo)) : (React.createElement(StyledLink$1, { to: href, "aria-label": "ShibaNova home page" }, innerLogo))));
 };
 var templateObject_1$A;
 
@@ -2213,14 +2213,19 @@ var links = [
     },
     {
         label: "Vaults",
-        icon: "MoreIcon",
-        items: [
-            {
-                label: "CrudeOil",
-                href: "https://app.crudeoil.finance/#/app/vaults",
-            },
-        ]
+        href: "https://app.crudeoil.finance/#/app/vaults",
     },
+    // {
+    //   label: "Vault",
+    //   icon: "VaultsIcon",
+    //   items: [
+    //     {
+    //       label: "CrudeOil",
+    //       icon: "VaultsIcon",
+    //       href: "https://app.crudeoil.finance/#/app/vaults",
+    //     },
+    //   ],
+    // },
     {
         label: "Audits",
         icon: "ShibaNovaAuditIcon",

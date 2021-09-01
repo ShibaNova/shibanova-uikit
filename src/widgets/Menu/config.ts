@@ -18,14 +18,19 @@ export const links = [
   },
   {
     label: "Vaults",
-    icon: "MoreIcon",
-    items: [
-      { 
-        label: "CrudeOil",
-        href: "https://app.crudeoil.finance/#/app/vaults",
-    },
-    ]
+    href: "https://app.crudeoil.finance/#/app/vaults",
   },
+  // {
+  //   label: "Vault",
+  //   icon: "VaultsIcon",
+  //   items: [
+  //     {
+  //       label: "CrudeOil",
+  //       icon: "VaultsIcon",
+  //       href: "https://app.crudeoil.finance/#/app/vaults",
+  //     },
+  //   ],
+  // },
   {
     label: "Audits",
     icon: "ShibaNovaAuditIcon",

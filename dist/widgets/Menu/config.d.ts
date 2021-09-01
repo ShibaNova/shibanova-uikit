@@ -13,15 +13,6 @@ export declare const links: ({
 } | {
     label: string;
     icon: string;
-    items: {
-        label: string;
-        href: string;
-    }[];
-    href?: undefined;
-    button?: undefined;
-} | {
-    label: string;
-    icon: string;
     href: string;
     button?: undefined;
     items?: undefined;
