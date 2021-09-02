@@ -35,7 +35,7 @@ const StyledCloseButton = styled.div`
 `;
 
 const StyledLinkList = styled.div`
-  margin-top: 25vw;
+  margin-top: 2vw;
   display: flex;
   flex-direction: column;
   align-items: center;

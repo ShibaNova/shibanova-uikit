@@ -2644,7 +2644,7 @@ var StyledNav = styled__default['default'].nav(templateObject_1$G || (templateOb
     return (open ? "translateX(0px)" : "translateX(-100%)");
 });
 var StyledCloseButton = styled__default['default'].div(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  position: absolute;\n  right: 20px;\n  top: 20px;\n  filter: drop-shadow(1px 1px 3px rgba(0, 170, 255, 0.584));\n"], ["\n  position: absolute;\n  right: 20px;\n  top: 20px;\n  filter: drop-shadow(1px 1px 3px rgba(0, 170, 255, 0.584));\n"])));
-var StyledLinkList = styled__default['default'].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  margin-top: 25vw;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"], ["\n  margin-top: 25vw;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"])));
+var StyledLinkList = styled__default['default'].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  margin-top: 2vw;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"], ["\n  margin-top: 2vw;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"])));
 var StyledLinkSeparator = styled__default['default'].hr(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject(["\n  width: 200px;\n  border-color: ", ";\n"], ["\n  width: 200px;\n  border-color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textSubtle;
