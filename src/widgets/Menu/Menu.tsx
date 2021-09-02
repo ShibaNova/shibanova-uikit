@@ -47,9 +47,9 @@ const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
     isMobile
       ? "linear-gradient(90deg, rgba(6,26,84,1) 0%, rgba(6,28,124,1) 40%, rgba(6,28,124,1) 60%, rgba(4,2,66,1) 100%);"
       : theme.nav.background};
-  border-bottom: ${({ theme, isMobile }) => (isMobile ? `1px solid ${theme.colors.textSubtle}4f` : "none")};
+  border-bottom: ${({ theme, isMobile }) => (isMobile ? `1px solid ${theme.colors.secondary}4f` : "none")};
 
-  @media screen and (min-width: 1333px) {
+  @media screen and (min-width: 1421px) {
     padding: 40px 110px 110px 85px;
   }
   z-index: 20;
@@ -81,7 +81,7 @@ const Menu: React.FC<NavProps> = ({
   links,
   priceLink,
   profile,
-  children,
+  children, 
 }) => {
   const { isXl, isXs, isSm } = useMatchBreakpoints();
   const isMobile = !isXl;

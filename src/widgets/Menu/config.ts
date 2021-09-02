@@ -31,13 +31,11 @@ export const links = [
     icon: "MoreIcon",
     items: [
       {
-        label: "CrudeOil",
-        
+        label: "CrudeOil",        
         href: "https://app.crudeoil.finance/#/app/vaults",
       },
       {
-        label: "More Coming Soon!",
-        
+        label: "More Coming Soon!",        
         href: "/#",
       },
     ],
