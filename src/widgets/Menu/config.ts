@@ -35,8 +35,8 @@ export const links = [
         href: "https://app.crudeoil.finance/#/app/vaults",
       },
       {
-        label: "More Coming Soon!",        
-        href: "/#",
+        label: "AutoShark",        
+        href: "https://autoshark.finance/vaults",
       },
     ],
   },
