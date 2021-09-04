@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import { Text } from "../../components/Text";
@@ -35,11 +35,6 @@ const StyledNav = styled.nav<{ open: boolean }>`
   padding: 20px 0;
 
   overflow-y: scroll;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
-  &::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* Chrome/Safari/Webkit */
   }
 `;
 
@@ -66,6 +61,14 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
   const location = useLocation();
   const vaults = links[links.length - 2];
   const socials = links[links.length - 1];
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [open]);
 
   return (
     <StyledNav open={open}>
