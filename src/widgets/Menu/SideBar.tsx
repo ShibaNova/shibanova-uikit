@@ -28,9 +28,11 @@ const StyledNav = styled.nav<{ open: boolean }>`
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 30px 20px 30px;
+
   transform: ${({ open }) => (open ? "translateX(0px)" : "translateX(-100%)")};
   transition: transform 0.2s linear 0s;
+
+  padding: 20px 0;
 
   overflow-y: scroll;
   scrollbar-width: none; /* Firefox */
