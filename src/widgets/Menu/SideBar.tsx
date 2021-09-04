@@ -35,7 +35,7 @@ const StyledNav = styled.nav<{ open: boolean }>`
   padding-top: 20px;
 
   overflow-y: auto;
-  overscroll-behavior-y: none;
+  overscroll-behavior-y: contain;
   -webkit-overflow-scrolling: touch;
   }
 `;
