@@ -32,7 +32,7 @@ const StyledNav = styled.nav<{ open: boolean }>`
   transform: ${({ open }) => (open ? "translateX(0px)" : "translateX(-100%)")};
   transition: transform 0.2s linear 0s;
 
-  padding: 20px 0;
+  padding-top: 20px;
 
   overflow-y: auto;
   overscroll-behavior-y: none;
