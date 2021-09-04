@@ -25,6 +25,7 @@ const StyledNav = styled.nav<{ open: boolean }>`
   padding: 30px 20px 30px;
   transform: ${({ open }) => (open ? "translateX(0px)" : "translateX(-100%)")};
   transition: transform 0.2s linear 0s;
+  overflow-y: scroll;
 `;
 
 const StyledCloseButton = styled.div`
