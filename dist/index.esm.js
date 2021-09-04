@@ -2267,7 +2267,7 @@ var links = [
     },
 ];
 var MENU_HEIGHT = 200;
-var MENU_HEIGHT_MOBILE = 80;
+var MENU_HEIGHT_MOBILE = 100;
 var MENU_ENTRY_HEIGHT = 48;
 
 var rainbowAnimation = keyframes(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"], ["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"])));
