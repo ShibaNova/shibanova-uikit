@@ -35,6 +35,7 @@ const StyledNav = styled.nav<{ open: boolean }>`
   padding: 20px 0;
 
   overflow-y: scroll;
+  overscroll-behavior-y: none;
   -webkit-overflow-scrolling: touch;
   }
 `;
@@ -67,7 +68,7 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
     if (open) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "";
     }
   }, [open]);
 
