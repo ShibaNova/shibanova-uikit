@@ -2636,7 +2636,7 @@ var UserBlock = function (_a) {
 };
 var templateObject_1$F;
 
-var StyledNav = styled__default['default'].nav(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  position: fixed;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  // background-color: ", ";\n  background: linear-gradient(90deg, rgba(6,26,84,1) 0%, rgba(6,28,124,1) 40%, rgba(6,28,124,1) 60%, rgba(4,2,66,1) 100%);\n  display: block;\n  z-index: 100;\n  margin: 0;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  padding: 30px 20px 30px;\n  transform: ", ";\n  transition: transform 0.2s linear 0s;\n  overflow-y: scroll;\n"], ["\n  position: fixed;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  // background-color: ", ";\n  background: linear-gradient(90deg, rgba(6,26,84,1) 0%, rgba(6,28,124,1) 40%, rgba(6,28,124,1) 60%, rgba(4,2,66,1) 100%);\n  display: block;\n  z-index: 100;\n  margin: 0;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  padding: 30px 20px 30px;\n  transform: ", ";\n  transition: transform 0.2s linear 0s;\n  overflow-y: scroll;\n"])), function (_a) {
+var StyledNav = styled__default['default'].nav(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  position: fixed;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  // background-color: ", ";\n  background: linear-gradient(\n    90deg,\n    rgba(6, 26, 84, 1) 0%,\n    rgba(6, 28, 124, 1) 40%,\n    rgba(6, 28, 124, 1) 60%,\n    rgba(4, 2, 66, 1) 100%\n  );\n  display: block;\n  z-index: 100;\n  margin: 0;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  padding: 30px 20px 30px;\n  transform: ", ";\n  transition: transform 0.2s linear 0s;\n\n  overflow-y: scroll;\n  scrollbar-width: none; /* Firefox */\n  -ms-overflow-style: none; /* IE 10+ */\n  &::-webkit-scrollbar {\n    width: 0px;\n    background: transparent; /* Chrome/Safari/Webkit */\n  }\n"], ["\n  position: fixed;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  // background-color: ", ";\n  background: linear-gradient(\n    90deg,\n    rgba(6, 26, 84, 1) 0%,\n    rgba(6, 28, 124, 1) 40%,\n    rgba(6, 28, 124, 1) 60%,\n    rgba(4, 2, 66, 1) 100%\n  );\n  display: block;\n  z-index: 100;\n  margin: 0;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  padding: 30px 20px 30px;\n  transform: ", ";\n  transition: transform 0.2s linear 0s;\n\n  overflow-y: scroll;\n  scrollbar-width: none; /* Firefox */\n  -ms-overflow-style: none; /* IE 10+ */\n  &::-webkit-scrollbar {\n    width: 0px;\n    background: transparent; /* Chrome/Safari/Webkit */\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.card;
 }, function (_a) {
@@ -2660,13 +2660,13 @@ var SideBar = function (_a) {
             React__default['default'].createElement(Icon$k, { onClick: onDismiss })),
         React__default['default'].createElement("div", { style: { marginLeft: -20 } }, price),
         React__default['default'].createElement(StyledLinkList, null,
-            React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: '3px 0 3px 0' } }, "ShibaNova"),
+            React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "ShibaNova"),
             links.slice(0, links.length - 2).map(function (entry) { return (React__default['default'].createElement(MenuEntry, { onClick: onDismiss, isMobile: true, key: entry.href, isActive: entry.href === location.pathname },
                 entry.icon && React__default['default'].createElement(MenuIcon, { icon: entry.icon }),
                 React__default['default'].createElement(MenuLink, { style: { fontSize: 16, textTransform: "uppercase" }, href: entry.href },
                     React__default['default'].createElement(LinkLabel, null, entry.label)))); }),
             React__default['default'].createElement(StyledLinkSeparator, null),
-            React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: '3px 0 3px 0' } }, "Vault Partners"), (_b = vaults === null || vaults === void 0 ? void 0 : vaults.items) === null || _b === void 0 ? void 0 :
+            React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "Vault Partners"), (_b = vaults === null || vaults === void 0 ? void 0 : vaults.items) === null || _b === void 0 ? void 0 :
             _b.map(function (item) {
                 return (React__default['default'].createElement(MenuEntry, { isMobile: true, key: item.href, secondary: true, isActive: item.href === location.pathname },
                     item.icon && React__default['default'].createElement(MenuIcon, { icon: item.icon }),
@@ -2674,7 +2674,7 @@ var SideBar = function (_a) {
                         React__default['default'].createElement(LinkLabel, null, item.label))));
             }),
             React__default['default'].createElement(StyledLinkSeparator, null),
-            React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: '3px 0 3px 0' } }, "Socials and More"), (_c = socials.items) === null || _c === void 0 ? void 0 :
+            React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "Socials and More"), (_c = socials.items) === null || _c === void 0 ? void 0 :
             _c.map(function (item) {
                 return (React__default['default'].createElement(MenuEntry, { isMobile: true, key: item.href, secondary: true, isActive: item.href === location.pathname },
                     item.icon && React__default['default'].createElement(MenuIcon, { icon: item.icon }),
