@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import { Text } from "../../components/Text";
@@ -15,7 +15,13 @@ const StyledNav = styled.nav<{ open: boolean }>`
   top: 0;
   bottom: 0;
   // background-color: ${({ theme }) => theme.colors.card};
-  background: linear-gradient(90deg, rgba(6,26,84,1) 0%, rgba(6,28,124,1) 40%, rgba(6,28,124,1) 60%, rgba(4,2,66,1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(6, 26, 84, 1) 0%,
+    rgba(6, 28, 124, 1) 40%,
+    rgba(6, 28, 124, 1) 60%,
+    rgba(4, 2, 66, 1) 100%
+  );
   display: block;
   z-index: 100;
   margin: 0;
@@ -25,6 +31,10 @@ const StyledNav = styled.nav<{ open: boolean }>`
   padding: 30px 20px 30px;
   transform: ${({ open }) => (open ? "translateX(0px)" : "translateX(-100%)")};
   transition: transform 0.2s linear 0s;
+
+  overflow-y: auto;
+  overscroll-behavior-y: none;
+  -webkit-overflow-scrolling: touch;
 `;
 
 const StyledCloseButton = styled.div`
@@ -50,7 +60,14 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
   const location = useLocation();
   const vaults = links[links.length - 2];
   const socials = links[links.length - 1];
-  
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [open]);
 
   return (
     <StyledNav open={open}>
@@ -61,9 +78,9 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
       <div style={{ marginLeft: -20 }}>{price}</div>
 
       <StyledLinkList>
-      <Text glowing bold style={{ padding: '3px 0 3px 0' }} >
-        ShibaNova
-      </Text>
+        <Text glowing bold style={{ padding: "3px 0 3px 0" }}>
+          ShibaNova
+        </Text>
         {links.slice(0, links.length - 2).map((entry) => (
           <MenuEntry onClick={onDismiss} isMobile key={entry.href} isActive={entry.href === location.pathname}>
             {entry.icon && <MenuIcon icon={entry.icon} />}
@@ -73,11 +90,11 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
           </MenuEntry>
         ))}
 
-      <StyledLinkSeparator />
+        <StyledLinkSeparator />
 
-      <Text glowing bold style={{ padding: '3px 0 3px 0' }} >
-        Vault Partners
-      </Text>
+        <Text glowing bold style={{ padding: "3px 0 3px 0" }}>
+          Vault Partners
+        </Text>
         {vaults?.items?.map((item: MenuSubEntry) => {
           return (
             <MenuEntry isMobile key={item.href} secondary isActive={item.href === location.pathname}>
@@ -90,8 +107,8 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
         })}
 
         <StyledLinkSeparator />
-        <Text glowing bold style={{ padding: '3px 0 3px 0' }} >
-        Socials and More
+        <Text glowing bold style={{ padding: "3px 0 3px 0" }}>
+          Socials and More
         </Text>
         {socials.items?.map((item: MenuSubEntry) => {
           return (
