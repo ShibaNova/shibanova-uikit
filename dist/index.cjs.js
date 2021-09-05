@@ -2668,26 +2668,26 @@ var SideBar = function (_a) {
             React__default['default'].createElement(Icon$k, { onClick: onDismiss })),
         React__default['default'].createElement("div", { style: { marginLeft: -20 } }, price),
         React__default['default'].createElement(StyledLinkList, null,
-            React__default['default'].createElement(Heading, { glowing: true }, "ShibaNova"),
+            React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "ShibaNova"),
             links.slice(0, links.length - 2).map(function (entry) { return (React__default['default'].createElement(MenuEntry, { onClick: onDismiss, isMobile: true, key: entry.href, isActive: entry.href === location.pathname },
                 entry.icon && React__default['default'].createElement(MenuIcon, { icon: entry.icon }),
-                React__default['default'].createElement(MenuLink, { href: entry.href },
-                    React__default['default'].createElement(LinkLabel, null, entry.label.toUpperCase())))); }),
+                React__default['default'].createElement(MenuLink, { style: { fontSize: 16, textTransform: "uppercase" }, href: entry.href },
+                    React__default['default'].createElement(LinkLabel, null, entry.label)))); }),
             React__default['default'].createElement(StyledLinkSeparator, null),
-            React__default['default'].createElement(Heading, { glowing: true }, "Vault Partners"), (_b = vaults === null || vaults === void 0 ? void 0 : vaults.items) === null || _b === void 0 ? void 0 :
+            React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "Vault Partners"), (_b = vaults === null || vaults === void 0 ? void 0 : vaults.items) === null || _b === void 0 ? void 0 :
             _b.map(function (item) {
                 return (React__default['default'].createElement(MenuEntry, { isMobile: true, key: item.href, secondary: true, isActive: item.href === location.pathname },
                     item.icon && React__default['default'].createElement(MenuIcon, { icon: item.icon }),
-                    React__default['default'].createElement(MenuLink, { href: item.href },
-                        React__default['default'].createElement(LinkLabel, null, item.label.toUpperCase()))));
+                    React__default['default'].createElement(MenuLink, { style: { fontSize: 14, textTransform: "uppercase" }, href: item.href },
+                        React__default['default'].createElement(LinkLabel, null, item.label))));
             }),
             React__default['default'].createElement(StyledLinkSeparator, null),
-            React__default['default'].createElement(Heading, { glowing: true }, "Socials and More"), (_c = socials.items) === null || _c === void 0 ? void 0 :
+            React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "Socials and More"), (_c = socials.items) === null || _c === void 0 ? void 0 :
             _c.map(function (item) {
                 return (React__default['default'].createElement(MenuEntry, { isMobile: true, key: item.href, secondary: true, isActive: item.href === location.pathname },
                     item.icon && React__default['default'].createElement(MenuIcon, { icon: item.icon }),
-                    React__default['default'].createElement(MenuLink, { href: item.href },
-                        React__default['default'].createElement(LinkLabel, null, item.label.toUpperCase()))));
+                    React__default['default'].createElement(MenuLink, { style: { fontSize: 14, textTransform: "uppercase" }, href: item.href },
+                        React__default['default'].createElement(LinkLabel, null, item.label))));
             }))));
 };
 var templateObject_1$G, templateObject_2$f, templateObject_3$7, templateObject_4$4;

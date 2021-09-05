@@ -7,7 +7,6 @@ import { SideBarProps, MenuSubEntry } from "./types";
 import { MenuEntry, LinkLabel } from "./MenuEntry";
 import MenuLink from "./MenuLink";
 import MenuIcon from "./MenuIcon";
-import { Heading } from "../../components/Heading";
 
 const StyledNav = styled.nav<{ open: boolean }>`
   position: fixed;
@@ -79,38 +78,44 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
       <div style={{ marginLeft: -20 }}>{price}</div>
 
       <StyledLinkList>
-        <Heading glowing>ShibaNova</Heading>
+        <Text glowing bold style={{ padding: "3px 0 3px 0" }}>
+          ShibaNova
+        </Text>
         {links.slice(0, links.length - 2).map((entry) => (
           <MenuEntry onClick={onDismiss} isMobile key={entry.href} isActive={entry.href === location.pathname}>
             {entry.icon && <MenuIcon icon={entry.icon} />}
-            <MenuLink href={entry.href}>
-              <LinkLabel>{entry.label.toUpperCase()}</LinkLabel>
+            <MenuLink style={{ fontSize: 16, textTransform: "uppercase" }} href={entry.href}>
+              <LinkLabel>{entry.label}</LinkLabel>
             </MenuLink>
           </MenuEntry>
         ))}
 
         <StyledLinkSeparator />
 
-        <Heading glowing>Vault Partners</Heading>
+        <Text glowing bold style={{ padding: "3px 0 3px 0" }}>
+          Vault Partners
+        </Text>
         {vaults?.items?.map((item: MenuSubEntry) => {
           return (
             <MenuEntry isMobile key={item.href} secondary isActive={item.href === location.pathname}>
               {item.icon && <MenuIcon icon={item.icon} />}
-              <MenuLink href={item.href}>
-                <LinkLabel>{item.label.toUpperCase()}</LinkLabel>
+              <MenuLink style={{ fontSize: 14, textTransform: "uppercase" }} href={item.href}>
+                <LinkLabel>{item.label}</LinkLabel>
               </MenuLink>
             </MenuEntry>
           );
         })}
 
         <StyledLinkSeparator />
-        <Heading glowing>Socials and More</Heading>
+        <Text glowing bold style={{ padding: "3px 0 3px 0" }}>
+          Socials and More
+        </Text>
         {socials.items?.map((item: MenuSubEntry) => {
           return (
             <MenuEntry isMobile key={item.href} secondary isActive={item.href === location.pathname}>
               {item.icon && <MenuIcon icon={item.icon} />}
-              <MenuLink href={item.href}>
-                <LinkLabel>{item.label.toUpperCase()}</LinkLabel>
+              <MenuLink style={{ fontSize: 14, textTransform: "uppercase" }} href={item.href}>
+                <LinkLabel>{item.label}</LinkLabel>
               </MenuLink>
             </MenuEntry>
           );
