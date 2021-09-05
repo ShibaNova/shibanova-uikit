@@ -2656,26 +2656,26 @@ var SideBar = function (_a) {
             React.createElement(Icon$k, { onClick: onDismiss })),
         React.createElement("div", { style: { marginLeft: -20 } }, price),
         React.createElement(StyledLinkList, null,
-            React.createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "ShibaNova"),
+            React.createElement(Heading, { glowing: true }, "ShibaNova"),
             links.slice(0, links.length - 2).map(function (entry) { return (React.createElement(MenuEntry, { onClick: onDismiss, isMobile: true, key: entry.href, isActive: entry.href === location.pathname },
                 entry.icon && React.createElement(MenuIcon, { icon: entry.icon }),
-                React.createElement(MenuLink, { style: { fontSize: 16, textTransform: "uppercase" }, href: entry.href },
-                    React.createElement(LinkLabel, null, entry.label)))); }),
+                React.createElement(MenuLink, { href: entry.href },
+                    React.createElement(LinkLabel, null, entry.label.toUpperCase())))); }),
             React.createElement(StyledLinkSeparator, null),
-            React.createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "Vault Partners"), (_b = vaults === null || vaults === void 0 ? void 0 : vaults.items) === null || _b === void 0 ? void 0 :
+            React.createElement(Heading, { glowing: true }, "Vault Partners"), (_b = vaults === null || vaults === void 0 ? void 0 : vaults.items) === null || _b === void 0 ? void 0 :
             _b.map(function (item) {
                 return (React.createElement(MenuEntry, { isMobile: true, key: item.href, secondary: true, isActive: item.href === location.pathname },
                     item.icon && React.createElement(MenuIcon, { icon: item.icon }),
-                    React.createElement(MenuLink, { style: { fontSize: 14, textTransform: "uppercase" }, href: item.href },
-                        React.createElement(LinkLabel, null, item.label))));
+                    React.createElement(MenuLink, { href: item.href },
+                        React.createElement(LinkLabel, null, item.label.toUpperCase()))));
             }),
             React.createElement(StyledLinkSeparator, null),
-            React.createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "Socials and More"), (_c = socials.items) === null || _c === void 0 ? void 0 :
+            React.createElement(Heading, { glowing: true }, "Socials and More"), (_c = socials.items) === null || _c === void 0 ? void 0 :
             _c.map(function (item) {
                 return (React.createElement(MenuEntry, { isMobile: true, key: item.href, secondary: true, isActive: item.href === location.pathname },
                     item.icon && React.createElement(MenuIcon, { icon: item.icon }),
-                    React.createElement(MenuLink, { style: { fontSize: 14, textTransform: "uppercase" }, href: item.href },
-                        React.createElement(LinkLabel, null, item.label))));
+                    React.createElement(MenuLink, { href: item.href },
+                        React.createElement(LinkLabel, null, item.label.toUpperCase()))));
             }))));
 };
 var templateObject_1$G, templateObject_2$f, templateObject_3$7, templateObject_4$4;
