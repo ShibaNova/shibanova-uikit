@@ -4,6 +4,11 @@ export interface LangType {
     code: string;
     language: string;
 }
+export interface Language {
+    code: string;
+    language: string;
+    locale: string;
+}
 export interface Profile {
     username?: string;
     image?: string;
