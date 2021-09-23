@@ -558,10 +558,10 @@ var variants = {
 
 var breakpointMap = {
     xs: 370,
-    sm: 576,
-    md: 952,
-    lg: 1420,
-    xl: 1660,
+    sm: 476,
+    md: 652,
+    lg: 1020,
+    xl: 1360,
 };
 var breakpoints = Object.values(breakpointMap).map(function (breakpoint) { return breakpoint + "px"; });
 var mediaQueries$1 = {
@@ -2564,7 +2564,7 @@ var templateObject_1$a;
 
 var links = [
     {
-        label: "Dashboard",
+        label: "Home",
         href: "/",
     },
     {
@@ -2572,33 +2572,33 @@ var links = [
         href: "https://swap.shibanova.io",
         button: true,
     },
-    {
-        label: "Farms",
-        href: "/farms",
-    },
-    {
-        label: "Pools",
-        href: "/pools",
-    },
     // {
-    //   label: "Vaults",
-    //   href: "https://app.crudeoil.finance/#/app/vaults",
+    //   label: "Audits",
+    //   icon: "ShibaNovaAuditIcon",
+    //   href: "https://docs.shibanova.io/shibanova-documentation/security/audits",
     // },
     {
-        label: "Audits",
-        icon: "ShibaNovaAuditIcon",
-        href: "https://docs.shibanova.io/shibanova-documentation/security/audits",
-    },
-    {
-        label: "Vault Partners",
+        label: "Earn",
         icon: "MoreIcon",
         items: [
             {
-                label: "CrudeOil",
+                label: "Dashboard",
+                href: "/dashboard",
+            },
+            {
+                label: "Farms",
+                href: "/farms",
+            },
+            {
+                label: "Pools",
+                href: "/pools",
+            },
+            {
+                label: "CrudeOil Vault",
                 href: "https://app.crudeoil.finance/#/app/vaults",
             },
             {
-                label: "AutoShark",
+                label: "AutoShark Vault",
                 href: "https://autoshark.finance/vaults",
             },
         ],
@@ -2635,7 +2635,7 @@ var links = [
         ],
     },
 ];
-var MENU_HEIGHT = 200;
+var MENU_HEIGHT = 48;
 var MENU_HEIGHT_MOBILE = 64;
 var MENU_ENTRY_HEIGHT = 48;
 
@@ -3043,7 +3043,7 @@ var SideBar = function (_a) {
                 React__default['default'].createElement(MenuLink, { style: { fontSize: 16, textTransform: "uppercase" }, href: entry.href },
                     React__default['default'].createElement(LinkLabel, null, entry.label)))); }),
             React__default['default'].createElement(StyledLinkSeparator, null),
-            React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "Vault Partners"), (_b = vaults === null || vaults === void 0 ? void 0 : vaults.items) === null || _b === void 0 ? void 0 :
+            React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "Earn"), (_b = vaults === null || vaults === void 0 ? void 0 : vaults.items) === null || _b === void 0 ? void 0 :
             _b.map(function (item) {
                 return (React__default['default'].createElement(MenuEntry, { isMobile: true, key: item.href, secondary: true, isActive: item.href === location.pathname },
                     item.icon && React__default['default'].createElement(MenuIcon, { icon: item.icon }),
@@ -3063,7 +3063,7 @@ var templateObject_1$4, templateObject_2$1, templateObject_3$1, templateObject_4
 
 var Wrapper = styled__default['default'].div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
 var PriceLink = styled__default['default'].a(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
-var StyledNav = styled__default['default'].nav(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  align-items: center;\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ", ";\n  border-bottom: ", ";\n\n  @media screen and (min-width: 1421px) {\n    padding: 40px 110px 110px 85px;\n  }\n  z-index: 20;\n"], ["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  align-items: center;\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ", ";\n  border-bottom: ", ";\n\n  @media screen and (min-width: 1421px) {\n    padding: 40px 110px 110px 85px;\n  }\n  z-index: 20;\n"])), function (_a) {
+var StyledNav = styled__default['default'].nav(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  align-items: center;\n  // padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ", ";\n  border-bottom: ", ";\n\n  @media screen and (min-width: 1421px) {\n    // padding: 40px 110px 110px 85px;\n  }\n  z-index: 20;\n"], ["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  align-items: center;\n  // padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ", ";\n  border-bottom: ", ";\n\n  @media screen and (min-width: 1421px) {\n    // padding: 40px 110px 110px 85px;\n  }\n  z-index: 20;\n"])), function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? "fixed" : "initial");
 }, function (_a) {

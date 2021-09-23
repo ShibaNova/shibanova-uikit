@@ -93,7 +93,7 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
         <StyledLinkSeparator />
 
         <Text glowing bold style={{ padding: "3px 0 3px 0" }}>
-          Vault Partners
+          Earn
         </Text>
         {vaults?.items?.map((item: MenuSubEntry) => {
           return (

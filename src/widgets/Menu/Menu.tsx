@@ -40,7 +40,7 @@ const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
   display: flex;
   // justify-content: space-between;
   align-items: center;
-  padding: ${({ isMobile }) => (isMobile ? "0 10px" : "40px 15px 110px 15px")};
+  // padding: ${({ isMobile }) => (isMobile ? "0 10px" : "40px 15px 110px 15px")};
   width: 100%;
   height: ${({ isMobile }) => (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT)}px;
   background: ${({ theme, isMobile }) =>
@@ -50,7 +50,7 @@ const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
   border-bottom: ${({ theme, isMobile }) => (isMobile ? `1px solid ${theme.colors.secondary}4f` : "none")};
 
   @media screen and (min-width: 1421px) {
-    padding: 40px 110px 110px 85px;
+    // padding: 40px 110px 110px 85px;
   }
   z-index: 20;
 `;

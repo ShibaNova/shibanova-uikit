@@ -1,6 +1,6 @@
 export const links = [
   {
-    label: "Dashboard",
+    label: "Home",
     href: "/",
   },
   {
@@ -8,34 +8,34 @@ export const links = [
     href: "https://swap.shibanova.io",
     button: true,
   },
-  {
-    label: "Farms",
-    href: "/farms",
-  },
-  {
-    label: "Pools",
-    href: "/pools",
-  },
+  
   // {
-  //   label: "Vaults",
-  //   href: "https://app.crudeoil.finance/#/app/vaults",
+  //   label: "Audits",
+  //   icon: "ShibaNovaAuditIcon",
+  //   href: "https://docs.shibanova.io/shibanova-documentation/security/audits",
   // },
-
   {
-    label: "Audits",
-    icon: "ShibaNovaAuditIcon",
-    href: "https://docs.shibanova.io/shibanova-documentation/security/audits",
-  },
-  {
-    label: "Vault Partners",
+    label: "Earn",
     icon: "MoreIcon",
     items: [
       {
-        label: "CrudeOil",        
+        label: "Dashboard",
+        href: "/dashboard",
+      },
+      {
+        label: "Farms",
+        href: "/farms",
+      },
+      {
+        label: "Pools",
+        href: "/pools",
+      },
+      {
+        label: "CrudeOil Vault",        
         href: "https://app.crudeoil.finance/#/app/vaults",
       },
       {
-        label: "AutoShark",        
+        label: "AutoShark Vault",        
         href: "https://autoshark.finance/vaults",
       },
     ],
@@ -84,7 +84,7 @@ export const more = [
   },
 ];
 
-export const MENU_HEIGHT = 200;
+export const MENU_HEIGHT = 48;
 export const MENU_HEIGHT_MOBILE = 64;
 export const MENU_ENTRY_HEIGHT = 48;
 export const SIDEBAR_WIDTH_FULL = 240;
