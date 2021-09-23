@@ -40,8 +40,8 @@ const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
   transition: top 0.2s;
   display: flex;
   // justify-content: space-between;
-  // align-items: center;
-  padding: ${({ isMobile }) => (isMobile ? "0 10px" : "0px 15px 40px 15px")};
+  // align-items: ${({ isMobile }) => (isMobile ? "center" : "none")};
+  padding: ${({ isMobile }) => (isMobile ? "0px 10px 10px 10px" : "0px 15px 40px 15px")};
   width: 100%;
   height: ${({ isMobile }) => (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT)}px;
   background: ${({ theme, isMobile }) =>
@@ -50,8 +50,8 @@ const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
       : theme.nav.background};
   border-bottom: ${({ theme, isMobile }) => (isMobile ? `1px solid ${theme.colors.secondary}4f` : "none")};
 
-  @media screen and (min-width: 1421px) {
-    // padding: 40px 110px 110px 85px;
+  @media screen and (min-width: 1021px) {
+    // padding: 0px 110px 110px 85px;
   }
   z-index: 20;
 `;
@@ -155,7 +155,7 @@ const Menu: React.FC<NavProps> = ({
           links={links}
           priceLink={priceLink}
         />
-        <Flex ml="auto" alignItems="center" style={{paddingTop:25}}>
+        <Flex ml="auto" alignItems="center" style={{paddingTop:30, paddingRight:50}}>
           {isXs || isSm ? null : renderPrice()}
           <UserBlock isMobile={isMobile} account={account} login={login} logout={logout} />
           {/* {profile && <Avatar profile={profile} />} */}

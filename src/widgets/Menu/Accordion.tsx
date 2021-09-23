@@ -28,7 +28,7 @@ const AccordionContent = styled.div<{ isOpen: boolean; maxHeight: number }>`
   box-shadow: ${({ theme, isOpen }) => (isOpen ? theme.shadows.active : "none")};
   border-radius: 10px;
   z-index: 1;
-  margin-top: 15px;
+  margin-top: 30px;
 `;
 
 const Accordion: React.FC<Props> = ({ label, initialOpenState = false, children, className }) => {
