@@ -2542,7 +2542,7 @@ MenuButton.defaultProps = {
 };
 var templateObject_1$b;
 
-var StyledLink = styled__default['default'](reactRouterDom.Link)(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 185px;\n    display: none;\n    ", " {\n      display: block;\n      margin-top: 10px;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 185px;\n    display: none;\n    ", " {\n      display: block;\n      margin-top: 10px;\n    }\n  }\n"])), function (_a) {
+var StyledLink = styled__default['default'](reactRouterDom.Link)(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 170px;\n    height: 70px;\n    display: none;\n    ", " {\n      display: block;\n      margin-top: 0px;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 170px;\n    height: 70px;\n    display: none;\n    ", " {\n      display: block;\n      margin-top: 0px;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 }, function (_a) {
@@ -2568,9 +2568,13 @@ var links = [
         href: "/",
     },
     {
-        label: "Exchange",
+        label: "NovaDEX",
         href: "https://swap.shibanova.io",
         button: true,
+    },
+    {
+        label: "NovaPad",
+        href: "/novapad",
     },
     // {
     //   label: "Audits",
@@ -2635,7 +2639,7 @@ var links = [
         ],
     },
 ];
-var MENU_HEIGHT = 48;
+var MENU_HEIGHT = 70;
 var MENU_HEIGHT_MOBILE = 64;
 var MENU_ENTRY_HEIGHT = 48;
 
@@ -2645,11 +2649,11 @@ var LinkLabel = styled__default['default'].div(templateObject_3$2 || (templateOb
     var glowing = _a.glowing, theme = _a.theme;
     return (glowing ? theme.shadows.text : "none");
 });
-var MenuEntry = styled__default['default'].div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: ", "px;\n  background-color: ", ";\n  color: ", ";\n  line-height: ", ";\n  margin: ", ";\n  // box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  ", " {\n    padding: 0 20px;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: "
+var MenuEntry = styled__default['default'].div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: ", "px; \n  background: ", ";\n  color: ", ";\n  line-height: ", ";\n  margin: ", ";\n  // box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  ", " {\n    padding: 0 20px;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: "
     /* eslint-disable */
     , 
     /* eslint-enable */
-    "px;\n  background-color: ", ";\n  color: ", ";\n  line-height: ", ";\n  margin: ", ";\n  // box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  ", " {\n    padding: 0 20px;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"])), function (_a) {
+    "px; \n  background: ", ";\n  color: ", ";\n  line-height: ", ";\n  margin: ", ";\n  // box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  ", " {\n    padding: 0 20px;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"])), function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? "auto" : MENU_ENTRY_HEIGHT + "px");
 }, function (_a) {
@@ -2697,8 +2701,14 @@ MenuEntry.defaultProps = {
 };
 var templateObject_1$9, templateObject_2$4, templateObject_3$2, templateObject_4$2;
 
-var Container$2 = styled__default['default'].div(templateObject_1$8 || (templateObject_1$8 = __makeTemplateObject(["\n  display: flex;\n  position: relative;\n  flex-direction: column;\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  display: flex;\n  position: relative;\n  flex-direction: column;\n  // Safari fix\n  flex-shrink: 0;\n"])));
-var AccordionContent = styled__default['default'].div(templateObject_2$3 || (templateObject_2$3 = __makeTemplateObject(["\n  position: absolute;\n  top: 100%;\n  max-height: ", ";\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n  box-shadow: ", ";\n  border-radius: 10px;\n  z-index: 1;\n"], ["\n  position: absolute;\n  top: 100%;\n  max-height: ", ";\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n  box-shadow: ", ";\n  border-radius: 10px;\n  z-index: 1;\n"])), function (_a) {
+var Container$2 = styled__default['default'].div(templateObject_1$8 || (templateObject_1$8 = __makeTemplateObject(["\n  // background: ", ";\n  display: flex;\n  position: relative;\n  flex-direction: column;\n  // Safari fix\n  flex-shrink: 0;\n"], ["\n  // background: ", ";\n  display: flex;\n  position: relative;\n  flex-direction: column;\n  // Safari fix\n  flex-shrink: 0;\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.gradients.background;
+});
+var AccordionContent = styled__default['default'].div(templateObject_2$3 || (templateObject_2$3 = __makeTemplateObject(["\n  // background: ", ";\n  position: absolute;\n  top: 100%;\n  max-height: ", ";\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n  box-shadow: ", ";\n  border-radius: 10px;\n  z-index: 1;\n  margin-top: 15px;\n"], ["\n  // background: ", ";\n  position: absolute;\n  top: 100%;\n  max-height: ", ";\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n  box-shadow: ", ";\n  border-radius: 10px;\n  z-index: 1;\n  margin-top: 15px;\n"])), function (_a) {
+    var theme = _a.theme, isOpen = _a.isOpen;
+    return (isOpen ? theme.colors.gradients.background : "none");
+}, function (_a) {
     var isOpen = _a.isOpen, maxHeight = _a.maxHeight;
     return (isOpen ? maxHeight + "px" : 0);
 }, function (_a) {
@@ -2989,7 +2999,7 @@ var useWalletModal = function (login, logout, account) {
     return { onPresentConnectModal: onPresentConnectModal, onPresentAccountModal: onPresentAccountModal };
 };
 
-var Container = styled__default['default'].div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  margin-left: 8px;\n  ", " {\n    margin-left: 32px;\n  }\n"], ["\n  margin-left: 8px;\n  ", " {\n    margin-left: 32px;\n  }\n"])), function (_a) {
+var Container = styled__default['default'].div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  margin-left: 8px;\n  \n  ", " {\n    margin-left: 32px;\n  }\n"], ["\n  margin-left: 8px;\n  \n  ", " {\n    margin-left: 32px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xl;
 });
@@ -3062,8 +3072,8 @@ var SideBar = function (_a) {
 var templateObject_1$4, templateObject_2$1, templateObject_3$1, templateObject_4$1;
 
 var Wrapper = styled__default['default'].div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
-var PriceLink = styled__default['default'].a(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
-var StyledNav = styled__default['default'].nav(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  align-items: center;\n  // padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ", ";\n  border-bottom: ", ";\n\n  @media screen and (min-width: 1421px) {\n    // padding: 40px 110px 110px 85px;\n  }\n  z-index: 20;\n"], ["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  align-items: center;\n  // padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ", ";\n  border-bottom: ", ";\n\n  @media screen and (min-width: 1421px) {\n    // padding: 40px 110px 110px 85px;\n  }\n  z-index: 20;\n"])), function (_a) {
+var PriceLink = styled__default['default'].a(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  margin-top: 15px;\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  margin-top: 15px;\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
+var StyledNav = styled__default['default'].nav(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  // align-items: center;\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ", ";\n  border-bottom: ", ";\n\n  @media screen and (min-width: 1421px) {\n    // padding: 40px 110px 110px 85px;\n  }\n  z-index: 20;\n"], ["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  // align-items: center;\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ", ";\n  border-bottom: ", ";\n\n  @media screen and (min-width: 1421px) {\n    // padding: 40px 110px 110px 85px;\n  }\n  z-index: 20;\n"])), function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? "fixed" : "initial");
 }, function (_a) {
@@ -3071,7 +3081,7 @@ var StyledNav = styled__default['default'].nav(templateObject_3 || (templateObje
     return (showMenu ? 0 : "-" + MENU_HEIGHT + "px");
 }, function (_a) {
     var isMobile = _a.isMobile;
-    return (isMobile ? "0 10px" : "40px 15px 110px 15px");
+    return (isMobile ? "0 10px" : "0px 15px 40px 15px");
 }, function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT);
@@ -3139,7 +3149,7 @@ var Menu = function (_a) {
             React__default['default'].createElement(Logo, { isMobile: isMobile, showSideBar: function () { return setShowSideBar(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             React__default['default'].createElement(SideBar, { open: showSideBar, price: renderPrice(), onDismiss: function () { return setShowSideBar(false); }, links: links }),
             React__default['default'].createElement(NavBar, { isMobile: isMobile, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, novaPriceUsd: novaPriceUsd, links: links, priceLink: priceLink }),
-            React__default['default'].createElement(Flex, { ml: "auto", alignItems: "center" },
+            React__default['default'].createElement(Flex, { ml: "auto", alignItems: "center", style: { paddingTop: 20 } },
                 isXs || isSm ? null : renderPrice(),
                 React__default['default'].createElement(UserBlock, { isMobile: isMobile, account: account, login: login, logout: logout }))),
         React__default['default'].createElement(BodyWrapper, null,

@@ -46,8 +46,8 @@ const MenuEntry = styled.div<Props>`
     /* eslint-disable */
     ({ isMobile, secondary }) => (isMobile ? (secondary ? 16 : 18) : 15)
     /* eslint-enable */
-  }px;
-  background-color: ${({ secondary, theme, isMobile }) => (secondary && !isMobile ? theme.colors.card : "transparent")};
+  }px; 
+  background: ${({ secondary, theme, isMobile }) => (secondary && !isMobile ? theme.colors.card : "transparent")};
   color: ${({ theme, isActive }) => (isActive ? theme.colors.primary : theme.colors.text)};
   line-height: ${({ isMobile }) => (isMobile ? "1.5" : "inherit")};
   margin: ${({ isMobile }) => (isMobile ? "10px 0" : "0")};

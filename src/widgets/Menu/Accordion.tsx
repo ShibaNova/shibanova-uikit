@@ -10,6 +10,7 @@ interface Props {
 }
 
 const Container = styled.div`
+  // background: ${({ theme }) => theme.colors.gradients.background};
   display: flex;
   position: relative;
   flex-direction: column;
@@ -18,6 +19,7 @@ const Container = styled.div`
 `;
 
 const AccordionContent = styled.div<{ isOpen: boolean; maxHeight: number }>`
+  // background: ${({ theme, isOpen }) => (isOpen ? theme.colors.gradients.background : "none")};
   position: absolute;
   top: 100%;
   max-height: ${({ isOpen, maxHeight }) => (isOpen ? `${maxHeight}px` : 0)};
@@ -26,6 +28,7 @@ const AccordionContent = styled.div<{ isOpen: boolean; maxHeight: number }>`
   box-shadow: ${({ theme, isOpen }) => (isOpen ? theme.shadows.active : "none")};
   border-radius: 10px;
   z-index: 1;
+  margin-top: 15px;
 `;
 
 const Accordion: React.FC<Props> = ({ label, initialOpenState = false, children, className }) => {

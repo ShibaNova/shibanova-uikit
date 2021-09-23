@@ -4,11 +4,14 @@ export const links = [
     href: "/",
   },
   {
-    label: "Exchange",
+    label: "NovaDEX",
     href: "https://swap.shibanova.io",
     button: true,
   },
-  
+  {
+    label: "NovaPad",
+    href: "/novapad",
+  },  
   // {
   //   label: "Audits",
   //   icon: "ShibaNovaAuditIcon",
@@ -84,7 +87,7 @@ export const more = [
   },
 ];
 
-export const MENU_HEIGHT = 48;
+export const MENU_HEIGHT = 70;
 export const MENU_HEIGHT_MOBILE = 64;
 export const MENU_ENTRY_HEIGHT = 48;
 export const SIDEBAR_WIDTH_FULL = 240;

@@ -36,11 +36,11 @@ const NavBar: React.FC<Props> = ({ isMobile, links }) => {
                 key={entry.label}
                 label={entry.label.toUpperCase()}
                 initialOpenState={entry.initialOpenState}
-                className={calloutClass}
+                className={calloutClass}            
               >
                 {entry.items.map((item) => {
                   return (
-                    <MenuEntry key={item.href} secondary isActive={item.href === location.pathname}>
+                    <MenuEntry key={item.href} secondary isActive={item.href === location.pathname} >
                       {item.icon && <MenuIcon icon={item.icon} />}
                       <MenuLink href={item.href}>{item.label}</MenuLink>
                     </MenuEntry>

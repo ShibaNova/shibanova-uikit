@@ -13,6 +13,7 @@ interface Props {
 
 const Container = styled.div`
   margin-left: 8px;
+  
   ${({ theme }) => theme.mediaQueries.xl} {
     margin-left: 32px;
   }

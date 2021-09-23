@@ -20,6 +20,7 @@ const Wrapper = styled.div`
 `;
 
 const PriceLink = styled.a`
+  margin-top: 15px;
   display: flex;
   align-items: center;
   svg {
@@ -39,8 +40,8 @@ const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
   transition: top 0.2s;
   display: flex;
   // justify-content: space-between;
-  align-items: center;
-  // padding: ${({ isMobile }) => (isMobile ? "0 10px" : "40px 15px 110px 15px")};
+  // align-items: center;
+  padding: ${({ isMobile }) => (isMobile ? "0 10px" : "0px 15px 40px 15px")};
   width: 100%;
   height: ${({ isMobile }) => (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT)}px;
   background: ${({ theme, isMobile }) =>
@@ -154,7 +155,7 @@ const Menu: React.FC<NavProps> = ({
           links={links}
           priceLink={priceLink}
         />
-        <Flex ml="auto" alignItems="center">
+        <Flex ml="auto" alignItems="center" style={{paddingTop:20}}>
           {isXs || isSm ? null : renderPrice()}
           <UserBlock isMobile={isMobile} account={account} login={login} logout={logout} />
           {/* {profile && <Avatar profile={profile} />} */}
