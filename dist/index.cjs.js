@@ -2542,7 +2542,7 @@ MenuButton.defaultProps = {
 };
 var templateObject_1$b;
 
-var StyledLink = styled__default['default'](reactRouterDom.Link)(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 170px;\n    height: 70px;\n    display: none;\n    ", " {\n      display: block;\n      margin-top: 0px;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 170px;\n    height: 70px;\n    display: none;\n    ", " {\n      display: block;\n      margin-top: 0px;\n    }\n  }\n"])), function (_a) {
+var StyledLink = styled__default['default'](reactRouterDom.Link)(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 175px;\n    display: none;\n    ", " {\n      display: block;\n      margin-top: 0px;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 175px;\n    display: none;\n    ", " {\n      display: block;\n      margin-top: 0px;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 }, function (_a) {
@@ -2639,7 +2639,7 @@ var links = [
         ],
     },
 ];
-var MENU_HEIGHT = 70;
+var MENU_HEIGHT = 60;
 var MENU_HEIGHT_MOBILE = 64;
 var MENU_ENTRY_HEIGHT = 48;
 
@@ -2748,7 +2748,7 @@ var MenuIcon = function (_a) {
     return React__default['default'].createElement(Icon, __assign({}, iconProps, { mr: "5px" }));
 };
 
-var Container$1 = styled__default['default'].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n"], ["\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n"])));
+var Container$1 = styled__default['default'].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  margin-top: 5px;\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n"], ["\n  margin-top: 5px;\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n"])));
 var NavBar = function (_a) {
     var isMobile = _a.isMobile, links = _a.links;
     var location = reactRouterDom.useLocation();
@@ -3072,7 +3072,7 @@ var SideBar = function (_a) {
 var templateObject_1$4, templateObject_2$1, templateObject_3$1, templateObject_4$1;
 
 var Wrapper = styled__default['default'].div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
-var PriceLink = styled__default['default'].a(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  margin-top: 15px;\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  margin-top: 15px;\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
+var PriceLink = styled__default['default'].a(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  \n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  \n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
 var StyledNav = styled__default['default'].nav(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  // align-items: center;\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ", ";\n  border-bottom: ", ";\n\n  @media screen and (min-width: 1421px) {\n    // padding: 40px 110px 110px 85px;\n  }\n  z-index: 20;\n"], ["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  // align-items: center;\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ", ";\n  border-bottom: ", ";\n\n  @media screen and (min-width: 1421px) {\n    // padding: 40px 110px 110px 85px;\n  }\n  z-index: 20;\n"])), function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? "fixed" : "initial");
@@ -3149,7 +3149,7 @@ var Menu = function (_a) {
             React__default['default'].createElement(Logo, { isMobile: isMobile, showSideBar: function () { return setShowSideBar(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             React__default['default'].createElement(SideBar, { open: showSideBar, price: renderPrice(), onDismiss: function () { return setShowSideBar(false); }, links: links }),
             React__default['default'].createElement(NavBar, { isMobile: isMobile, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, novaPriceUsd: novaPriceUsd, links: links, priceLink: priceLink }),
-            React__default['default'].createElement(Flex, { ml: "auto", alignItems: "center", style: { paddingTop: 20 } },
+            React__default['default'].createElement(Flex, { ml: "auto", alignItems: "center", style: { paddingTop: 25 } },
                 isXs || isSm ? null : renderPrice(),
                 React__default['default'].createElement(UserBlock, { isMobile: isMobile, account: account, login: login, logout: logout }))),
         React__default['default'].createElement(BodyWrapper, null,

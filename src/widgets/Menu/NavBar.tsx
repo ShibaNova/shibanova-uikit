@@ -13,6 +13,7 @@ interface Props extends PanelProps {
 }
 
 const Container = styled.div`
+  margin-top: 5px;
   display: flex;
   flex-direction: row;
   height: 100%;

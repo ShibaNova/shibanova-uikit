@@ -20,7 +20,7 @@ const Wrapper = styled.div`
 `;
 
 const PriceLink = styled.a`
-  margin-top: 15px;
+  
   display: flex;
   align-items: center;
   svg {
@@ -155,7 +155,7 @@ const Menu: React.FC<NavProps> = ({
           links={links}
           priceLink={priceLink}
         />
-        <Flex ml="auto" alignItems="center" style={{paddingTop:20}}>
+        <Flex ml="auto" alignItems="center" style={{paddingTop:25}}>
           {isXs || isSm ? null : renderPrice()}
           <UserBlock isMobile={isMobile} account={account} login={login} logout={logout} />
           {/* {profile && <Avatar profile={profile} />} */}
