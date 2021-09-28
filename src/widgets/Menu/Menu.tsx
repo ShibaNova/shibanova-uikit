@@ -40,15 +40,16 @@ const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
   transition: top 0.2s;
   display: flex;
   // justify-content: space-between;
-  // align-items: ${({ isMobile }) => (isMobile ? "center" : "none")};
-  padding: ${({ isMobile }) => (isMobile ? "0px 10px 10px 10px" : "0px 15px 40px 15px")};
+   align-items: ${({ isMobile }) => (isMobile ? "center" : "none")};
+  padding: ${({ isMobile }) => (isMobile ? "0px 10px 10px 10px" : "5px 15px 40px 15px")};
   width: 100%;
   height: ${({ isMobile }) => (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT)}px;
-  background: ${({ theme, isMobile }) =>
+  background: transparent;
+  // background: ${({ theme, isMobile }) =>
     isMobile
       ? "linear-gradient(90deg, rgba(6,26,84,1) 0%, rgba(6,28,124,1) 40%, rgba(6,28,124,1) 60%, rgba(4,2,66,1) 100%);"
       : theme.nav.background};
-  border-bottom: ${({ theme, isMobile }) => (isMobile ? `1px solid ${theme.colors.secondary}4f` : "none")};
+  // border-bottom: ${({ theme, isMobile }) => (isMobile ? `1px solid ${theme.colors.secondary}4f` : "none")};
 
   @media screen and (min-width: 1021px) {
     // padding: 0px 110px 110px 85px;

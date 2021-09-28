@@ -2636,11 +2636,11 @@ var LinkLabel = styled.div(templateObject_3$2 || (templateObject_3$2 = __makeTem
     var glowing = _a.glowing, theme = _a.theme;
     return (glowing ? theme.shadows.text : "none");
 });
-var MenuEntry = styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: ", "px; \n  background: ", ";\n  color: ", ";\n  line-height: ", ";\n  margin: ", ";\n  // box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  ", " {\n    padding: 0 20px;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: "
+var MenuEntry = styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: ", "px; \n  \n  background: ", ";\n  color: ", ";\n  line-height: ", ";\n  margin: ", ";\n  // box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  ", " {\n    padding: 0 20px;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: "
     /* eslint-disable */
     , 
     /* eslint-enable */
-    "px; \n  background: ", ";\n  color: ", ";\n  line-height: ", ";\n  margin: ", ";\n  // box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  ", " {\n    padding: 0 20px;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"])), function (_a) {
+    "px; \n  \n  background: ", ";\n  color: ", ";\n  line-height: ", ";\n  margin: ", ";\n  // box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  ", " {\n    padding: 0 20px;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"])), function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? "auto" : MENU_ENTRY_HEIGHT + "px");
 }, function (_a) {
@@ -2654,8 +2654,8 @@ function (_a) {
 }
 /* eslint-enable */
 , function (_a) {
-    var secondary = _a.secondary, theme = _a.theme, isMobile = _a.isMobile;
-    return (secondary && !isMobile ? theme.colors.card : "transparent");
+    var secondary = _a.secondary; _a.theme; var isMobile = _a.isMobile;
+    return (secondary && !isMobile ? "#0b23a280" : "transparent");
 }, function (_a) {
     var theme = _a.theme, isActive = _a.isActive;
     return (isActive ? theme.colors.primary : theme.colors.text);
@@ -2711,7 +2711,7 @@ var Accordion = function (_a) {
     return (React.createElement(Container$2, null,
         React.createElement(MenuEntry, { onClick: handleClick, className: className },
             React.createElement(LinkLabel, null, label)),
-        React.createElement(AccordionContent, { isOpen: isOpen, maxHeight: React.Children.count(children) * MENU_ENTRY_HEIGHT }, children)));
+        React.createElement(AccordionContent, { onClick: handleClick, isOpen: isOpen, maxHeight: React.Children.count(children) * MENU_ENTRY_HEIGHT }, children)));
 };
 var templateObject_1$8, templateObject_2$3;
 
@@ -3060,7 +3060,7 @@ var templateObject_1$4, templateObject_2$1, templateObject_3$1, templateObject_4
 
 var Wrapper = styled.div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
 var PriceLink = styled.a(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  \n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  \n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
-var StyledNav = styled.nav(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  // align-items: ", ";\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ", ";\n  border-bottom: ", ";\n\n  @media screen and (min-width: 1021px) {\n    // padding: 0px 110px 110px 85px;\n  }\n  z-index: 20;\n"], ["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n  // align-items: ", ";\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: ", ";\n  border-bottom: ", ";\n\n  @media screen and (min-width: 1021px) {\n    // padding: 0px 110px 110px 85px;\n  }\n  z-index: 20;\n"])), function (_a) {
+var StyledNav = styled.nav(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n   align-items: ", ";\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: transparent;\n  // background: ", ";\n  // border-bottom: ", ";\n\n  @media screen and (min-width: 1021px) {\n    // padding: 0px 110px 110px 85px;\n  }\n  z-index: 20;\n"], ["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n   align-items: ", ";\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: transparent;\n  // background: ", ";\n  // border-bottom: ", ";\n\n  @media screen and (min-width: 1021px) {\n    // padding: 0px 110px 110px 85px;\n  }\n  z-index: 20;\n"])), function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? "fixed" : "initial");
 }, function (_a) {
@@ -3071,7 +3071,7 @@ var StyledNav = styled.nav(templateObject_3 || (templateObject_3 = __makeTemplat
     return (isMobile ? "center" : "none");
 }, function (_a) {
     var isMobile = _a.isMobile;
-    return (isMobile ? "0px 10px 10px 10px" : "0px 15px 40px 15px");
+    return (isMobile ? "0px 10px 10px 10px" : "5px 15px 40px 15px");
 }, function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT);
