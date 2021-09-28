@@ -2626,7 +2626,7 @@ var links = [
         ],
     },
 ];
-var MENU_HEIGHT = 60;
+var MENU_HEIGHT = 68;
 var MENU_HEIGHT_MOBILE = 68;
 var MENU_ENTRY_HEIGHT = 48;
 
@@ -2654,8 +2654,8 @@ function (_a) {
 }
 /* eslint-enable */
 , function (_a) {
-    var secondary = _a.secondary; _a.theme; var isMobile = _a.isMobile;
-    return (secondary && !isMobile ? "#0b23a280" : "transparent");
+    var secondary = _a.secondary, theme = _a.theme, isMobile = _a.isMobile;
+    return (secondary && !isMobile ? theme.colors.card : "transparent");
 }, function (_a) {
     var theme = _a.theme, isActive = _a.isActive;
     return (isActive ? theme.colors.primary : theme.colors.text);

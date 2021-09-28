@@ -87,7 +87,7 @@ export const more = [
   },
 ];
 
-export const MENU_HEIGHT = 60;
+export const MENU_HEIGHT = 68;
 export const MENU_HEIGHT_MOBILE = 68;
 export const MENU_ENTRY_HEIGHT = 48;
 export const SIDEBAR_WIDTH_FULL = 240;
