@@ -41,7 +41,7 @@ const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
   display: flex;
   // justify-content: space-between;
    align-items: ${({ isMobile }) => (isMobile ? "center" : "none")};
-  padding: ${({ isMobile }) => (isMobile ? "0px 10px 10px 10px" : "5px 15px 40px 15px")};
+  padding: ${({ isMobile }) => (isMobile ? "0px 10px 10px 10px" : "5px 25px 40px 15px")};
   width: 100%;
   height: ${({ isMobile }) => (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT)}px;
   background: transparent;
