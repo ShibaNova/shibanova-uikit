@@ -1295,7 +1295,7 @@ var templateObject_1$h, templateObject_2$8, templateObject_3$5, templateObject_4
 
 var Handle = styled__default['default'].div(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 50%;\n  cursor: pointer;\n  height: 32px;\n  left: 4px;\n  position: absolute;\n  top: 4px;\n  transition: left 200ms ease-in;\n  width: 32px;\n  z-index: 1;\n"], ["\n  background-color: ", ";\n  border-radius: 50%;\n  cursor: pointer;\n  height: 32px;\n  left: 4px;\n  position: absolute;\n  top: 4px;\n  transition: left 200ms ease-in;\n  width: 32px;\n  z-index: 1;\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.toggle.handleBackground;
+    return theme.colors.secondary;
 });
 var Input = styled__default['default'].input(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: calc(100% - 36px);\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"], ["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: calc(100% - 36px);\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"])), Handle, Handle, function (_a) {
     var theme = _a.theme;
@@ -1306,7 +1306,7 @@ var Input = styled__default['default'].input(templateObject_2$7 || (templateObje
 });
 var StyledToggle = styled__default['default'].div(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: 40px;\n  position: relative;\n  transition: background-color 200ms;\n  width: 72px;\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: 40px;\n  position: relative;\n  transition: background-color 200ms;\n  width: 72px;\n"])), function (_a) {
     var theme = _a.theme, checked = _a.checked;
-    return theme.colors[checked ? "success" : "tertiary"];
+    return theme.colors[checked ? "success" : "background"];
 }, function (_a) {
     var theme = _a.theme;
     return theme.shadows.inset;
@@ -3050,23 +3050,23 @@ var SideBar = function (_a) {
             React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "ShibaNova"),
             links.slice(0, links.length - 2).map(function (entry) { return (React__default['default'].createElement(MenuEntry, { onClick: onDismiss, isMobile: true, key: entry.href, isActive: entry.href === location.pathname },
                 entry.icon && React__default['default'].createElement(MenuIcon, { icon: entry.icon }),
-                React__default['default'].createElement(MenuLink, { style: { fontSize: 16, textTransform: "uppercase" }, href: entry.href },
-                    React__default['default'].createElement(LinkLabel, null, entry.label)))); }),
+                React__default['default'].createElement(MenuLink, { onClick: onDismiss, style: { fontSize: 16, textTransform: "uppercase" }, href: entry.href },
+                    React__default['default'].createElement(LinkLabel, { onClick: onDismiss }, entry.label)))); }),
             React__default['default'].createElement(StyledLinkSeparator, null),
             React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "Earn"), (_b = vaults === null || vaults === void 0 ? void 0 : vaults.items) === null || _b === void 0 ? void 0 :
             _b.map(function (item) {
-                return (React__default['default'].createElement(MenuEntry, { isMobile: true, key: item.href, secondary: true, isActive: item.href === location.pathname },
+                return (React__default['default'].createElement(MenuEntry, { onClick: onDismiss, isMobile: true, key: item.href, secondary: true, isActive: item.href === location.pathname },
                     item.icon && React__default['default'].createElement(MenuIcon, { icon: item.icon }),
-                    React__default['default'].createElement(MenuLink, { style: { fontSize: 14, textTransform: "uppercase" }, href: item.href },
-                        React__default['default'].createElement(LinkLabel, null, item.label))));
+                    React__default['default'].createElement(MenuLink, { onClick: onDismiss, style: { fontSize: 14, textTransform: "uppercase" }, href: item.href },
+                        React__default['default'].createElement(LinkLabel, { onClick: onDismiss }, item.label))));
             }),
             React__default['default'].createElement(StyledLinkSeparator, null),
             React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "Socials and More"), (_c = socials.items) === null || _c === void 0 ? void 0 :
             _c.map(function (item) {
-                return (React__default['default'].createElement(MenuEntry, { isMobile: true, key: item.href, secondary: true, isActive: item.href === location.pathname },
+                return (React__default['default'].createElement(MenuEntry, { onClick: onDismiss, isMobile: true, key: item.href, secondary: true, isActive: item.href === location.pathname },
                     item.icon && React__default['default'].createElement(MenuIcon, { icon: item.icon }),
-                    React__default['default'].createElement(MenuLink, { style: { fontSize: 14, textTransform: "uppercase" }, href: item.href },
-                        React__default['default'].createElement(LinkLabel, null, item.label))));
+                    React__default['default'].createElement(MenuLink, { onClick: onDismiss, style: { fontSize: 14, textTransform: "uppercase" }, href: item.href },
+                        React__default['default'].createElement(LinkLabel, { onClick: onDismiss }, item.label))));
             }))));
 };
 var templateObject_1$4, templateObject_2$1, templateObject_3$1, templateObject_4$1;

@@ -84,8 +84,8 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
         {links.slice(0, links.length - 2).map((entry) => (
           <MenuEntry onClick={onDismiss} isMobile key={entry.href} isActive={entry.href === location.pathname}>
             {entry.icon && <MenuIcon icon={entry.icon} />}
-            <MenuLink style={{ fontSize: 16, textTransform: "uppercase" }} href={entry.href}>
-              <LinkLabel>{entry.label}</LinkLabel>
+            <MenuLink onClick={onDismiss} style={{ fontSize: 16, textTransform: "uppercase" }} href={entry.href}>
+              <LinkLabel onClick={onDismiss}>{entry.label}</LinkLabel>
             </MenuLink>
           </MenuEntry>
         ))}
@@ -97,10 +97,10 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
         </Text>
         {vaults?.items?.map((item: MenuSubEntry) => {
           return (
-            <MenuEntry isMobile key={item.href} secondary isActive={item.href === location.pathname}>
+            <MenuEntry onClick={onDismiss} isMobile key={item.href} secondary isActive={item.href === location.pathname}>
               {item.icon && <MenuIcon icon={item.icon} />}
-              <MenuLink style={{ fontSize: 14, textTransform: "uppercase" }} href={item.href}>
-                <LinkLabel>{item.label}</LinkLabel>
+              <MenuLink onClick={onDismiss} style={{ fontSize: 14, textTransform: "uppercase" }} href={item.href}>
+                <LinkLabel onClick={onDismiss}>{item.label}</LinkLabel>
               </MenuLink>
             </MenuEntry>
           );
@@ -112,10 +112,10 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
         </Text>
         {socials.items?.map((item: MenuSubEntry) => {
           return (
-            <MenuEntry isMobile key={item.href} secondary isActive={item.href === location.pathname}>
+            <MenuEntry onClick={onDismiss} isMobile key={item.href} secondary isActive={item.href === location.pathname}>
               {item.icon && <MenuIcon icon={item.icon} />}
-              <MenuLink style={{ fontSize: 14, textTransform: "uppercase" }} href={item.href}>
-                <LinkLabel>{item.label}</LinkLabel>
+              <MenuLink onClick={onDismiss} style={{ fontSize: 14, textTransform: "uppercase" }} href={item.href}>
+                <LinkLabel onClick={onDismiss}>{item.label}</LinkLabel>
               </MenuLink>
             </MenuEntry>
           );

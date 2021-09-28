@@ -41,10 +41,10 @@ const Accordion: React.FC<Props> = ({ label, initialOpenState = false, children,
   return (
     <Container>
       <MenuEntry onClick={handleClick} className={className}>
-        <LinkLabel>{label}</LinkLabel>
+        <LinkLabel >{label}</LinkLabel>
       </MenuEntry>
       <AccordionContent  onClick={handleClick} isOpen={isOpen} maxHeight={React.Children.count(children) * MENU_ENTRY_HEIGHT}>
-        {children}
+        {children} 
       </AccordionContent>
     </Container>
   );
