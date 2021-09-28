@@ -42,7 +42,7 @@ export const light: ButtonTheme = {
     borderColorHover: "currentColor",
     boxShadow: "none",
     boxShadowActive: "none",
-    color: lightColors.primary,
+    color: "white",
   },
   [DANGER]: {
     background: lightColors.failure,
@@ -90,7 +90,7 @@ export const dark: ButtonTheme = {
     backgroundActive: darkColors.tertiary,
     backgroundHover: darkColors.tertiary,
     color: darkColors.primary,
-  },
+  }, 
   [TEXT]: {
     ...light.text,
     backgroundHover: darkColors.tertiary,

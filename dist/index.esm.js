@@ -1864,7 +1864,7 @@ var light$6 = (_a$1 = {},
         borderColorHover: "currentColor",
         boxShadow: "none",
         boxShadowActive: "none",
-        color: lightColors.primary,
+        color: "white",
     },
     _a$1[DANGER] = {
         background: lightColors.failure,
@@ -2913,7 +2913,7 @@ var connectorLocalStorageKey = "connectorId";
 var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss, mb = _a.mb;
     var title = walletConfig.title, Icon = walletConfig.icon;
-    return (React.createElement(Button, { fullWidth: true, variant: "tertiary", onClick: function () {
+    return (React.createElement(Button, { fullWidth: true, variant: "secondary", onClick: function () {
             login(walletConfig.connectorId);
             window.localStorage.setItem(connectorLocalStorageKey, "1");
             onDismiss();
@@ -2968,7 +2968,7 @@ var templateObject_1$6, templateObject_2$2;
 var AccountModal = function (_a) {
     var account = _a.account, logout = _a.logout, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
     return (React.createElement(Modal, { title: "Your wallet", onDismiss: onDismiss },
-        React.createElement(Text, { fontSize: "20px", bold: true, style: { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" } }, account),
+        React.createElement(Text, { fontSize: "20px", bold: true, style: { color: "white", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" } }, account),
         React.createElement(Flex, { mb: "32px" },
             React.createElement(LinkExternal, { small: true, href: "https://bscscan.com/address/" + account, mr: "16px" }, "View on BscScan"),
             React.createElement(CopyToClipboard, { toCopy: account }, "Copy Address")),
@@ -2994,7 +2994,7 @@ var UserBlock = function (_a) {
     var account = _a.account, login = _a.login, logout = _a.logout, isMobile = _a.isMobile;
     var _b = useWalletModal(login, logout, account), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
     var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 4) : null;
-    return (React.createElement(Container, null, account ? (React.createElement(Button, { size: "sm", variant: "tertiary", onClick: function () {
+    return (React.createElement(Container, null, account ? (React.createElement(Button, { size: "sm", variant: "secondary", onClick: function () {
             onPresentAccountModal();
         } }, accountEllipsis)) : (React.createElement(Button, { size: "sm", style: { fontSize: isMobile ? 16 : 14 }, glowing: true, onClick: function () {
             onPresentConnectModal();
@@ -3139,7 +3139,7 @@ var Menu = function (_a) {
             React.createElement(Logo, { isMobile: isMobile, showSideBar: function () { return setShowSideBar(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             React.createElement(SideBar, { open: showSideBar, price: renderPrice(), onDismiss: function () { return setShowSideBar(false); }, links: links }),
             React.createElement(NavBar, { isMobile: isMobile, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, novaPriceUsd: novaPriceUsd, links: links, priceLink: priceLink }),
-            React.createElement(Flex, { ml: "auto", alignItems: "center", style: { paddingTop: 30, paddingRight: 50 } },
+            React.createElement(Flex, { ml: "auto", alignItems: "center", style: { paddingTop: 30, paddingRight: 70 } },
                 isXs || isSm ? null : renderPrice(),
                 React.createElement(UserBlock, { isMobile: isMobile, account: account, login: login, logout: logout }))),
         React.createElement(BodyWrapper, null,

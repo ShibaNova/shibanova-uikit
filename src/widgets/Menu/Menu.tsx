@@ -156,7 +156,7 @@ const Menu: React.FC<NavProps> = ({
           links={links}
           priceLink={priceLink}
         />
-        <Flex ml="auto" alignItems="center" style={{paddingTop:30, paddingRight:50}}>
+        <Flex ml="auto" alignItems="center" style={{paddingTop:30, paddingRight:70}}>
           {isXs || isSm ? null : renderPrice()}
           <UserBlock isMobile={isMobile} account={account} login={login} logout={logout} />
           {/* {profile && <Avatar profile={profile} />} */}

@@ -27,7 +27,7 @@ const UserBlock: React.FC<Props> = ({ account, login, logout, isMobile }) => {
       {account ? (
         <Button
           size="sm"
-          variant="tertiary"
+          variant="secondary"
           onClick={() => {
             onPresentAccountModal();
           }}
