@@ -1844,7 +1844,7 @@ var light$6 = (_a$1 = {},
         borderColorHover: lightColors.primaryBright,
         boxShadow: "none",
         boxShadowActive: "none",
-        color: lightColors.primary,
+        color: "white",
     },
     _a$1[TERTIARY] = {
         background: lightColors.tertiary,
@@ -3071,7 +3071,7 @@ var StyledNav = styled.nav(templateObject_3 || (templateObject_3 = __makeTemplat
     return (isMobile ? "center" : "none");
 }, function (_a) {
     var isMobile = _a.isMobile;
-    return (isMobile ? "0px 10px 10px 10px" : "5px 15px 40px 15px");
+    return (isMobile ? "0px 10px 10px 10px" : "5px 25px 40px 15px");
 }, function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT);
