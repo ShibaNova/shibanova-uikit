@@ -16,11 +16,11 @@ export declare const links: ({
     items: ({
         label: string;
         href: string;
-        target?: undefined;
+        external?: undefined;
     } | {
         label: string;
         href: string;
-        target: string;
+        external: boolean;
     })[];
     href?: undefined;
     button?: undefined;
@@ -31,7 +31,7 @@ export declare const links: ({
         label: string;
         icon: string;
         href: string;
-        target: string;
+        external: boolean;
     }[];
     href?: undefined;
     button?: undefined;

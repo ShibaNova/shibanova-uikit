@@ -2587,12 +2587,12 @@ var links = [
             {
                 label: "CrudeOil Vault",
                 href: "https://app.crudeoil.finance/#/app/vaults",
-                target: "_blank"
+                external: true,
             },
             {
                 label: "AutoShark Vault",
                 href: "https://autoshark.finance/vaults",
-                target: "_blank"
+                external: true,
             },
         ],
     },
@@ -2604,31 +2604,31 @@ var links = [
                 label: "Telegram",
                 icon: "TelegramIcon",
                 href: "https://t.me/ShibaNovaDEX",
-                target: "_blank"
+                external: true,
             },
             {
                 label: "Twitter",
                 icon: "TwitterIcon",
                 href: "https://twitter.com/ShibaNovaDefi",
-                target: "_blank"
+                external: true,
             },
             {
                 label: "Medium",
                 icon: "MediumIcon",
                 href: "https://shibanova.medium.com/",
-                target: "_blank"
+                external: true,
             },
             {
                 label: "Github",
                 icon: "GithubIcon",
                 href: "https://github.com/ShibaNova",
-                target: "_blank"
+                external: true,
             },
             {
                 label: "Docs",
                 icon: "BookIcon",
                 href: "https://docs.shibanova.io",
-                target: "_blank"
+                external: true,
             },
         ],
     },
@@ -2755,12 +2755,12 @@ var NavBar = function (_a) {
                 return (React.createElement(Accordion, { key: entry.label, label: entry.label.toUpperCase(), initialOpenState: entry.initialOpenState, className: calloutClass }, entry.items.map(function (item) {
                     return (React.createElement(MenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname },
                         item.icon && React.createElement(MenuIcon, { icon: item.icon }),
-                        React.createElement(MenuLink, { href: item.href }, item.label)));
+                        React.createElement(MenuLink, __assign({ href: item.href }, (item.external ? getExternalLinkProps() : {})), item.label)));
                 })));
             }
             return (React.createElement(MenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
                 entry.icon && React.createElement(MenuIcon, { icon: entry.icon }),
-                React.createElement(MenuLink, { href: entry.href }, entry.button ? (React.createElement(ButtonLabel, { size: "sm" }, entry.label.toUpperCase())) : (React.createElement(LinkLabel, null, entry.label.toUpperCase())))));
+                React.createElement(MenuLink, __assign({ href: entry.href }, (entry.external ? getExternalLinkProps() : {})), entry.button ? (React.createElement(ButtonLabel, { size: "sm" }, entry.label.toUpperCase())) : (React.createElement(LinkLabel, null, entry.label.toUpperCase())))));
         }))));
 };
 var templateObject_1$7;
