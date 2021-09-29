@@ -7,6 +7,7 @@ import MenuLink from "./MenuLink";
 import { PanelProps } from "./types";
 import Flex from "../../components/Flex/Flex";
 import MenuIcon from "./MenuIcon";
+import getExternalLinkProps from "../../util/getExternalLinkProps";
 
 interface Props extends PanelProps {
   isMobile: boolean;
@@ -37,13 +38,15 @@ const NavBar: React.FC<Props> = ({ isMobile, links }) => {
                 key={entry.label}
                 label={entry.label.toUpperCase()}
                 initialOpenState={entry.initialOpenState}
-                className={calloutClass}            
+                className={calloutClass}
               >
                 {entry.items.map((item) => {
                   return (
-                    <MenuEntry key={item.href} secondary isActive={item.href === location.pathname} >
+                    <MenuEntry key={item.href} secondary isActive={item.href === location.pathname}>
                       {item.icon && <MenuIcon icon={item.icon} />}
-                      <MenuLink href={item.href}>{item.label}</MenuLink>
+                      <MenuLink href={item.href} {...(item.external ? getExternalLinkProps() : {})}>
+                        {item.label}
+                      </MenuLink>
                     </MenuEntry>
                   );
                 })}
@@ -53,7 +56,7 @@ const NavBar: React.FC<Props> = ({ isMobile, links }) => {
           return (
             <MenuEntry key={entry.label} isActive={entry.href === location.pathname} className={calloutClass}>
               {entry.icon && <MenuIcon icon={entry.icon} />}
-              <MenuLink href={entry.href}>
+              <MenuLink href={entry.href} {...(entry.external ? getExternalLinkProps() : {})}>
                 {entry.button ? (
                   <ButtonLabel size="sm">{entry.label.toUpperCase()}</ButtonLabel>
                 ) : (

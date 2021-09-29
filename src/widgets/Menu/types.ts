@@ -35,6 +35,7 @@ export interface MenuSubEntry {
   href: string;
   calloutClass?: string;
   icon?: string;
+  external?: boolean;
 }
 
 export interface MenuEntry {
@@ -45,6 +46,7 @@ export interface MenuEntry {
   href?: string;
   calloutClass?: string;
   initialOpenState?: boolean;
+  external?: boolean;
 }
 
 export interface PanelProps {

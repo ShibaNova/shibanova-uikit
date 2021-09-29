@@ -11,7 +11,7 @@ export const links = [
   {
     label: "NovaPad",
     href: "/novapad",
-  },  
+  },
   // {
   //   label: "Audits",
   //   icon: "ShibaNovaAuditIcon",
@@ -34,14 +34,14 @@ export const links = [
         href: "/pools",
       },
       {
-        label: "CrudeOil Vault",        
+        label: "CrudeOil Vault",
         href: "https://app.crudeoil.finance/#/app/vaults",
-        target: "_blank"
+        external: true,
       },
       {
-        label: "AutoShark Vault",        
+        label: "AutoShark Vault",
         href: "https://autoshark.finance/vaults",
-        target: "_blank"
+        external: true,
       },
     ],
   },
@@ -53,31 +53,31 @@ export const links = [
         label: "Telegram",
         icon: "TelegramIcon",
         href: "https://t.me/ShibaNovaDEX",
-        target: "_blank"
+        external: true,
       },
       {
         label: "Twitter",
         icon: "TwitterIcon",
         href: "https://twitter.com/ShibaNovaDefi",
-        target: "_blank"
+        external: true,
       },
       {
         label: "Medium",
         icon: "MediumIcon",
         href: "https://shibanova.medium.com/",
-        target: "_blank"
+        external: true,
       },
       {
         label: "Github",
         icon: "GithubIcon",
         href: "https://github.com/ShibaNova",
-        target: "_blank"
+        external: true,
       },
       {
         label: "Docs",
         icon: "BookIcon",
         href: "https://docs.shibanova.io",
-        target: "_blank"
+        external: true,
       },
     ],
   },
