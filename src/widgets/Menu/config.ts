@@ -36,10 +36,12 @@ export const links = [
       {
         label: "CrudeOil Vault",        
         href: "https://app.crudeoil.finance/#/app/vaults",
+        target: "_blank"
       },
       {
         label: "AutoShark Vault",        
         href: "https://autoshark.finance/vaults",
+        target: "_blank"
       },
     ],
   },
@@ -51,26 +53,31 @@ export const links = [
         label: "Telegram",
         icon: "TelegramIcon",
         href: "https://t.me/ShibaNovaDEX",
+        target: "_blank"
       },
       {
         label: "Twitter",
         icon: "TwitterIcon",
         href: "https://twitter.com/ShibaNovaDefi",
+        target: "_blank"
       },
       {
         label: "Medium",
         icon: "MediumIcon",
         href: "https://shibanova.medium.com/",
+        target: "_blank"
       },
       {
         label: "Github",
         icon: "GithubIcon",
         href: "https://github.com/ShibaNova",
+        target: "_blank"
       },
       {
         label: "Docs",
         icon: "BookIcon",
         href: "https://docs.shibanova.io",
+        target: "_blank"
       },
     ],
   },

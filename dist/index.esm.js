@@ -2587,10 +2587,12 @@ var links = [
             {
                 label: "CrudeOil Vault",
                 href: "https://app.crudeoil.finance/#/app/vaults",
+                target: "_blank"
             },
             {
                 label: "AutoShark Vault",
                 href: "https://autoshark.finance/vaults",
+                target: "_blank"
             },
         ],
     },
@@ -2602,26 +2604,31 @@ var links = [
                 label: "Telegram",
                 icon: "TelegramIcon",
                 href: "https://t.me/ShibaNovaDEX",
+                target: "_blank"
             },
             {
                 label: "Twitter",
                 icon: "TwitterIcon",
                 href: "https://twitter.com/ShibaNovaDefi",
+                target: "_blank"
             },
             {
                 label: "Medium",
                 icon: "MediumIcon",
                 href: "https://shibanova.medium.com/",
+                target: "_blank"
             },
             {
                 label: "Github",
                 icon: "GithubIcon",
                 href: "https://github.com/ShibaNova",
+                target: "_blank"
             },
             {
                 label: "Docs",
                 icon: "BookIcon",
                 href: "https://docs.shibanova.io",
+                target: "_blank"
             },
         ],
     },
@@ -2986,7 +2993,7 @@ var useWalletModal = function (login, logout, account) {
     return { onPresentConnectModal: onPresentConnectModal, onPresentAccountModal: onPresentAccountModal };
 };
 
-var Container = styled.div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  margin-left: 8px;\n  \n  ", " {\n    margin-left: 32px;\n  }\n"], ["\n  margin-left: 8px;\n  \n  ", " {\n    margin-left: 32px;\n  }\n"])), function (_a) {
+var Container = styled.div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  margin-left: 8px;\n  display: flex;\n  \n  ", " {\n    margin-left: 32px;\n  }\n"], ["\n  margin-left: 8px;\n  display: flex;\n  \n  ", " {\n    margin-left: 32px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xl;
 });
@@ -2994,11 +3001,14 @@ var UserBlock = function (_a) {
     var account = _a.account, login = _a.login, logout = _a.logout, isMobile = _a.isMobile;
     var _b = useWalletModal(login, logout, account), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
     var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 4) : null;
-    return (React.createElement(Container, null, account ? (React.createElement(Button, { size: "sm", variant: "secondary", onClick: function () {
-            onPresentAccountModal();
-        } }, accountEllipsis)) : (React.createElement(Button, { size: "sm", style: { fontSize: isMobile ? 16 : 14 }, glowing: true, onClick: function () {
-            onPresentConnectModal();
-        } }, isMobile ? "Connect" : "CONNECT WALLET"))));
+    return (React.createElement(Container, null,
+        React.createElement("a", { href: "https://github.com/ShibaNova/Contracts/tree/main/Audits", target: "_blank", rel: "noreferrer noopener" },
+            React.createElement(Icon$8, { style: { paddingRight: "5px", width: "40px" } })),
+        account ? (React.createElement(Button, { size: "sm", variant: "secondary", onClick: function () {
+                onPresentAccountModal();
+            } }, accountEllipsis)) : (React.createElement(Button, { size: "sm", style: { fontSize: isMobile ? 16 : 14 }, glowing: true, onClick: function () {
+                onPresentConnectModal();
+            } }, isMobile ? "Connect" : "CONNECT WALLET"))));
 };
 var templateObject_1$5;
 
