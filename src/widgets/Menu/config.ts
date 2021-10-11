@@ -43,6 +43,11 @@ export const links = [
         href: "https://autoshark.finance/vaults",
         external: true,
       },
+      {
+        label: "CandleGenie Games",
+        href: "https://candlegenie.io/ref/IRCTOB3Q",
+        external: true,
+      },
     ],
   },
   {
