@@ -2935,7 +2935,7 @@ var WalletCard = function (_a) {
     var title = walletConfig.title, Icon = walletConfig.icon;
     return (React__default['default'].createElement(Button, { fullWidth: true, variant: "secondary", onClick: function () {
             login(walletConfig.connectorId);
-            window.localStorage.setItem(connectorLocalStorageKey, "1");
+            window.localStorage.setItem(connectorLocalStorageKey, walletConfig.connectorId);
             onDismiss();
         }, style: { justifyContent: "space-between" }, mb: mb, id: "wallet-connect-" + title.toLocaleLowerCase() },
         React__default['default'].createElement(Text, { bold: true, color: "primary", mr: "16px" }, title),
