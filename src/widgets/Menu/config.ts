@@ -22,16 +22,8 @@ export const links = [
     icon: "MoreIcon",
     items: [
       {
-        label: "Dashboard",
-        href: "/dashboard",
-      },
-      {
-        label: "Farms",
+        label: "Yield Farms",
         href: "/farms",
-      },
-      {
-        label: "Pools",
-        href: "/pools",
       },
       {
         label: "CrudeOil Vault",

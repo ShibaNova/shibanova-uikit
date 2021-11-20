@@ -31,7 +31,7 @@ const connectors: Config[] = [
   },
   {
     title: "WalletConnect",
-    icon: WalletConnect,
+    icon: WalletConnect, 
     connectorId: ConnectorNames.WalletConnect,
   },
   {
