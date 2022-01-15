@@ -18,18 +18,8 @@ export const links = [
   //   href: "https://docs.shibanova.io/shibanova-documentation/security/audits",
   // },
   {
-    label: "Earn",
-    icon: "MoreIcon",
-    items: [
-      {
-        label: "Trade Routes",
-        href: "/traderoutes",
-      },
-      {
-        label: "Novaria",
-        href: "/novaria",
-      }
-    ],
+    label: "Trade Routes",
+    href: "/traderoutes",
   },
   {
     label: "Socials",

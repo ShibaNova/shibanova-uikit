@@ -36,7 +36,7 @@ const PriceLink = styled.a`
 const transparent = "transparent";
 const black = "black";
 console.log(window.location.pathname);
-const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
+const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean; isNovaria: boolean; }>`
   position: ${({ isMobile }) => (isMobile ? "fixed" : "initial")};
   top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT}px`)};
   left: 0;
@@ -48,7 +48,7 @@ const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
   width: 100%;
   height: ${({ isMobile }) => (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT)}px;
   // background: black;
-  // background: window.location.pathname === "/novaria" ? black : transparent;
+   background:${({ isNovaria }) => (isNovaria ? black : transparent)};
   // background: ${({ theme, isMobile }) =>
     isMobile
       ? "linear-gradient(90deg, rgba(6,26,84,1) 0%, rgba(6,28,124,1) 40%, rgba(6,28,124,1) 60%, rgba(4,2,66,1) 100%);"
@@ -94,6 +94,7 @@ const Menu: React.FC<NavProps> = ({
   const [showSideBar, setShowSideBar] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(window.pageYOffset);
+  const isNovaria = (window.location.pathname === "/novaria" ? true : false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -141,7 +142,7 @@ const Menu: React.FC<NavProps> = ({
 
   return (
     <Wrapper>
-      <StyledNav isMobile={isMobile} showMenu={showMenu} style={{background:(window.location.pathname === "/novaria" ? black : transparent) } }>
+      <StyledNav isMobile={isMobile} showMenu={showMenu} isNovaria={isNovaria}>
         <Logo
           isMobile={isMobile}
           showSideBar={() => setShowSideBar((prevState: boolean) => !prevState)}

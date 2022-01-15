@@ -15,15 +15,6 @@ export declare const links: ({
     icon: string;
     items: {
         label: string;
-        href: string;
-    }[];
-    href?: undefined;
-    button?: undefined;
-} | {
-    label: string;
-    icon: string;
-    items: {
-        label: string;
         icon: string;
         href: string;
         external: boolean;

@@ -2582,18 +2582,8 @@ var links = [
     //   href: "https://docs.shibanova.io/shibanova-documentation/security/audits",
     // },
     {
-        label: "Earn",
-        icon: "MoreIcon",
-        items: [
-            {
-                label: "Trade Routes",
-                href: "/traderoutes",
-            },
-            {
-                label: "Novaria",
-                href: "/novaria",
-            }
-        ],
+        label: "Trade Routes",
+        href: "/traderoutes",
     },
     {
         label: "Socials",
@@ -3069,7 +3059,10 @@ var templateObject_1$4, templateObject_2$1, templateObject_3$1, templateObject_4
 
 var Wrapper = styled__default['default'].div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
 var PriceLink = styled__default['default'].a(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  \n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  \n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
-var StyledNav = styled__default['default'].nav(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n   align-items: ", ";\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: transparent;\n  // background: ", ";\n  // border-bottom: ", ";\n\n  @media screen and (min-width: 1021px) {\n    // padding: 0px 110px 110px 85px;\n  }\n  z-index: 20;\n"], ["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n   align-items: ", ";\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  background: transparent;\n  // background: ", ";\n  // border-bottom: ", ";\n\n  @media screen and (min-width: 1021px) {\n    // padding: 0px 110px 110px 85px;\n  }\n  z-index: 20;\n"])), function (_a) {
+var transparent = "transparent";
+var black = "black";
+console.log(window.location.pathname);
+var StyledNav = styled__default['default'].nav(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n   align-items: ", ";\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  // background: black;\n   background:", ";\n  // background: ", ";\n  // border-bottom: ", ";\n\n  @media screen and (min-width: 1021px) {\n    // padding: 0px 110px 110px 85px;\n  }\n  z-index: 20;\n"], ["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n   align-items: ", ";\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  // background: black;\n   background:", ";\n  // background: ", ";\n  // border-bottom: ", ";\n\n  @media screen and (min-width: 1021px) {\n    // padding: 0px 110px 110px 85px;\n  }\n  z-index: 20;\n"])), function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? "fixed" : "initial");
 }, function (_a) {
@@ -3084,6 +3077,9 @@ var StyledNav = styled__default['default'].nav(templateObject_3 || (templateObje
 }, function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT);
+}, function (_a) {
+    var isNovaria = _a.isNovaria;
+    return (isNovaria ? black : transparent);
 }, function (_a) {
     var theme = _a.theme, isMobile = _a.isMobile;
     return isMobile
@@ -3106,6 +3102,7 @@ var Menu = function (_a) {
     var _d = React.useState(false), showSideBar = _d[0], setShowSideBar = _d[1];
     var _e = React.useState(true), showMenu = _e[0], setShowMenu = _e[1];
     var refPrevOffset = React.useRef(window.pageYOffset);
+    var isNovaria = (window.location.pathname === "/novaria" ? true : false);
     React.useEffect(function () {
         var handleScroll = function () {
             if (!isMobile)
@@ -3144,7 +3141,7 @@ var Menu = function (_a) {
             React__default['default'].createElement(Text, { fontSize: "15px", small: true, bold: true }, "$" + novaPriceUsd.toFixed(3)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 }));
     };
     return (React__default['default'].createElement(Wrapper, null,
-        React__default['default'].createElement(StyledNav, { isMobile: isMobile, showMenu: showMenu },
+        React__default['default'].createElement(StyledNav, { isMobile: isMobile, showMenu: showMenu, isNovaria: isNovaria },
             React__default['default'].createElement(Logo, { isMobile: isMobile, showSideBar: function () { return setShowSideBar(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             React__default['default'].createElement(SideBar, { open: showSideBar, price: renderPrice(), onDismiss: function () { return setShowSideBar(false); }, links: links }),
             React__default['default'].createElement(NavBar, { isMobile: isMobile, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, novaPriceUsd: novaPriceUsd, links: links, priceLink: priceLink }),
