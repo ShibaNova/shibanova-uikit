@@ -35,10 +35,10 @@ const PriceLink = styled.a`
 
 const transparent = "transparent";
 const black = "black";
-const gray = "linear-gradient(0deg, rgba(31,31,31,1) 0%, rgba(88,88,88,1) 45%, rgba(42,42,42,1) 100%)";
+const gray = "linear-gradient(0deg, rgba(31,31,31,1,0.8) 0%, rgba(88,88,88,1,0.8) 45%, rgba(42,42,42,1,0.8) 100%)";
 console.log(window.location.pathname);
 const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean; isNovaria: boolean; }>`
-  position: ${({ isMobile }) => (isMobile ? "fixed" : "initial")};
+  position: ${({ isMobile }) => (isMobile ? "initial" : "initial")};
   top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT}px`)};
   left: 0;
   transition: top 0.2s;
