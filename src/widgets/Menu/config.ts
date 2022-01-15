@@ -9,8 +9,8 @@ export const links = [
     button: true,
   },
   {
-    label: "NovaPad",
-    href: "/novapad",
+    label: "Novaria",
+    href: "/novaria",
   },
   // {
   //   label: "Audits",
@@ -22,19 +22,13 @@ export const links = [
     icon: "MoreIcon",
     items: [
       {
-        label: "Yield Farms",
-        href: "/farms",
+        label: "Trade Routes",
+        href: "/traderoutes",
       },
       {
-        label: "CrudeOil Vault",
-        href: "https://app.crudeoil.finance/#/app/vaults",
-        external: true,
-      },
-      {
-        label: "CandleGenie Games",
-        href: "https://candlegenie.io/ref/IRCTOB3Q",
-        external: true,
-      },
+        label: "Novaria",
+        href: "/novaria",
+      }
     ],
   },
   {
