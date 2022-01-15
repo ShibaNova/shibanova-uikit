@@ -35,6 +35,7 @@ const PriceLink = styled.a`
 
 const transparent = "transparent";
 const black = "black";
+const gray = "linear-gradient(0deg, rgba(31,31,31,1) 0%, rgba(88,88,88,1) 45%, rgba(42,42,42,1) 100%)";
 console.log(window.location.pathname);
 const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean; isNovaria: boolean; }>`
   position: ${({ isMobile }) => (isMobile ? "fixed" : "initial")};
@@ -48,7 +49,7 @@ const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean; isNovaria: 
   width: 100%;
   height: ${({ isMobile }) => (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT)}px;
   // background: black;
-   background:${({ isNovaria }) => (isNovaria ? black : transparent)};
+   background:${({ isNovaria }) => (isNovaria ? gray : transparent)};
   // background: ${({ theme, isMobile }) =>
     isMobile
       ? "linear-gradient(90deg, rgba(6,26,84,1) 0%, rgba(6,28,124,1) 40%, rgba(6,28,124,1) 60%, rgba(4,2,66,1) 100%);"
