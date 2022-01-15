@@ -33,6 +33,9 @@ const PriceLink = styled.a`
   }
 `;
 
+const transparent = "transparent";
+const black = "black";
+console.log(window.location.pathname);
 const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
   position: ${({ isMobile }) => (isMobile ? "fixed" : "initial")};
   top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT}px`)};
@@ -44,7 +47,8 @@ const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean }>`
   padding: ${({ isMobile }) => (isMobile ? "0px 10px 10px 10px" : "5px 25px 40px 15px")};
   width: 100%;
   height: ${({ isMobile }) => (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT)}px;
-  background: transparent;
+  // background: black;
+  // background: window.location.pathname === "/novaria" ? black : transparent;
   // background: ${({ theme, isMobile }) =>
     isMobile
       ? "linear-gradient(90deg, rgba(6,26,84,1) 0%, rgba(6,28,124,1) 40%, rgba(6,28,124,1) 60%, rgba(4,2,66,1) 100%);"
@@ -120,7 +124,7 @@ const Menu: React.FC<NavProps> = ({
       window.removeEventListener("scroll", throttledHandleScroll);
     };
   }, [isMobile]);
-
+ 
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "DASHBOARD");
 
@@ -137,7 +141,7 @@ const Menu: React.FC<NavProps> = ({
 
   return (
     <Wrapper>
-      <StyledNav isMobile={isMobile} showMenu={showMenu}>
+      <StyledNav isMobile={isMobile} showMenu={showMenu} style={{background:(window.location.pathname === "/novaria" ? black : transparent) } }>
         <Logo
           isMobile={isMobile}
           showSideBar={() => setShowSideBar((prevState: boolean) => !prevState)}
