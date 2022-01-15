@@ -2623,7 +2623,7 @@ var links = [
     },
 ];
 var MENU_HEIGHT = 68;
-var MENU_HEIGHT_MOBILE = 68;
+var MENU_HEIGHT_MOBILE = 48;
 var MENU_ENTRY_HEIGHT = 48;
 
 var rainbowAnimation = styled.keyframes(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"], ["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"])));
@@ -3060,7 +3060,7 @@ var templateObject_1$4, templateObject_2$1, templateObject_3$1, templateObject_4
 var Wrapper = styled__default['default'].div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
 var PriceLink = styled__default['default'].a(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  \n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  \n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
 var transparent = "transparent";
-var gray = "linear-gradient(0deg, rgba(31,31,31,1,0.8) 0%, rgba(88,88,88,1,0.8) 45%, rgba(42,42,42,1,0.8) 100%)";
+var gray = "linear-gradient(0deg, rgba(31,31,31,1) 0%, rgba(88,88,88,1,0.8) 45%, rgba(42,42,42,1) 100%)";
 console.log(window.location.pathname);
 var StyledNav = styled__default['default'].nav(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n   align-items: ", ";\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  // background: black;\n   background:", ";\n  // background: ", ";\n  // border-bottom: ", ";\n\n  @media screen and (min-width: 1021px) {\n    // padding: 0px 110px 110px 85px;\n  }\n  z-index: 20;\n"], ["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n   align-items: ", ";\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  // background: black;\n   background:", ";\n  // background: ", ";\n  // border-bottom: ", ";\n\n  @media screen and (min-width: 1021px) {\n    // padding: 0px 110px 110px 85px;\n  }\n  z-index: 20;\n"])), function (_a) {
     var isMobile = _a.isMobile;
