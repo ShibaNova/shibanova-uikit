@@ -2542,7 +2542,7 @@ MenuButton.defaultProps = {
 };
 var templateObject_1$b;
 
-var StyledLink = styled__default['default'](reactRouterDom.Link)(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 175px;\n    display: none;\n    ", " {\n      display: block;\n      margin-top: 0px;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 175px;\n    display: none;\n    ", " {\n      display: block;\n      margin-top: 0px;\n    }\n  }\n"])), function (_a) {
+var StyledLink = styled__default['default'](reactRouterDom.Link)(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    margin-top: 15px;\n    ", " {\n      display: none;\n      margin-top: 5px;\n    }\n  }\n  .desktop-icon {\n    width: 175px;\n    display: none;\n    margin-top: 5px;\n    ", " {\n      display: block;\n      margin-top: 5px;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 50px;\n    margin-top: 15px;\n    ", " {\n      display: none;\n      margin-top: 5px;\n    }\n  }\n  .desktop-icon {\n    width: 175px;\n    display: none;\n    margin-top: 5px;\n    ", " {\n      display: block;\n      margin-top: 5px;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 }, function (_a) {
@@ -2731,7 +2731,7 @@ var MenuIcon = function (_a) {
     return React__default['default'].createElement(Icon, __assign({}, iconProps, { mr: "5px" }));
 };
 
-var Container$1 = styled__default['default'].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  margin-top: 5px;\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n"], ["\n  margin-top: 5px;\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n"])));
+var Container$1 = styled__default['default'].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  margin-top: 0px;\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n"], ["\n  margin-top: 0px;\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  width: 100%;\n"])));
 var NavBar = function (_a) {
     var isMobile = _a.isMobile, links = _a.links;
     var location = reactRouterDom.useLocation();
@@ -3015,10 +3015,9 @@ var StyledLinkSeparator = styled__default['default'].hr(templateObject_4$1 || (t
     return theme.colors.textSubtle;
 });
 var SideBar = function (_a) {
-    var _b, _c;
+    var _b;
     var onDismiss = _a.onDismiss, links = _a.links, open = _a.open, price = _a.price;
     var location = reactRouterDom.useLocation();
-    var vaults = links[links.length - 2];
     var socials = links[links.length - 1];
     React.useEffect(function () {
         if (open) {
@@ -3034,21 +3033,13 @@ var SideBar = function (_a) {
         React__default['default'].createElement("div", { style: { marginLeft: -20 } }, price),
         React__default['default'].createElement(StyledLinkList, null,
             React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "ShibaNova"),
-            links.slice(0, links.length - 2).map(function (entry) { return (React__default['default'].createElement(MenuEntry, { onClick: onDismiss, isMobile: true, key: entry.href, isActive: entry.href === location.pathname },
+            links.slice(0, links.length - 1).map(function (entry) { return (React__default['default'].createElement(MenuEntry, { onClick: onDismiss, isMobile: true, key: entry.href, isActive: entry.href === location.pathname },
                 entry.icon && React__default['default'].createElement(MenuIcon, { icon: entry.icon }),
                 React__default['default'].createElement(MenuLink, { onClick: onDismiss, style: { fontSize: 16, textTransform: "uppercase" }, href: entry.href },
                     React__default['default'].createElement(LinkLabel, { onClick: onDismiss }, entry.label)))); }),
             React__default['default'].createElement(StyledLinkSeparator, null),
-            React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "Earn"), (_b = vaults === null || vaults === void 0 ? void 0 : vaults.items) === null || _b === void 0 ? void 0 :
+            React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "Socials and More"), (_b = socials.items) === null || _b === void 0 ? void 0 :
             _b.map(function (item) {
-                return (React__default['default'].createElement(MenuEntry, { onClick: onDismiss, isMobile: true, key: item.href, secondary: true, isActive: item.href === location.pathname },
-                    item.icon && React__default['default'].createElement(MenuIcon, { icon: item.icon }),
-                    React__default['default'].createElement(MenuLink, { onClick: onDismiss, style: { fontSize: 14, textTransform: "uppercase" }, href: item.href },
-                        React__default['default'].createElement(LinkLabel, { onClick: onDismiss }, item.label))));
-            }),
-            React__default['default'].createElement(StyledLinkSeparator, null),
-            React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "Socials and More"), (_c = socials.items) === null || _c === void 0 ? void 0 :
-            _c.map(function (item) {
                 return (React__default['default'].createElement(MenuEntry, { onClick: onDismiss, isMobile: true, key: item.href, secondary: true, isActive: item.href === location.pathname },
                     item.icon && React__default['default'].createElement(MenuIcon, { icon: item.icon }),
                     React__default['default'].createElement(MenuLink, { onClick: onDismiss, style: { fontSize: 14, textTransform: "uppercase" }, href: item.href },
@@ -3059,10 +3050,8 @@ var templateObject_1$4, templateObject_2$1, templateObject_3$1, templateObject_4
 
 var Wrapper = styled__default['default'].div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
 var PriceLink = styled__default['default'].a(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  \n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  \n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
-var transparent = "transparent";
-var gray = "linear-gradient(0deg, rgba(31,31,31,1) 0%, rgba(88,88,88,1,0.8) 45%, rgba(42,42,42,1) 100%)";
 console.log(window.location.pathname);
-var StyledNav = styled__default['default'].nav(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n   align-items: ", ";\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  // background: black;\n   background:", ";\n  // background: ", ";\n  // border-bottom: ", ";\n\n  @media screen and (min-width: 1021px) {\n    // padding: 0px 110px 110px 85px;\n  }\n  z-index: 20;\n"], ["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n   align-items: ", ";\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  // background: black;\n   background:", ";\n  // background: ", ";\n  // border-bottom: ", ";\n\n  @media screen and (min-width: 1021px) {\n    // padding: 0px 110px 110px 85px;\n  }\n  z-index: 20;\n"])), function (_a) {
+var StyledNav = styled__default['default'].nav(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n   align-items: ", ";\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  // background: black;\n   background: transparent;\n  \n  // border-bottom: ", ";\n\n  @media screen and (min-width: 1021px) {\n    // padding: 0px 110px 110px 85px;\n  }\n  z-index: 20;\n"], ["\n  position: ", ";\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  // justify-content: space-between;\n   align-items: ", ";\n  padding: ", ";\n  width: 100%;\n  height: ", "px;\n  // background: black;\n   background: transparent;\n  \n  // border-bottom: ", ";\n\n  @media screen and (min-width: 1021px) {\n    // padding: 0px 110px 110px 85px;\n  }\n  z-index: 20;\n"])), function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? "initial" : "initial");
 }, function (_a) {
@@ -3073,18 +3062,10 @@ var StyledNav = styled__default['default'].nav(templateObject_3 || (templateObje
     return (isMobile ? "center" : "none");
 }, function (_a) {
     var isMobile = _a.isMobile;
-    return (isMobile ? "0px 10px 10px 10px" : "5px 25px 40px 15px");
+    return (isMobile ? "5px 10px 10px 10px" : "5px 5px 40px 15px");
 }, function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT);
-}, function (_a) {
-    var isNovaria = _a.isNovaria;
-    return (isNovaria ? gray : transparent);
-}, function (_a) {
-    var theme = _a.theme, isMobile = _a.isMobile;
-    return isMobile
-        ? "linear-gradient(90deg, rgba(6,26,84,1) 0%, rgba(6,28,124,1) 40%, rgba(6,28,124,1) 60%, rgba(4,2,66,1) 100%);"
-        : theme.nav.background;
 }, function (_a) {
     var theme = _a.theme, isMobile = _a.isMobile;
     return (isMobile ? "1px solid " + theme.colors.secondary + "4f" : "none");
@@ -3145,7 +3126,7 @@ var Menu = function (_a) {
             React__default['default'].createElement(Logo, { isMobile: isMobile, showSideBar: function () { return setShowSideBar(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             React__default['default'].createElement(SideBar, { open: showSideBar, price: renderPrice(), onDismiss: function () { return setShowSideBar(false); }, links: links }),
             React__default['default'].createElement(NavBar, { isMobile: isMobile, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, novaPriceUsd: novaPriceUsd, links: links, priceLink: priceLink }),
-            React__default['default'].createElement(Flex, { ml: "auto", alignItems: "center", style: { paddingTop: 30, paddingRight: 70 } },
+            React__default['default'].createElement(Flex, { ml: "auto", alignItems: "center", style: { paddingTop: isMobile ? -30 : 25, paddingRight: 70 } },
                 isXs || isSm ? null : renderPrice(),
                 React__default['default'].createElement(UserBlock, { isMobile: isMobile, account: account, login: login, logout: logout }))),
         React__default['default'].createElement(BodyWrapper, null,

@@ -25,7 +25,7 @@ const UserBlock: React.FC<Props> = ({ account, login, logout, isMobile }) => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(login, logout, account);
   const accountEllipsis = account ? `${account.substring(0, 4)}...${account.substring(account.length - 4)}` : null;
   return (
-    <Container>
+    <Container >
       <a href="https://github.com/ShibaNova/Contracts/tree/main/Audits" target="_blank" rel="noreferrer noopener">
         <ShibaNovaAuditIcon  style={{paddingRight:"5px", width:"40px"}} />
       </a>

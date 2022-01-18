@@ -58,7 +58,6 @@ const StyledLinkSeparator = styled.hr`
 
 const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
   const location = useLocation();
-  const vaults = links[links.length - 2];
   const socials = links[links.length - 1];
 
   useEffect(() => {
@@ -81,7 +80,7 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
         <Text glowing bold style={{ padding: "3px 0 3px 0" }}>
           ShibaNova
         </Text>
-        {links.slice(0, links.length - 2).map((entry) => (
+        {links.slice(0, links.length - 1).map((entry) => (
           <MenuEntry onClick={onDismiss} isMobile key={entry.href} isActive={entry.href === location.pathname}>
             {entry.icon && <MenuIcon icon={entry.icon} />}
             <MenuLink onClick={onDismiss} style={{ fontSize: 16, textTransform: "uppercase" }} href={entry.href}>
@@ -89,22 +88,6 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
             </MenuLink>
           </MenuEntry>
         ))}
-
-        <StyledLinkSeparator />
-
-        <Text glowing bold style={{ padding: "3px 0 3px 0" }}>
-          Earn
-        </Text>
-        {vaults?.items?.map((item: MenuSubEntry) => {
-          return (
-            <MenuEntry onClick={onDismiss} isMobile key={item.href} secondary isActive={item.href === location.pathname}>
-              {item.icon && <MenuIcon icon={item.icon} />}
-              <MenuLink onClick={onDismiss} style={{ fontSize: 14, textTransform: "uppercase" }} href={item.href}>
-                <LinkLabel onClick={onDismiss}>{item.label}</LinkLabel>
-              </MenuLink>
-            </MenuEntry>
-          );
-        })}
 
         <StyledLinkSeparator />
         <Text glowing bold style={{ padding: "3px 0 3px 0" }}>

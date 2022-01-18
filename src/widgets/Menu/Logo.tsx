@@ -18,16 +18,19 @@ const StyledLink = styled(Link)`
   align-items: center;
   .mobile-icon {
     width: 50px;
+    margin-top: 15px;
     ${({ theme }) => theme.mediaQueries.nav} {
       display: none;
+      margin-top: 5px;
     }
   }
   .desktop-icon {
     width: 175px;
     display: none;
+    margin-top: 5px;
     ${({ theme }) => theme.mediaQueries.nav} {
       display: block;
-      margin-top: 0px;
+      margin-top: 5px;
     }
   }
 `;

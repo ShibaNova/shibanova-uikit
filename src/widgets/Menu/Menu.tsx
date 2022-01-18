@@ -45,15 +45,12 @@ const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean; isNovaria: 
   display: flex;
   // justify-content: space-between;
    align-items: ${({ isMobile }) => (isMobile ? "center" : "none")};
-  padding: ${({ isMobile }) => (isMobile ? "0px 10px 10px 10px" : "5px 25px 40px 15px")};
+  padding: ${({ isMobile }) => (isMobile ? "5px 10px 10px 10px" : "5px 5px 40px 15px")};
   width: 100%;
   height: ${({ isMobile }) => (isMobile ? MENU_HEIGHT_MOBILE : MENU_HEIGHT)}px;
   // background: black;
-   background:${({ isNovaria }) => (isNovaria ? gray : transparent)};
-  // background: ${({ theme, isMobile }) =>
-    isMobile
-      ? "linear-gradient(90deg, rgba(6,26,84,1) 0%, rgba(6,28,124,1) 40%, rgba(6,28,124,1) 60%, rgba(4,2,66,1) 100%);"
-      : theme.nav.background};
+   background: transparent;
+  
   // border-bottom: ${({ theme, isMobile }) => (isMobile ? `1px solid ${theme.colors.secondary}4f` : "none")};
 
   @media screen and (min-width: 1021px) {
@@ -162,7 +159,7 @@ const Menu: React.FC<NavProps> = ({
           links={links}
           priceLink={priceLink}
         />
-        <Flex ml="auto" alignItems="center" style={{paddingTop:30, paddingRight:70}}>
+        <Flex ml="auto" alignItems="center" style={{paddingTop: isMobile ? -30 : 25, paddingRight:70}}>
           {isXs || isSm ? null : renderPrice()}
           <UserBlock isMobile={isMobile} account={account} login={login} logout={logout} />
           {/* {profile && <Avatar profile={profile} />} */}
