@@ -29,3 +29,4 @@ export { default as MediumIcon } from "./Medium";
 export { default as GithubIcon } from "./Github";
 export { default as BookIcon } from "./Book";
 export { default as ShibaNovaAuditIcon } from "./ShibaNovaAudit";
+export { default as DiscordIcon } from "./Discord";

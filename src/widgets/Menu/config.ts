@@ -10,7 +10,7 @@ export const links = [
   },
   {
     label: "Novaria",
-    href: "/novaria",
+    href: "/legend-of-novaria",
   },
   // {
   //   label: "Audits",
@@ -53,6 +53,12 @@ export const links = [
         label: "Docs",
         icon: "BookIcon",
         href: "https://docs.shibanova.io",
+        external: true,
+      },
+      {
+        label: "Discord",
+        icon: "DiscordIcon",
+        href: "https://discord.gg/vQdxbGx9pV",
         external: true,
       },
     ],
