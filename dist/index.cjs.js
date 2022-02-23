@@ -1966,7 +1966,7 @@ var light$1 = {
     background: lightColors.card,
 };
 var dark$1 = {
-    background: darkColors.card,
+    background: '#00000080',
 };
 
 var light = {
