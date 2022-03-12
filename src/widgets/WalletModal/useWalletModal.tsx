@@ -16,3 +16,4 @@ const useWalletModal = (login: Login, logout: () => void, account?: string): Ret
 };
 
 export default useWalletModal;
+ 
