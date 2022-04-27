@@ -164,7 +164,7 @@ var getButtonVariantProp = function (prop) { return function (_a) {
     var theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? variants$1.PRIMARY : _b;
     return theme.button[variant][prop];
 }; };
-var StyledButton$1 = styled.button(templateObject_1$J || (templateObject_1$J = __makeTemplateObject(["\n  align-items: center;\n  background: ", ";\n  border: ", ";\n  border-radius: 18px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: bold;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background 0.15s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background: ", ";\n  border: ", ";\n  border-radius: 18px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: bold;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background 0.15s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), function (_a) {
+var StyledButton$1 = styled.button(templateObject_1$J || (templateObject_1$J = __makeTemplateObject(["\n  align-items: center;\n  background: ", ";\n  border: ", ";\n  border-radius: 5px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: normal;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background 0.15s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background: ", ";\n  border: ", ";\n  border-radius: 5px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: normal;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background 0.15s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), function (_a) {
     var glowing = _a.glowing, theme = _a.theme;
     return !glowing ? getButtonVariantProp("boxShadow") : "0px 0px 10px " + theme.colors.primary;
 }, getButtonVariantProp("color"), function (_a) {
@@ -689,7 +689,7 @@ var getBackgroundColor = function (_a) {
     var theme = _a.theme, variant = _a.variant;
     return theme.colors[variant === variants$1.SUBTLE ? "input" : "tertiary"];
 };
-var StyledButtonMenu = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 16px;\n  display: inline-flex;\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n"], ["\n  background-color: ", ";\n  border-radius: 16px;\n  display: inline-flex;\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n"])), getBackgroundColor);
+var StyledButtonMenu = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 5px;\n  display: inline-flex;\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n"], ["\n  background-color: ", ";\n  border-radius: 5px;\n  display: inline-flex;\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n"])), getBackgroundColor);
 var templateObject_1$D;
 
 var ButtonMenu = function (_a) {
@@ -710,17 +710,39 @@ var InactiveButton = styled(Button)(templateObject_1$C || (templateObject_1$C = 
 });
 var StyledButton = styled(Button)(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background: ", ";\n  }\n"], ["\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.button.primary.background;
+    return theme.button.primary.backgroundActive;
 });
 var ButtonMenuItem = function (_a) {
     var _b = _a.isActive, isActive = _b === void 0 ? false : _b, _c = _a.size, size = _c === void 0 ? sizes$1.MD : _c, _d = _a.variant, variant = _d === void 0 ? variants$1.PRIMARY : _d, as = _a.as, props = __rest(_a, ["isActive", "size", "variant", "as"]);
     if (!isActive) {
-        return (React.createElement(InactiveButton, __assign({ forwardedAs: as, size: size, variant: "tertiary", colorKey: variant === variants$1.PRIMARY ? "primary" : "textSubtle" }, props)));
+        return (React.createElement(InactiveButton, __assign({ forwardedAs: as, size: size, variant: "tertiary", colorKey: variant === variants$1.PRIMARY ? "text" : "text" }, props)));
     }
     // @ts-ignore: Unreachable code error
     return React.createElement(StyledButton, __assign({ as: as, size: size, variant: variant }, props));
 };
 var templateObject_1$C, templateObject_2$e;
+
+var brandColors = {
+    binance: "#F0B90B",
+};
+var baseColors = {
+    failure: "#a20b0b",
+    primary: "#00af30",
+    primaryBright: "#608bfb",
+    primaryDark: "#a797ff",
+    secondary: "#ff56b5",
+    success: "#00af30",
+    warning: "#ffb318", // yellow
+};
+var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { 
+    // secondary: "#00aaff", 
+    background: "#141223", backgroundDisabled: "#2E3034", backgroundAlt: "#93999D", contrast: "#ffb318", invertedContrast: "#edf4f7", input: "transparent", primaryDark: "#a797ff", tertiary: "#608bfb", text: "#edf4f7", textDisabled: "#93999d", textSubtle: "#c7cbd1", borderColor: "#2e3034", card: "#141223", gradients: {
+        bubblegum: "linear-gradient(90deg, #FF56B5 0%, #A797FF 100%)",
+        background: "#141223",
+    } });
+var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#141223", backgroundDisabled: "#2E3034", backgroundAlt: "#93999D", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", text: "#0000a4", textDisabled: "#BDC2C4", textSubtle: "#46e3f4", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
+        bubblegum: "linear-gradient(139.73deg, #FF56B5 0%, #F3EFFF 100%)",
+    } });
 
 /**
  * Priority: Warning --> Success --> Active
@@ -739,14 +761,11 @@ var getBoxShadow$1 = function (_a) {
     return theme.card.boxShadow;
 };
 var getGradientBorder = function (_a) {
-    var gradientBorder = _a.gradientBorder, theme = _a.theme;
+    var gradientBorder = _a.gradientBorder; _a.theme;
     return gradientBorder &&
-        "background-clip: padding-box;\nborder: solid 1px #00aaff;\n\n&:before {\ncontent: \"\";\nposition: absolute;\ntop: 0;\nright: 0;\nbottom: 0;\nleft: 0;\nz-index: -1;\nmargin: -2px;\nborder-radius: inherit;\n// background: linear-gradient(\n//   to right,\n//   " + theme.colors.background + ",\n//   " + theme.colors.primary + "\n// );\n}";
+        "background-clip: padding-box;\n// border: solid 1px #00aaff;\n\n&:before {\ncontent: \"\";\nposition: absolute;\ntop: 0;\nright: 0;\nbottom: 0;\nleft: 0;\nz-index: -1;\nmargin: -2px;\nborder-radius: inherit;\nbackground: linear-gradient(135deg, " + darkColors.secondary + " 0%, " + darkColors.primaryBright + " 100%);\n}";
 };
-var StyledCard = styled.div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  // background-color: ", ";\n  background: transparent;\n  border: ", ";\n  border-radius: 32px;\n  box-shadow: ", ";\n  color: ", ";\n  position: relative;\n\n  ", "\n\n  ", "\n"], ["\n  // background-color: ", ";\n  background: transparent;\n  border: ", ";\n  border-radius: 32px;\n  box-shadow: ", ";\n  color: ", ";\n  position: relative;\n\n  ", "\n\n  ", "\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.card.background;
-}, function (_a) {
+var StyledCard = styled.div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  background-color: ", ";\n  // background: transparent;\n  // border: ", ";\n  border-radius: 5px;\n  box-shadow: ", ";\n  color: ", ";\n  position: relative;\n\n  ", "\n\n  ", "\n"], ["\n  background-color: ", ";\n  // background: transparent;\n  // border: ", ";\n  border-radius: 5px;\n  box-shadow: ", ";\n  color: ", ";\n  position: relative;\n\n  ", "\n\n  ", "\n"])), darkColors.background, function (_a) {
     var theme = _a.theme;
     return theme.card.boxShadow;
 }, getBoxShadow$1, function (_a) {
@@ -1794,26 +1813,6 @@ var useParticleBurst = function (options) {
     return { initialize: initialize, teardown: teardown };
 };
 
-var baseColors = {
-    failure: "#a20b0b",
-    primary: "#1f9ce4",
-    primaryBright: "#1f9ce4",
-    primaryDark: "#1f9ce4",
-    secondary: "#00aaff",
-    success: "#0ba223",
-    warning: "#FFB237",
-};
-var brandColors = {
-    binance: "#F0B90B",
-};
-var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", backgroundAlt: "#FFFFFF", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", text: "#0000a4", textDisabled: "#BDC2C4", textSubtle: "#46e3f4", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
-        bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
-    } });
-var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#00aaff", background: "#0b23a2", backgroundDisabled: "#2f2f3c", backgroundAlt: "#27262c", contrast: "#FFFFFF", invertedContrast: "#191326", input: "transparent", primaryDark: "#0098A1", tertiary: "#040547", text: "#FFFFFF", textDisabled: "#4d547b", textSubtle: "#c4c7d4", borderColor: "#00aaff", card: "#061c7d", gradients: {
-        bubblegum: "linear-gradient(90deg, rgba(4,5,71,1) 0%, rgba(31,156,228,1) 100%)",
-        background: "linear-gradient(90deg, rgba(6,26,84,1) 0%, rgba(6,28,124,1) 50%, rgba(4,6,77,1) 100%)",
-    } });
-
 var light$7 = {
     background: lightColors.card,
     boxShadow: shadows.active,
@@ -1827,39 +1826,39 @@ var _a$1, _b;
 var PRIMARY = variants$1.PRIMARY, SECONDARY = variants$1.SECONDARY, TERTIARY = variants$1.TERTIARY, TEXT = variants$1.TEXT, DANGER = variants$1.DANGER, SUBTLE = variants$1.SUBTLE, SUCCESS = variants$1.SUCCESS;
 var light$6 = (_a$1 = {},
     _a$1[PRIMARY] = {
-        background: "linear-gradient(90deg, " + lightColors.tertiary + " 0%, " + lightColors.primary + " 100%)",
-        backgroundActive: lightColors.primaryDark,
-        backgroundHover: lightColors.primaryBright,
+        background: "linear-gradient(90deg, " + darkColors.tertiary + " 0%, " + darkColors.primary + " 100%)",
+        backgroundActive: darkColors.primaryDark,
+        backgroundHover: darkColors.primaryBright,
         border: 0,
         borderColorHover: "currentColor",
         boxShadow: "inset 0px -1px 0px rgba(14, 14, 44, 0.4)",
         boxShadowActive: "inset 0px -1px 0px rgba(14, 14, 44, 0.4)",
-        color: "#FFFFFF",
+        color: "#edf4f7",
     },
     _a$1[SECONDARY] = {
         background: "transparent",
         backgroundActive: "transparent",
         backgroundHover: "transparent",
-        border: "2px solid " + lightColors.primary,
-        borderColorHover: lightColors.primaryBright,
+        border: "2px solid " + darkColors.primary,
+        borderColorHover: darkColors.primaryDark,
         boxShadow: "none",
         boxShadowActive: "none",
         color: "white",
     },
     _a$1[TERTIARY] = {
-        background: lightColors.tertiary,
-        backgroundActive: lightColors.tertiary,
-        backgroundHover: lightColors.tertiary,
+        background: darkColors.tertiary,
+        backgroundActive: darkColors.tertiary,
+        backgroundHover: darkColors.primaryDark,
         border: 0,
         borderColorHover: "currentColor",
         boxShadow: "none",
         boxShadowActive: "none",
-        color: lightColors.primary,
+        color: darkColors.primary,
     },
     _a$1[TEXT] = {
         background: "transparent",
         backgroundActive: "transparent",
-        backgroundHover: lightColors.tertiary,
+        backgroundHover: darkColors.tertiary,
         border: 0,
         borderColorHover: "currentColor",
         boxShadow: "none",
@@ -1867,7 +1866,7 @@ var light$6 = (_a$1 = {},
         color: "white",
     },
     _a$1[DANGER] = {
-        background: lightColors.failure,
+        background: darkColors.failure,
         backgroundActive: "#D43285",
         backgroundHover: "#d71010",
         border: 0,
@@ -1877,9 +1876,9 @@ var light$6 = (_a$1 = {},
         color: "#FFFFFF",
     },
     _a$1[SUBTLE] = {
-        background: lightColors.textSubtle,
-        backgroundActive: lightColors.textSubtle + "D9",
-        backgroundHover: lightColors.textSubtle + "B3",
+        background: darkColors.textSubtle,
+        backgroundActive: darkColors.textSubtle + "D9",
+        backgroundHover: darkColors.textSubtle + "B3",
         border: 0,
         borderColorHover: "currentColor",
         boxShadow: "none",
@@ -1887,9 +1886,9 @@ var light$6 = (_a$1 = {},
         color: "#FFFFFF",
     },
     _a$1[SUCCESS] = {
-        background: lightColors.success,
-        backgroundActive: lightColors.success + "D9",
-        backgroundHover: lightColors.success + "B3",
+        background: darkColors.success,
+        backgroundActive: darkColors.success + "D9",
+        backgroundHover: darkColors.success + "B3",
         border: 0,
         borderColorHover: "currentColor",
         boxShadow: "none",
@@ -1898,9 +1897,9 @@ var light$6 = (_a$1 = {},
     },
     _a$1);
 var dark$6 = (_b = {},
-    _b[PRIMARY] = __assign(__assign({}, light$6.primary), { background: "linear-gradient(90deg, " + darkColors.background + " 30%, " + darkColors.primary + " 100%)" }),
-    _b[SECONDARY] = __assign({}, light$6.secondary),
-    _b[TERTIARY] = __assign(__assign({}, light$6.tertiary), { background: darkColors.tertiary, backgroundActive: darkColors.tertiary, backgroundHover: darkColors.tertiary, color: darkColors.primary }),
+    _b[PRIMARY] = __assign(__assign({}, light$6.primary), { background: "linear-gradient(90deg, " + darkColors.secondary + " 0%, " + darkColors.primaryBright + " 100%)" }),
+    _b[SECONDARY] = __assign(__assign({}, light$6.secondary), { color: darkColors.primary }),
+    _b[TERTIARY] = __assign(__assign({}, light$6.tertiary), { background: darkColors.tertiary, backgroundActive: darkColors.tertiary, backgroundHover: darkColors.primaryDark, color: darkColors.background }),
     _b[TEXT] = __assign(__assign({}, light$6.text), { backgroundHover: darkColors.tertiary }),
     _b[DANGER] = __assign({}, light$6.danger),
     _b[SUBTLE] = __assign({}, light$6.subtle),
@@ -2551,7 +2550,7 @@ var Logo = function (_a) {
     return (React.createElement(Flex, { alignItems: "center", mt: isMobile ? "0" : "auto", mr: "45px" },
         !isMobile ? null : (React.createElement(MenuButton, { "aria-label": "Toggle menu", onClick: showSideBar },
             React.createElement(Icon$A, { width: "24px", color: "textSubtle" }))),
-        isAbsoluteUrl ? (React.createElement(StyledLink, { as: "a", href: href, "aria-label": "ShibaNova home page" }, innerLogo)) : (React.createElement(StyledLink, { to: href, "aria-label": "ShibaNova home page" }, innerLogo))));
+        isAbsoluteUrl ? (React.createElement(StyledLink, { as: "a", href: href, "aria-label": "NovaDex home page" }, innerLogo)) : (React.createElement(StyledLink, { to: href, "aria-label": "NovaDex home page" }, innerLogo))));
 };
 var templateObject_1$a;
 
@@ -2562,8 +2561,7 @@ var links = [
     },
     {
         label: "NovaDEX",
-        href: "https://swap.shibanova.io",
-        button: true,
+        href: "https://swap.novadex.finance",
     },
     {
         label: "Novaria",
@@ -2585,19 +2583,19 @@ var links = [
             {
                 label: "Telegram",
                 icon: "TelegramIcon",
-                href: "https://t.me/ShibaNovaDEX",
+                href: "https://t.me/NovaDexAnn",
                 external: true,
             },
             {
                 label: "Twitter",
                 icon: "TwitterIcon",
-                href: "https://twitter.com/ShibaNovaDefi",
+                href: "https://twitter.com/earnwithNovaDEX",
                 external: true,
             },
             {
                 label: "Medium",
                 icon: "MediumIcon",
-                href: "https://shibanova.medium.com/",
+                href: "https://novadex.medium.com/",
                 external: true,
             },
             {
@@ -2609,13 +2607,13 @@ var links = [
             {
                 label: "Docs",
                 icon: "BookIcon",
-                href: "https://docs.shibanova.io",
+                href: "https://docs.novadex.finance",
                 external: true,
             },
             {
                 label: "Discord",
                 icon: "DiscordIcon",
-                href: "https://discord.gg/vQdxbGx9pV",
+                href: "https://discord.gg/qK39QkVxNj",
                 external: true,
             },
         ],
@@ -2627,15 +2625,15 @@ var MENU_ENTRY_HEIGHT = 48;
 
 var rainbowAnimation = keyframes(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"], ["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"])));
 var ButtonLabel = styled(Button)(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  font-size: 15px;\n"], ["\n  font-size: 15px;\n"])));
-var LinkLabel = styled.div(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  color: inherit;\n  transition: color 0.4s;\n  flex-grow: 1;\n  font-weight: bold;\n  text-shadow: ", ";\n\n  &:hover {\n    opacity: 0.8;\n  }\n"], ["\n  color: inherit;\n  transition: color 0.4s;\n  flex-grow: 1;\n  font-weight: bold;\n  text-shadow: ", ";\n\n  &:hover {\n    opacity: 0.8;\n  }\n"])), function (_a) {
+var LinkLabel = styled.div(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  color: inherit;\n  transition: color 0.4s;\n  flex-grow: 1;\n  // font-weight: bold;\n  text-shadow: ", ";\n\n  &:hover {\n    opacity: 0.8;\n  }\n"], ["\n  color: inherit;\n  transition: color 0.4s;\n  flex-grow: 1;\n  // font-weight: bold;\n  text-shadow: ", ";\n\n  &:hover {\n    opacity: 0.8;\n  }\n"])), function (_a) {
     var glowing = _a.glowing, theme = _a.theme;
     return (glowing ? theme.shadows.text : "none");
 });
-var MenuEntry = styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: ", "px; \n  \n  background: ", ";\n  color: ", ";\n  line-height: ", ";\n  margin: ", ";\n  // box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  ", " {\n    padding: 0 20px;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: "
+var MenuEntry = styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: ", "px; \n  \n  background: ", ";\n  color: ", ";\n  line-height: ", ";\n  margin: ", ";\n  // box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  ", " {\n    padding: 0 20px;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    // font-weight: bold;\n  }\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", ";\n  padding: ", ";\n  font-size: "
     /* eslint-disable */
     , 
     /* eslint-enable */
-    "px; \n  \n  background: ", ";\n  color: ", ";\n  line-height: ", ";\n  margin: ", ";\n  // box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  ", " {\n    padding: 0 20px;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"])), function (_a) {
+    "px; \n  \n  background: ", ";\n  color: ", ";\n  line-height: ", ";\n  margin: ", ";\n  // box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  ", " {\n    padding: 0 20px;\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    // font-weight: bold;\n  }\n"])), function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? "auto" : MENU_ENTRY_HEIGHT + "px");
 }, function (_a) {
@@ -2668,7 +2666,7 @@ function (_a) {
     return theme.colors.textSubtle;
 }, function (_a) {
     var secondary = _a.secondary, theme = _a.theme, isMobile = _a.isMobile;
-    return secondary && !isMobile ? theme.colors.primary : "transparent";
+    return secondary && !isMobile ? theme.colors.primaryBright : "transparent";
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xl;
@@ -2703,6 +2701,27 @@ var Accordion = function (_a) {
     var handleClick = function () {
         setIsOpen(function (prevState) { return !prevState; });
     };
+    // Attempt to handle closing accordian if click off
+    // const wrapperRef = useRef(null);
+    // useOutsideAlerter(wrapperRef);
+    // function useOutsideAlerter(ref:any) {
+    //   useEffect(() => {
+    //     /**
+    //      * Alert if clicked on outside of element
+    //      */
+    //     function handleClickOutside(event) {
+    //       if (isOpen === true && ref.current && !ref.current.contains(event.target)) {
+    //         setIsOpen((prevState) => !prevState);
+    //       }
+    //     }
+    //     // Bind the event listener
+    //     document.addEventListener("mousedown", handleClickOutside);
+    //     return () => {
+    //       // Unbind the event listener on clean up
+    //       document.removeEventListener("mousedown", handleClickOutside);
+    //     };
+    //   }, [ref]);
+    // }
     return (React.createElement(Container$2, null,
         React.createElement(MenuEntry, { onClick: handleClick, className: className },
             React.createElement(LinkLabel, null, label)),
@@ -3000,9 +3019,9 @@ var UserBlock = function (_a) {
 };
 var templateObject_1$5;
 
-var StyledNav$1 = styled.nav(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  position: fixed;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  // background-color: ", ";\n  background: linear-gradient(\n    90deg,\n    rgba(6, 26, 84, 1) 0%,\n    rgba(6, 28, 124, 1) 40%,\n    rgba(6, 28, 124, 1) 60%,\n    rgba(4, 2, 66, 1) 100%\n  );\n  display: block;\n  z-index: 100;\n  margin: 0;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  padding: 30px 20px 30px;\n  transform: ", ";\n  transition: transform 0.2s linear 0s;\n\n  overflow-y: auto;\n  overscroll-behavior-y: none;\n  -webkit-overflow-scrolling: touch;\n"], ["\n  position: fixed;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  // background-color: ", ";\n  background: linear-gradient(\n    90deg,\n    rgba(6, 26, 84, 1) 0%,\n    rgba(6, 28, 124, 1) 40%,\n    rgba(6, 28, 124, 1) 60%,\n    rgba(4, 2, 66, 1) 100%\n  );\n  display: block;\n  z-index: 100;\n  margin: 0;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  padding: 30px 20px 30px;\n  transform: ", ";\n  transition: transform 0.2s linear 0s;\n\n  overflow-y: auto;\n  overscroll-behavior-y: none;\n  -webkit-overflow-scrolling: touch;\n"])), function (_a) {
+var StyledNav$1 = styled.nav(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  position: fixed;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  width: 85vw;\n  background: ", ";\n  display: block;\n  z-index: 100;\n  margin: 0;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  padding: 30px 20px 30px;\n  transform: ", ";\n  transition: transform 0.2s linear 0s;\n\n  overflow-y: auto;\n  overscroll-behavior-y: none;\n  -webkit-overflow-scrolling: touch;\n"], ["\n  position: fixed;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  width: 85vw;\n  background: ", ";\n  display: block;\n  z-index: 100;\n  margin: 0;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  padding: 30px 20px 30px;\n  transform: ", ";\n  transition: transform 0.2s linear 0s;\n\n  overflow-y: auto;\n  overscroll-behavior-y: none;\n  -webkit-overflow-scrolling: touch;\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.card;
+    return theme.colors.background;
 }, function (_a) {
     var open = _a.open;
     return (open ? "translateX(0px)" : "translateX(-100%)");
@@ -3031,7 +3050,7 @@ var SideBar = function (_a) {
             React.createElement(Icon$$, { onClick: onDismiss })),
         React.createElement("div", { style: { marginLeft: -20 } }, price),
         React.createElement(StyledLinkList, null,
-            React.createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "ShibaNova"),
+            React.createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "NOVADEX"),
             links.slice(0, links.length - 1).map(function (entry) { return (React.createElement(MenuEntry, { onClick: onDismiss, isMobile: true, key: entry.href, isActive: entry.href === location.pathname },
                 entry.icon && React.createElement(MenuIcon, { icon: entry.icon }),
                 React.createElement(MenuLink, { onClick: onDismiss, style: { fontSize: 16, textTransform: "uppercase" }, href: entry.href },
@@ -3125,7 +3144,7 @@ var Menu = function (_a) {
             React.createElement(Logo, { isMobile: isMobile, showSideBar: function () { return setShowSideBar(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             React.createElement(SideBar, { open: showSideBar, price: renderPrice(), onDismiss: function () { return setShowSideBar(false); }, links: links }),
             React.createElement(NavBar, { isMobile: isMobile, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, novaPriceUsd: novaPriceUsd, links: links, priceLink: priceLink }),
-            React.createElement(Flex, { ml: "auto", alignItems: "center", style: { paddingTop: isMobile ? -30 : 25, paddingRight: 70 } },
+            React.createElement(Flex, { ml: "auto", alignItems: "center", style: { paddingTop: isMobile ? 5 : 25, paddingRight: 10 } },
                 isXs || isSm ? null : renderPrice(),
                 React.createElement(UserBlock, { isMobile: isMobile, account: account, login: login, logout: logout }))),
         React.createElement(BodyWrapper, null,

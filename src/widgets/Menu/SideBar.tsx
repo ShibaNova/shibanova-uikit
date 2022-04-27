@@ -14,14 +14,8 @@ const StyledNav = styled.nav<{ open: boolean }>`
   right: 0;
   top: 0;
   bottom: 0;
-  // background-color: ${({ theme }) => theme.colors.card};
-  background: linear-gradient(
-    90deg,
-    rgba(6, 26, 84, 1) 0%,
-    rgba(6, 28, 124, 1) 40%,
-    rgba(6, 28, 124, 1) 60%,
-    rgba(4, 2, 66, 1) 100%
-  );
+  width: 85vw;
+  background: ${({ theme }) => theme.colors.background};
   display: block;
   z-index: 100;
   margin: 0;
@@ -78,7 +72,7 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
 
       <StyledLinkList>
         <Text glowing bold style={{ padding: "3px 0 3px 0" }}>
-          ShibaNova
+          NOVADEX
         </Text>
         {links.slice(0, links.length - 1).map((entry) => (
           <MenuEntry onClick={onDismiss} isMobile key={entry.href} isActive={entry.href === location.pathname}>

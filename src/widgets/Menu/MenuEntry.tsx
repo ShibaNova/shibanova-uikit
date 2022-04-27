@@ -28,7 +28,7 @@ const LinkLabel = styled.div<TextProps>`
   color: inherit;
   transition: color 0.4s;
   flex-grow: 1;
-  font-weight: bold;
+  // font-weight: bold;
   text-shadow: ${({ glowing, theme }) => (glowing ? theme.shadows.text : "none")};
 
   &:hover {
@@ -67,7 +67,7 @@ const MenuEntry = styled.div<Props>`
 
   &:hover {
     background-color: ${({ secondary, theme, isMobile }) =>
-      secondary && !isMobile ? theme.colors.primary : "transparent"};
+      secondary && !isMobile ? theme.colors.primaryBright : "transparent"};
   }
 
   ${({ theme }) => theme.mediaQueries.xl} {
@@ -82,7 +82,7 @@ const MenuEntry = styled.div<Props>`
     animation: ${rainbowAnimation} 3s ease-in-out infinite;
     background: ${({ theme }) => theme.colors.gradients.bubblegum};
     background-size: 200% 100%;
-    font-weight: bold;
+    // font-weight: bold;
   }
 `;
 MenuEntry.defaultProps = {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { MENU_ENTRY_HEIGHT } from "./config";
 import { MenuEntry, LinkLabel } from "./MenuEntry";
@@ -38,12 +38,34 @@ const Accordion: React.FC<Props> = ({ label, initialOpenState = false, children,
     setIsOpen((prevState) => !prevState);
   };
 
+  // Attempt to handle closing accordian if click off
+  // const wrapperRef = useRef(null);
+  // useOutsideAlerter(wrapperRef);
+  // function useOutsideAlerter(ref:any) {
+  //   useEffect(() => {
+  //     /**
+  //      * Alert if clicked on outside of element
+  //      */
+  //     function handleClickOutside(event) {
+  //       if (isOpen === true && ref.current && !ref.current.contains(event.target)) {
+  //         setIsOpen((prevState) => !prevState);
+  //       }
+  //     }
+  //     // Bind the event listener
+  //     document.addEventListener("mousedown", handleClickOutside);
+  //     return () => {
+  //       // Unbind the event listener on clean up
+  //       document.removeEventListener("mousedown", handleClickOutside);
+  //     };
+  //   }, [ref]);
+  // }
+
   return (
     <Container>
       <MenuEntry onClick={handleClick} className={className}>
         <LinkLabel >{label}</LinkLabel>
       </MenuEntry>
-      <AccordionContent  onClick={handleClick} isOpen={isOpen} maxHeight={React.Children.count(children) * MENU_ENTRY_HEIGHT}>
+      <AccordionContent onClick={handleClick} isOpen={isOpen} maxHeight={React.Children.count(children) * MENU_ENTRY_HEIGHT}>
         {children} 
       </AccordionContent>
     </Container>

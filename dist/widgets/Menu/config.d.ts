@@ -1,13 +1,6 @@
 export declare const links: ({
     label: string;
     href: string;
-    button?: undefined;
-    icon?: undefined;
-    items?: undefined;
-} | {
-    label: string;
-    href: string;
-    button: boolean;
     icon?: undefined;
     items?: undefined;
 } | {
@@ -20,7 +13,6 @@ export declare const links: ({
         external: boolean;
     }[];
     href?: undefined;
-    button?: undefined;
 })[];
 export declare const more: {
     label: string;

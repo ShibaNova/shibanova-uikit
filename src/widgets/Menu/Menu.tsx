@@ -138,6 +138,7 @@ const Menu: React.FC<NavProps> = ({
     );
   };
 
+
   return (
     <Wrapper>
       <StyledNav isMobile={isMobile} showMenu={showMenu} isNovaria={isNovaria}>
@@ -159,7 +160,7 @@ const Menu: React.FC<NavProps> = ({
           links={links}
           priceLink={priceLink}
         />
-        <Flex ml="auto" alignItems="center" style={{paddingTop: isMobile ? -30 : 25, paddingRight:70}}>
+        <Flex ml="auto" alignItems="center" style={{paddingTop: isMobile ? 5 : 25, paddingRight:10}}>
           {isXs || isSm ? null : renderPrice()}
           <UserBlock isMobile={isMobile} account={account} login={login} logout={logout} />
           {/* {profile && <Avatar profile={profile} />} */}

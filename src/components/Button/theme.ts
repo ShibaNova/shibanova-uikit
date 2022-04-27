@@ -1,43 +1,43 @@
 import { ButtonTheme, variants } from "./types";
-import { lightColors, darkColors } from "../../theme/colors";
+import { darkColors } from "../../theme/colors";
 
 const { PRIMARY, SECONDARY, TERTIARY, TEXT, DANGER, SUBTLE, SUCCESS } = variants;
 
 export const light: ButtonTheme = {
   [PRIMARY]: {
-    background: `linear-gradient(90deg, ${lightColors.tertiary} 0%, ${lightColors.primary} 100%)`,
-    backgroundActive: lightColors.primaryDark,
-    backgroundHover: lightColors.primaryBright,
+    background: `linear-gradient(90deg, ${darkColors.tertiary} 0%, ${darkColors.primary} 100%)`,
+    backgroundActive: darkColors.primaryDark,
+    backgroundHover: darkColors.primaryBright,
     border: 0,
     borderColorHover: "currentColor",
     boxShadow: "inset 0px -1px 0px rgba(14, 14, 44, 0.4)",
     boxShadowActive: "inset 0px -1px 0px rgba(14, 14, 44, 0.4)",
-    color: "#FFFFFF",
+    color: "#edf4f7",
   },
   [SECONDARY]: {
     background: "transparent",
     backgroundActive: "transparent",
     backgroundHover: "transparent",
-    border: `2px solid ${lightColors.primary}`,
-    borderColorHover: lightColors.primaryBright,
+    border: `2px solid ${darkColors.primary}`,
+    borderColorHover: darkColors.primaryDark,
     boxShadow: "none",
     boxShadowActive: "none",
     color: "white",
   },
   [TERTIARY]: {
-    background: lightColors.tertiary,
-    backgroundActive: lightColors.tertiary,
-    backgroundHover: lightColors.tertiary,
+    background: darkColors.tertiary,
+    backgroundActive: darkColors.tertiary,
+    backgroundHover: darkColors.primaryDark,
     border: 0,
     borderColorHover: "currentColor",
     boxShadow: "none",
     boxShadowActive: "none",
-    color: lightColors.primary,
+    color: darkColors.primary,
   },
   [TEXT]: {
     background: "transparent",
     backgroundActive: "transparent",
-    backgroundHover: lightColors.tertiary,
+    backgroundHover: darkColors.tertiary,
     border: 0,
     borderColorHover: "currentColor",
     boxShadow: "none",
@@ -45,7 +45,7 @@ export const light: ButtonTheme = {
     color: "white",
   },
   [DANGER]: {
-    background: lightColors.failure,
+    background: darkColors.failure,
     backgroundActive: "#D43285", // darkten 10%
     backgroundHover: "#d71010", // lighten 10%
     border: 0,
@@ -55,9 +55,9 @@ export const light: ButtonTheme = {
     color: "#FFFFFF",
   },
   [SUBTLE]: {
-    background: lightColors.textSubtle,
-    backgroundActive: `${lightColors.textSubtle}D9`, // 70% opacity
-    backgroundHover: `${lightColors.textSubtle}B3`, // 85% opacity
+    background: darkColors.textSubtle,
+    backgroundActive: `${darkColors.textSubtle}D9`, // 70% opacity
+    backgroundHover: `${darkColors.textSubtle}B3`, // 85% opacity
     border: 0,
     borderColorHover: "currentColor",
     boxShadow: "none",
@@ -65,9 +65,9 @@ export const light: ButtonTheme = {
     color: "#FFFFFF",
   },
   [SUCCESS]: {
-    background: lightColors.success,
-    backgroundActive: `${lightColors.success}D9`, // 70% opacity
-    backgroundHover: `${lightColors.success}B3`, // 85% opacity
+    background: darkColors.success,
+    backgroundActive: `${darkColors.success}D9`, // 70% opacity
+    backgroundHover: `${darkColors.success}B3`, // 85% opacity
     border: 0,
     borderColorHover: "currentColor",
     boxShadow: "none",
@@ -79,17 +79,18 @@ export const light: ButtonTheme = {
 export const dark: ButtonTheme = {
   [PRIMARY]: {
     ...light.primary,
-    background: `linear-gradient(90deg, ${darkColors.background} 30%, ${darkColors.primary} 100%)`,
+    background: `linear-gradient(90deg, ${darkColors.secondary} 0%, ${darkColors.primaryBright} 100%)`,
   },
   [SECONDARY]: {
     ...light.secondary,
+    color: darkColors.primary
   },
   [TERTIARY]: {
     ...light.tertiary,
     background: darkColors.tertiary,
     backgroundActive: darkColors.tertiary,
-    backgroundHover: darkColors.tertiary,
-    color: darkColors.primary,
+    backgroundHover: darkColors.primaryDark,
+    color: darkColors.background,
   }, 
   [TEXT]: {
     ...light.text,

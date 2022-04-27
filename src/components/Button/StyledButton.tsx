@@ -49,7 +49,7 @@ const StyledButton = styled.button<ButtonProps>`
   align-items: center;
   background: ${getButtonVariantProp("background")};
   border: ${getButtonVariantProp("border")};
-  border-radius: 18px;
+  border-radius: 5px;
   box-shadow: ${({ glowing, theme }) =>
     !glowing ? getButtonVariantProp("boxShadow") : `0px 0px 10px ${theme.colors.primary}`};
   color: ${getButtonVariantProp("color")};
@@ -57,7 +57,7 @@ const StyledButton = styled.button<ButtonProps>`
   display: inline-flex;
   font-family: inherit;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: normal;
   /* max-content instead of auto for Safari fix */
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "max-content")};
   line-height: 1;

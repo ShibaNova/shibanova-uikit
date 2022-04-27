@@ -5,8 +5,7 @@ export const links = [
   },
   {
     label: "NovaDEX",
-    href: "https://swap.shibanova.io",
-    button: true,
+    href: "https://swap.novadex.finance",
   },
   {
     label: "Novaria",
@@ -28,19 +27,19 @@ export const links = [
       {
         label: "Telegram",
         icon: "TelegramIcon",
-        href: "https://t.me/ShibaNovaDEX",
+        href: "https://t.me/NovaDexAnn",
         external: true,
       },
       {
         label: "Twitter",
         icon: "TwitterIcon",
-        href: "https://twitter.com/ShibaNovaDefi",
+        href: "https://twitter.com/earnwithNovaDEX",
         external: true,
       },
       {
         label: "Medium",
         icon: "MediumIcon",
-        href: "https://shibanova.medium.com/",
+        href: "https://novadex.medium.com/",
         external: true,
       },
       {
@@ -52,13 +51,13 @@ export const links = [
       {
         label: "Docs",
         icon: "BookIcon",
-        href: "https://docs.shibanova.io",
+        href: "https://docs.novadex.finance",
         external: true,
       },
       {
         label: "Discord",
         icon: "DiscordIcon",
-        href: "https://discord.gg/vQdxbGx9pV",
+        href: "https://discord.gg/qK39QkVxNj",
         external: true,
       },
     ],

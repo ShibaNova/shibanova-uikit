@@ -52,11 +52,11 @@ const Logo: React.FC<Props> = ({ showSideBar, isDark, href, isMobile }) => {
         </MenuButton>
       )}
       {isAbsoluteUrl ? (
-        <StyledLink as="a" href={href} aria-label="ShibaNova home page">
+        <StyledLink as="a" href={href} aria-label="NovaDex home page">
           {innerLogo}
         </StyledLink>
       ) : (
-        <StyledLink to={href} aria-label="ShibaNova home page">
+        <StyledLink to={href} aria-label="NovaDex home page">
           {innerLogo}
         </StyledLink>
       )}
