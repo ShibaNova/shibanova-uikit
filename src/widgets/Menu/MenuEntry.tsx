@@ -44,12 +44,12 @@ const MenuEntry = styled.div<Props>`
   padding: ${({ secondary }) => (secondary ? "0 24px" : "0 10px")};
   font-size: ${
     /* eslint-disable */
-    ({ isMobile, secondary }) => (isMobile ? (secondary ? 16 : 18) : 15)
+    ({ isMobile, secondary }) => (isMobile ? (secondary ? 16 : 18) : 15) 
     /* eslint-enable */
   }px; 
   
   background: ${({ secondary, theme, isMobile }) => (secondary && !isMobile ? theme.colors.card : "transparent")};
-  color: ${({ theme, isActive }) => (isActive ? theme.colors.primary : theme.colors.text)};
+  color: ${({ theme, isActive }) => (isActive ? theme.colors.primaryBright : theme.colors.text)};
   line-height: ${({ isMobile }) => (isMobile ? "1.5" : "inherit")};
   margin: ${({ isMobile }) => (isMobile ? "10px 0" : "0")};
   // box-shadow: ${({ isActive, theme }) => (isActive ? `inset 4px 0px 0px ${theme.colors.primary}` : "none")};

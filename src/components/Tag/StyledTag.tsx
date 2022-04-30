@@ -28,7 +28,7 @@ export const StyledTag = styled.div<ThemedProps>`
   line-height: 1.5;
   padding: 5px 12px;
   white-space: nowrap;
-  box-shadow: ${({ glowing, theme }) => (glowing ? `0px 0px 10px ${theme.colors.primary}` : "none")};
+  box-shadow: ${({ glowing, theme }) => (glowing ? `0px 0px 10px ${theme.colors.primaryBright}` : "none")};
 
   svg {
     fill: ${getThemeTextColor};

@@ -25,8 +25,9 @@ const AccordionContent = styled.div<{ isOpen: boolean; maxHeight: number }>`
   max-height: ${({ isOpen, maxHeight }) => (isOpen ? `${maxHeight}px` : 0)};
   transition: max-height 0.3s ease-out;
   overflow: hidden;
-  box-shadow: ${({ theme, isOpen }) => (isOpen ? theme.shadows.active : "none")};
-  border-radius: 10px;
+  // box-shadow: ${({ theme, isOpen }) => (isOpen ? theme.shadows.active : "none")};
+  border-radius: 5px;
+  border: 1px solid ${({theme, isOpen}) => (isOpen ? theme.colors.backgroundAlt : "none")};
   z-index: 1;
   margin-top: 30px;
 `;

@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { SpaceProps } from "styled-system";
 export declare const variants: {
     readonly PRIMARY: "primary";
-    readonly SECONDARY: "secondary";
+    readonly SECONDARY: "primaryDark";
     readonly SUCCESS: "success";
     readonly TEXTDISABLED: "textDisabled";
     readonly TEXTSUBTLE: "textSubtle";

@@ -41,14 +41,14 @@ left: 0;
 z-index: -1;
 margin: -2px;
 border-radius: inherit;
-background: linear-gradient(135deg, ${darkColors.secondary} 0%, ${darkColors.primaryBright} 100%);
+background: linear-gradient(90deg, ${darkColors.secondary} 0%, ${darkColors.primaryBright} 100%);
 }`;
 
 const StyledCard = styled.div<StyledCardProps>`
   background-color: ${darkColors.background};
   // background: transparent;
   // border: ${({ theme }) => theme.card.boxShadow};
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: ${getBoxShadow};
   color: ${({ theme, isDisabled }) => theme.colors[isDisabled ? "textDisabled" : "text"]};
   position: relative;

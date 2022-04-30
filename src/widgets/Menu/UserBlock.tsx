@@ -15,6 +15,7 @@ interface Props {
 const Container = styled.div`
   margin-left: 8px;
   display: flex;
+  border-left: 1px solid ${({theme}) => theme.colors.backgroundAlt};
   
   ${({ theme }) => theme.mediaQueries.xl} {
     margin-left: 32px;
@@ -27,7 +28,7 @@ const UserBlock: React.FC<Props> = ({ account, login, logout, isMobile }) => {
   return (
     <Container >
       <a href="https://github.com/ShibaNova/Contracts/tree/main/Audits" target="_blank" rel="noreferrer noopener">
-        <ShibaNovaAuditIcon  style={{paddingRight:"5px", width:"40px"}} />
+        <ShibaNovaAuditIcon  style={{paddingRight:"5px", width:"40px", marginLeft:10 }} />
       </a>
       {account ? (
         <Button

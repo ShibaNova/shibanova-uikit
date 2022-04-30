@@ -33,7 +33,7 @@ export const darkColors: Colors = {
   card: "#141223",
   gradients: {
     bubblegum: "linear-gradient(90deg, #FF56B5 0%, #A797FF 100%)",
-    background: "#141223",
+    background: "linear-gradient(90deg, #ff56b5 0%, #608bfb 100%)",
   },
 };
 

@@ -3,7 +3,7 @@ import { SpaceProps } from "styled-system";
 
 export const variants = {
   PRIMARY: "primary",
-  SECONDARY: "secondary",
+  SECONDARY: "primaryDark",
   SUCCESS: "success",
   TEXTDISABLED: "textDisabled",
   TEXTSUBTLE: "textSubtle",

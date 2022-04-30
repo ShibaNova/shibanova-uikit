@@ -751,7 +751,7 @@ var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), {
     // secondary: "#00aaff", 
     background: "#141223", backgroundDisabled: "#2E3034", backgroundAlt: "#93999D", contrast: "#ffb318", invertedContrast: "#edf4f7", input: "transparent", primaryDark: "#a797ff", tertiary: "#608bfb", text: "#edf4f7", textDisabled: "#93999d", textSubtle: "#c7cbd1", borderColor: "#2e3034", card: "#141223", gradients: {
         bubblegum: "linear-gradient(90deg, #FF56B5 0%, #A797FF 100%)",
-        background: "#141223",
+        background: "linear-gradient(90deg, #ff56b5 0%, #608bfb 100%)",
     } });
 var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#141223", backgroundDisabled: "#2E3034", backgroundAlt: "#93999D", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", text: "#0000a4", textDisabled: "#BDC2C4", textSubtle: "#46e3f4", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
         bubblegum: "linear-gradient(139.73deg, #FF56B5 0%, #F3EFFF 100%)",
@@ -776,9 +776,9 @@ var getBoxShadow$1 = function (_a) {
 var getGradientBorder = function (_a) {
     var gradientBorder = _a.gradientBorder; _a.theme;
     return gradientBorder &&
-        "background-clip: padding-box;\n// border: solid 1px #00aaff;\n\n&:before {\ncontent: \"\";\nposition: absolute;\ntop: 0;\nright: 0;\nbottom: 0;\nleft: 0;\nz-index: -1;\nmargin: -2px;\nborder-radius: inherit;\nbackground: linear-gradient(135deg, " + darkColors.secondary + " 0%, " + darkColors.primaryBright + " 100%);\n}";
+        "background-clip: padding-box;\n// border: solid 1px #00aaff;\n\n&:before {\ncontent: \"\";\nposition: absolute;\ntop: 0;\nright: 0;\nbottom: 0;\nleft: 0;\nz-index: -1;\nmargin: -2px;\nborder-radius: inherit;\nbackground: linear-gradient(90deg, " + darkColors.secondary + " 0%, " + darkColors.primaryBright + " 100%);\n}";
 };
-var StyledCard = styled__default['default'].div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  background-color: ", ";\n  // background: transparent;\n  // border: ", ";\n  border-radius: 5px;\n  box-shadow: ", ";\n  color: ", ";\n  position: relative;\n\n  ", "\n\n  ", "\n"], ["\n  background-color: ", ";\n  // background: transparent;\n  // border: ", ";\n  border-radius: 5px;\n  box-shadow: ", ";\n  color: ", ";\n  position: relative;\n\n  ", "\n\n  ", "\n"])), darkColors.background, function (_a) {
+var StyledCard = styled__default['default'].div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  background-color: ", ";\n  // background: transparent;\n  // border: ", ";\n  border-radius: 10px;\n  box-shadow: ", ";\n  color: ", ";\n  position: relative;\n\n  ", "\n\n  ", "\n"], ["\n  background-color: ", ";\n  // background: transparent;\n  // border: ", ";\n  border-radius: 10px;\n  box-shadow: ", ";\n  color: ", ";\n  position: relative;\n\n  ", "\n\n  ", "\n"])), darkColors.background, function (_a) {
     var theme = _a.theme;
     return theme.card.boxShadow;
 }, getBoxShadow$1, function (_a) {
@@ -1195,7 +1195,7 @@ function (_a) {
     return (bold ? 700 : 400);
 }, function (_a) {
     var glowing = _a.glowing, theme = _a.theme;
-    return (glowing ? "0px 0px 10px " + theme.colors.primary : "none");
+    return (glowing ? "0px 0px 10px " + theme.colors.primaryBright : "none");
 }, getThemeTextColor);
 var templateObject_1$m;
 
@@ -1314,7 +1314,7 @@ var templateObject_1$h, templateObject_2$8, templateObject_3$5, templateObject_4
 
 var Handle = styled__default['default'].div(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 50%;\n  cursor: pointer;\n  height: 32px;\n  left: 4px;\n  position: absolute;\n  top: 4px;\n  transition: left 200ms ease-in;\n  width: 32px;\n  z-index: 1;\n"], ["\n  background-color: ", ";\n  border-radius: 50%;\n  cursor: pointer;\n  height: 32px;\n  left: 4px;\n  position: absolute;\n  top: 4px;\n  transition: left 200ms ease-in;\n  width: 32px;\n  z-index: 1;\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.secondary;
+    return theme.colors.primaryDark;
 });
 var Input = styled__default['default'].input(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: calc(100% - 36px);\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"], ["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: calc(100% - 36px);\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"])), Handle, Handle, function (_a) {
     var theme = _a.theme;
@@ -2664,7 +2664,7 @@ function (_a) {
     return (secondary && !isMobile ? theme.colors.card : "transparent");
 }, function (_a) {
     var theme = _a.theme, isActive = _a.isActive;
-    return (isActive ? theme.colors.primary : theme.colors.text);
+    return (isActive ? theme.colors.primaryBright : theme.colors.text);
 }, function (_a) {
     var isMobile = _a.isMobile;
     return (isMobile ? "1.5" : "inherit");
@@ -2698,7 +2698,7 @@ var Container$2 = styled__default['default'].div(templateObject_1$8 || (template
     var theme = _a.theme;
     return theme.colors.gradients.background;
 });
-var AccordionContent = styled__default['default'].div(templateObject_2$3 || (templateObject_2$3 = __makeTemplateObject(["\n  // background: ", ";\n  position: absolute;\n  top: 100%;\n  max-height: ", ";\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n  box-shadow: ", ";\n  border-radius: 10px;\n  z-index: 1;\n  margin-top: 30px;\n"], ["\n  // background: ", ";\n  position: absolute;\n  top: 100%;\n  max-height: ", ";\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n  box-shadow: ", ";\n  border-radius: 10px;\n  z-index: 1;\n  margin-top: 30px;\n"])), function (_a) {
+var AccordionContent = styled__default['default'].div(templateObject_2$3 || (templateObject_2$3 = __makeTemplateObject(["\n  // background: ", ";\n  position: absolute;\n  top: 100%;\n  max-height: ", ";\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n  // box-shadow: ", ";\n  border-radius: 5px;\n  border: 1px solid ", ";\n  z-index: 1;\n  margin-top: 30px;\n"], ["\n  // background: ", ";\n  position: absolute;\n  top: 100%;\n  max-height: ", ";\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n  // box-shadow: ", ";\n  border-radius: 5px;\n  border: 1px solid ", ";\n  z-index: 1;\n  margin-top: 30px;\n"])), function (_a) {
     var theme = _a.theme, isOpen = _a.isOpen;
     return (isOpen ? theme.colors.gradients.background : "none");
 }, function (_a) {
@@ -2707,6 +2707,9 @@ var AccordionContent = styled__default['default'].div(templateObject_2$3 || (tem
 }, function (_a) {
     var theme = _a.theme, isOpen = _a.isOpen;
     return (isOpen ? theme.shadows.active : "none");
+}, function (_a) {
+    var theme = _a.theme, isOpen = _a.isOpen;
+    return (isOpen ? theme.colors.backgroundAlt : "none");
 });
 var Accordion = function (_a) {
     var label = _a.label, _b = _a.initialOpenState, initialOpenState = _b === void 0 ? false : _b, children = _a.children, className = _a.className;
@@ -3013,7 +3016,10 @@ var useWalletModal = function (login, logout, account) {
     return { onPresentConnectModal: onPresentConnectModal, onPresentAccountModal: onPresentAccountModal };
 };
 
-var Container = styled__default['default'].div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  margin-left: 8px;\n  display: flex;\n  \n  ", " {\n    margin-left: 32px;\n  }\n"], ["\n  margin-left: 8px;\n  display: flex;\n  \n  ", " {\n    margin-left: 32px;\n  }\n"])), function (_a) {
+var Container = styled__default['default'].div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  margin-left: 8px;\n  display: flex;\n  border-left: 1px solid ", ";\n  \n  ", " {\n    margin-left: 32px;\n  }\n"], ["\n  margin-left: 8px;\n  display: flex;\n  border-left: 1px solid ", ";\n  \n  ", " {\n    margin-left: 32px;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.backgroundAlt;
+}, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xl;
 });
@@ -3023,7 +3029,7 @@ var UserBlock = function (_a) {
     var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 4) : null;
     return (React__default['default'].createElement(Container, null,
         React__default['default'].createElement("a", { href: "https://github.com/ShibaNova/Contracts/tree/main/Audits", target: "_blank", rel: "noreferrer noopener" },
-            React__default['default'].createElement(Icon$9, { style: { paddingRight: "5px", width: "40px" } })),
+            React__default['default'].createElement(Icon$9, { style: { paddingRight: "5px", width: "40px", marginLeft: 10 } })),
         account ? (React__default['default'].createElement(Button, { size: "sm", variant: "secondary", onClick: function () {
                 onPresentAccountModal();
             } }, accountEllipsis)) : (React__default['default'].createElement(Button, { size: "sm", style: { fontSize: isMobile ? 16 : 14 }, glowing: true, onClick: function () {
