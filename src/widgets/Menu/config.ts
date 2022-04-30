@@ -1,21 +1,16 @@
 export const links = [
+  // {
+  //   label: "Home",
+  //   href: "/",
+  // },
   {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "NovaDEX",
+    label: "Exchange",
     href: "https://swap.novadex.finance",
   },
   {
     label: "Novaria",
     href: "/legend-of-novaria",
   },
-  // {
-  //   label: "Audits",
-  //   icon: "ShibaNovaAuditIcon",
-  //   href: "https://docs.shibanova.io/shibanova-documentation/security/audits",
-  // },
   {
     label: "Trade Routes",
     href: "/traderoutes",
@@ -68,10 +63,12 @@ export const more = [
   {
     label: "Github",
     href: "https://github.com/ShibaNova",
+    external: true,
   },
   {
     label: "Docs",
-    href: "https://docs.shibanova.io/",
+    href: "https://docs.novadex.finance/",
+    external: true,
   },
 ];
 

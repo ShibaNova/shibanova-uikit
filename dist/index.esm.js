@@ -2555,23 +2555,18 @@ var Logo = function (_a) {
 var templateObject_1$a;
 
 var links = [
+    // {
+    //   label: "Home",
+    //   href: "/",
+    // },
     {
-        label: "Home",
-        href: "/",
-    },
-    {
-        label: "NovaDEX",
+        label: "Exchange",
         href: "https://swap.novadex.finance",
     },
     {
         label: "Novaria",
         href: "/legend-of-novaria",
     },
-    // {
-    //   label: "Audits",
-    //   icon: "ShibaNovaAuditIcon",
-    //   href: "https://docs.shibanova.io/shibanova-documentation/security/audits",
-    // },
     {
         label: "Trade Routes",
         href: "/traderoutes",
@@ -3005,7 +3000,7 @@ var useWalletModal = function (login, logout, account) {
 
 var Container = styled.div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  margin-left: 8px;\n  display: flex;\n  border-left: 1px solid ", ";\n  \n  ", " {\n    margin-left: 32px;\n  }\n"], ["\n  margin-left: 8px;\n  display: flex;\n  border-left: 1px solid ", ";\n  \n  ", " {\n    margin-left: 32px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.backgroundAlt;
+    return theme.colors.backgroundDisabled;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xl;

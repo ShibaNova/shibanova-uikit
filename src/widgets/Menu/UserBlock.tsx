@@ -15,7 +15,7 @@ interface Props {
 const Container = styled.div`
   margin-left: 8px;
   display: flex;
-  border-left: 1px solid ${({theme}) => theme.colors.backgroundAlt};
+  border-left: 1px solid ${({theme}) => theme.colors.backgroundDisabled};
   
   ${({ theme }) => theme.mediaQueries.xl} {
     margin-left: 32px;

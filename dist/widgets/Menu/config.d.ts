@@ -17,6 +17,7 @@ export declare const links: ({
 export declare const more: {
     label: string;
     href: string;
+    external: boolean;
 }[];
 export declare const MENU_HEIGHT = 68;
 export declare const MENU_HEIGHT_MOBILE = 48;
