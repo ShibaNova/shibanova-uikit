@@ -2608,7 +2608,7 @@ var links = [
             {
                 label: "Discord",
                 icon: "DiscordIcon",
-                href: "https://discord.gg/qK39QkVxNj",
+                href: "https://discord.gg/nsxxXNjkqU",
                 external: true,
             },
         ],
