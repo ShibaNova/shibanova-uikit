@@ -10,6 +10,7 @@ import { NavProps } from "./types";
 import { MENU_HEIGHT, MENU_HEIGHT_MOBILE } from "./config";
 import Avatar from "./Avatar";
 import { NovaRoundIcon } from "../../components/Svg";
+import { PhxRoundIcon } from "../../components/Svg";
 import Skeleton from "../../components/Skeleton/Skeleton";
 import Text from "../../components/Text/Text";
 import SideBar from "./SideBar";
@@ -82,8 +83,10 @@ const Menu: React.FC<NavProps> = ({
   setLang,
   currentLang,
   novaPriceUsd,
+  phxPriceUsd,
   links,
   priceLink,
+  phxPriceLink,
   profile,
   children, 
 }) => {
@@ -138,6 +141,17 @@ const Menu: React.FC<NavProps> = ({
     );
   };
 
+  const renderPhxPrice = () => {
+    return phxPriceUsd ? (
+      <PriceLink href={phxPriceLink} target="_blank">
+        <PhxRoundIcon width="24px" mr="5px" />
+        <Text fontSize="15px" small bold>{`$${phxPriceUsd.toFixed(3)}`}</Text>
+      </PriceLink>
+    ) : (
+      <Skeleton width={80} height={24} />
+    );
+  };
+
 
   return (
     <Wrapper>
@@ -159,9 +173,11 @@ const Menu: React.FC<NavProps> = ({
           novaPriceUsd={novaPriceUsd}
           links={links}
           priceLink={priceLink}
+          phxPriceLink={phxPriceLink}
         />
         <Flex ml="auto" alignItems="center" style={{paddingTop: isMobile ? 5 : 25, paddingRight:10}}>
           {isXs || isSm ? null : renderPrice()}
+          {isXs || isSm ? null : renderPhxPrice()}
           <UserBlock isMobile={isMobile} account={account} login={login} logout={logout} />
           {/* {profile && <Avatar profile={profile} />} */}
         </Flex>
