@@ -421,6 +421,11 @@ var Icon$Q = function (props) {
         React__default['default'].createElement("image", { width: 90, height: 90, href: "/images/coins/NOVA.png" })));
 };
 
+var PhxIcon = function (props) {
+    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 90 90" }, props),
+        React__default['default'].createElement("image", { width: 90, height: 90, href: "/images/tokens/phoenix2.png" })));
+};
+
 var Icon$P = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 90 90" }, props),
         React__default['default'].createElement("image", { width: 90, height: 90, href: "/images/incubator/9.png" })));
@@ -3109,7 +3114,7 @@ var Inner = styled__default['default'].div(templateObject_5 || (templateObject_5
 });
 var Menu = function (_a) {
     var _b;
-    var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, novaPriceUsd = _a.novaPriceUsd, links = _a.links, priceLink = _a.priceLink; _a.profile; var children = _a.children;
+    var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, novaPriceUsd = _a.novaPriceUsd, phxPriceUsd = _a.phxPriceUsd, links = _a.links, priceLink = _a.priceLink, phxPriceLink = _a.phxPriceLink; _a.profile; var children = _a.children;
     var _c = useMatchBreakpoints(), isXl = _c.isXl, isXs = _c.isXs, isSm = _c.isSm;
     var isMobile = !isXl;
     var _d = React.useState(false), showSideBar = _d[0], setShowSideBar = _d[1];
@@ -3153,13 +3158,19 @@ var Menu = function (_a) {
             React__default['default'].createElement(Icon$Q, { width: "24px", mr: "5px" }),
             React__default['default'].createElement(Text, { fontSize: "15px", small: true, bold: true }, "$" + novaPriceUsd.toFixed(3)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 }));
     };
+    var renderPhxPrice = function () {
+        return phxPriceUsd ? (React__default['default'].createElement(PriceLink, { href: phxPriceLink, target: "_blank" },
+            React__default['default'].createElement(PhxIcon, { width: "24px", mr: "5px" }),
+            React__default['default'].createElement(Text, { fontSize: "15px", small: true, bold: true }, "$" + phxPriceUsd.toFixed(3)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 }));
+    };
     return (React__default['default'].createElement(Wrapper, null,
         React__default['default'].createElement(StyledNav, { isMobile: isMobile, showMenu: showMenu, isNovaria: isNovaria },
             React__default['default'].createElement(Logo, { isMobile: isMobile, showSideBar: function () { return setShowSideBar(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             React__default['default'].createElement(SideBar, { open: showSideBar, price: renderPrice(), onDismiss: function () { return setShowSideBar(false); }, links: links }),
-            React__default['default'].createElement(NavBar, { isMobile: isMobile, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, novaPriceUsd: novaPriceUsd, links: links, priceLink: priceLink }),
+            React__default['default'].createElement(NavBar, { isMobile: isMobile, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, novaPriceUsd: novaPriceUsd, links: links, priceLink: priceLink, phxPriceLink: phxPriceLink }),
             React__default['default'].createElement(Flex, { ml: "auto", alignItems: "center", style: { paddingTop: isMobile ? 5 : 25, paddingRight: 10 } },
                 isXs || isSm ? null : renderPrice(),
+                isXs || isSm ? null : renderPhxPrice(),
                 React__default['default'].createElement(UserBlock, { isMobile: isMobile, account: account, login: login, logout: logout }))),
         React__default['default'].createElement(BodyWrapper, null,
             React__default['default'].createElement(Inner, { isMobile: isMobile, showMenu: showMenu }, children))));
@@ -3313,6 +3324,7 @@ exports.NotificationDot = NotificationDot;
 exports.NovaRoundIcon = Icon$Q;
 exports.OpenNewIcon = Icon$S;
 exports.PancakesIcon = Icon$R;
+exports.PhxRoundIcon = PhxIcon;
 exports.PrizeIcon = Icon$O;
 exports.Progress = Progress;
 exports.ProgressBunny = Icon$L;

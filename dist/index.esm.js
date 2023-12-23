@@ -408,6 +408,11 @@ var Icon$Q = function (props) {
         React.createElement("image", { width: 90, height: 90, href: "/images/coins/NOVA.png" })));
 };
 
+var PhxIcon = function (props) {
+    return (React.createElement(Svg, __assign({ viewBox: "0 0 90 90" }, props),
+        React.createElement("image", { width: 90, height: 90, href: "/images/tokens/phoenix2.png" })));
+};
+
 var Icon$P = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 90 90" }, props),
         React.createElement("image", { width: 90, height: 90, href: "/images/incubator/9.png" })));
@@ -3096,7 +3101,7 @@ var Inner = styled.div(templateObject_5 || (templateObject_5 = __makeTemplateObj
 });
 var Menu = function (_a) {
     var _b;
-    var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, novaPriceUsd = _a.novaPriceUsd, links = _a.links, priceLink = _a.priceLink; _a.profile; var children = _a.children;
+    var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, novaPriceUsd = _a.novaPriceUsd, phxPriceUsd = _a.phxPriceUsd, links = _a.links, priceLink = _a.priceLink, phxPriceLink = _a.phxPriceLink; _a.profile; var children = _a.children;
     var _c = useMatchBreakpoints(), isXl = _c.isXl, isXs = _c.isXs, isSm = _c.isSm;
     var isMobile = !isXl;
     var _d = useState(false), showSideBar = _d[0], setShowSideBar = _d[1];
@@ -3140,13 +3145,19 @@ var Menu = function (_a) {
             React.createElement(Icon$Q, { width: "24px", mr: "5px" }),
             React.createElement(Text, { fontSize: "15px", small: true, bold: true }, "$" + novaPriceUsd.toFixed(3)))) : (React.createElement(Skeleton, { width: 80, height: 24 }));
     };
+    var renderPhxPrice = function () {
+        return phxPriceUsd ? (React.createElement(PriceLink, { href: phxPriceLink, target: "_blank" },
+            React.createElement(PhxIcon, { width: "24px", mr: "5px" }),
+            React.createElement(Text, { fontSize: "15px", small: true, bold: true }, "$" + phxPriceUsd.toFixed(3)))) : (React.createElement(Skeleton, { width: 80, height: 24 }));
+    };
     return (React.createElement(Wrapper, null,
         React.createElement(StyledNav, { isMobile: isMobile, showMenu: showMenu, isNovaria: isNovaria },
             React.createElement(Logo, { isMobile: isMobile, showSideBar: function () { return setShowSideBar(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             React.createElement(SideBar, { open: showSideBar, price: renderPrice(), onDismiss: function () { return setShowSideBar(false); }, links: links }),
-            React.createElement(NavBar, { isMobile: isMobile, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, novaPriceUsd: novaPriceUsd, links: links, priceLink: priceLink }),
+            React.createElement(NavBar, { isMobile: isMobile, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, novaPriceUsd: novaPriceUsd, links: links, priceLink: priceLink, phxPriceLink: phxPriceLink }),
             React.createElement(Flex, { ml: "auto", alignItems: "center", style: { paddingTop: isMobile ? 5 : 25, paddingRight: 10 } },
                 isXs || isSm ? null : renderPrice(),
+                isXs || isSm ? null : renderPhxPrice(),
                 React.createElement(UserBlock, { isMobile: isMobile, account: account, login: login, logout: logout }))),
         React.createElement(BodyWrapper, null,
             React.createElement(Inner, { isMobile: isMobile, showMenu: showMenu }, children))));
@@ -3239,4 +3250,4 @@ var ResetCSS = createGlobalStyle(templateObject_1 || (templateObject_1 = __makeT
 });
 var templateObject_1;
 
-export { Icon$1f as AddIcon, Alert, Icon$1e as ArrowBackIcon, Icon$1d as ArrowDownIcon, Icon$1c as ArrowDropDownIcon, Icon$1b as ArrowDropUpIcon, Icon$1a as ArrowForwardIcon, Icon$19 as AutoRenewIcon, BackgroundImage, GridLayout$1 as BaseLayout, Icon$18 as BinanceIcon, Icon$1h as BlockIcon, Box, Breadcrumbs, Icon$17 as BunnyPlaceholderIcon, Button, ButtonMenu, ButtonMenuItem, Icon$15 as CalculateIcon, Card, CardBody, CardFooter, CardHeader, CardRibbon, Icon$16 as CardViewIcon, GridLayout as CardsLayout, Checkbox, Icon$1j as CheckmarkCircleIcon, Icon$14 as CheckmarkIcon, Icon$13 as ChevronDownIcon, Icon$12 as ChevronLeftIcon, Icon$11 as ChevronRightIcon, Icon$10 as ChevronUpIcon, Icon$$ as CloseIcon, Icon$_ as CogIcon, Icon$Z as CommunityIcon, ConnectorNames, Icon$Y as CopyIcon, CopyToClipboard, Dropdown, Icon$1i as ErrorIcon, Flex, Icon$P as GooseRoundIcon, Heading, Icon$X as HelpIcon, IconButton, Image, Icon$1g as InfoIcon, Input$1 as Input, Link, LinkExternal, Icon$W as ListViewIcon, Icon$V as LogoIcon, Icon$U as LogoRoundIcon, Menu, Icon$T as MinusIcon, Modal, ModalProvider, NotificationDot, Icon$Q as NovaRoundIcon, Icon$S as OpenNewIcon, Icon$R as PancakesIcon, Icon$O as PrizeIcon, Progress, Icon$L as ProgressBunny, Radio, Icon$N as RemoveIcon, ResetCSS, Icon$G as SearchIcon, Skeleton, Spinner, Svg, Icon$F as SwapVertIcon, Icon$E as SyncAltIcon, Tag, Text, Icon$J as Ticket, Icon$I as TicketRound, ToastContainer, Toggle, Icon$H as TuneIcon, Icon$M as VerifiedIcon, Icon$D as WarningIcon, Icon$K as Won, variants as alertVariants, byTextAscending, byTextDescending, connectorLocalStorageKey, darkTheme as dark, darkColors, lightTheme as light, lightColors, makeRender, links as menuConfig, types as toastTypes, useMatchBreakpoints, useModal, useParticleBurst, useTable, useTooltip, useWalletModal };
+export { Icon$1f as AddIcon, Alert, Icon$1e as ArrowBackIcon, Icon$1d as ArrowDownIcon, Icon$1c as ArrowDropDownIcon, Icon$1b as ArrowDropUpIcon, Icon$1a as ArrowForwardIcon, Icon$19 as AutoRenewIcon, BackgroundImage, GridLayout$1 as BaseLayout, Icon$18 as BinanceIcon, Icon$1h as BlockIcon, Box, Breadcrumbs, Icon$17 as BunnyPlaceholderIcon, Button, ButtonMenu, ButtonMenuItem, Icon$15 as CalculateIcon, Card, CardBody, CardFooter, CardHeader, CardRibbon, Icon$16 as CardViewIcon, GridLayout as CardsLayout, Checkbox, Icon$1j as CheckmarkCircleIcon, Icon$14 as CheckmarkIcon, Icon$13 as ChevronDownIcon, Icon$12 as ChevronLeftIcon, Icon$11 as ChevronRightIcon, Icon$10 as ChevronUpIcon, Icon$$ as CloseIcon, Icon$_ as CogIcon, Icon$Z as CommunityIcon, ConnectorNames, Icon$Y as CopyIcon, CopyToClipboard, Dropdown, Icon$1i as ErrorIcon, Flex, Icon$P as GooseRoundIcon, Heading, Icon$X as HelpIcon, IconButton, Image, Icon$1g as InfoIcon, Input$1 as Input, Link, LinkExternal, Icon$W as ListViewIcon, Icon$V as LogoIcon, Icon$U as LogoRoundIcon, Menu, Icon$T as MinusIcon, Modal, ModalProvider, NotificationDot, Icon$Q as NovaRoundIcon, Icon$S as OpenNewIcon, Icon$R as PancakesIcon, PhxIcon as PhxRoundIcon, Icon$O as PrizeIcon, Progress, Icon$L as ProgressBunny, Radio, Icon$N as RemoveIcon, ResetCSS, Icon$G as SearchIcon, Skeleton, Spinner, Svg, Icon$F as SwapVertIcon, Icon$E as SyncAltIcon, Tag, Text, Icon$J as Ticket, Icon$I as TicketRound, ToastContainer, Toggle, Icon$H as TuneIcon, Icon$M as VerifiedIcon, Icon$D as WarningIcon, Icon$K as Won, variants as alertVariants, byTextAscending, byTextDescending, connectorLocalStorageKey, darkTheme as dark, darkColors, lightTheme as light, lightColors, makeRender, links as menuConfig, types as toastTypes, useMatchBreakpoints, useModal, useParticleBurst, useTable, useTooltip, useWalletModal };
