@@ -21,7 +21,7 @@ const Wrapper = styled.div`
 `;
 
 const PriceLink = styled.a`
-  
+  padding-left: 20px; 
   display: flex;
   align-items: center;
   svg {
