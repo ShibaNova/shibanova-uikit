@@ -134,7 +134,7 @@ const Menu: React.FC<NavProps> = ({
     return novaPriceUsd ? (
       <PriceLink href={priceLink} target="_blank">
         <NovaRoundIcon width="24px" mr="5px" />
-        <Text fontSize="15px" small bold marginRight="20px">{`$${novaPriceUsd.toFixed(3)}`}</Text>
+        <Text fontSize="15px" small bold marginRight="10px">{`$${novaPriceUsd.toFixed(3)}`}</Text>
       </PriceLink>
     ) : (
       <Skeleton width={80} height={24} />
@@ -144,7 +144,7 @@ const Menu: React.FC<NavProps> = ({
   const renderPhxPrice = () => {
     return phxPriceUsd ? (
       <PriceLink href={phxPriceLink} target="_blank">
-        <PhxRoundIcon width="24px" mr="5px" />
+        <PhxRoundIcon width="24px" mr="5px" marginLeft="10px"/>
         <Text fontSize="15px" small bold>{`$${phxPriceUsd.toFixed(3)}`}</Text>
       </PriceLink>
     ) : (

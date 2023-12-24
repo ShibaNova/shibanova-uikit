@@ -3156,11 +3156,11 @@ var Menu = function (_a) {
     var renderPrice = function () {
         return novaPriceUsd ? (React__default['default'].createElement(PriceLink, { href: priceLink, target: "_blank" },
             React__default['default'].createElement(Icon$Q, { width: "24px", mr: "5px" }),
-            React__default['default'].createElement(Text, { fontSize: "15px", small: true, bold: true, marginRight: "20px" }, "$" + novaPriceUsd.toFixed(3)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 }));
+            React__default['default'].createElement(Text, { fontSize: "15px", small: true, bold: true, marginRight: "10px" }, "$" + novaPriceUsd.toFixed(3)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 }));
     };
     var renderPhxPrice = function () {
         return phxPriceUsd ? (React__default['default'].createElement(PriceLink, { href: phxPriceLink, target: "_blank" },
-            React__default['default'].createElement(PhxIcon, { width: "24px", mr: "5px" }),
+            React__default['default'].createElement(PhxIcon, { width: "24px", mr: "5px", marginLeft: "10px" }),
             React__default['default'].createElement(Text, { fontSize: "15px", small: true, bold: true }, "$" + phxPriceUsd.toFixed(3)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 }));
     };
     return (React__default['default'].createElement(Wrapper, null,
