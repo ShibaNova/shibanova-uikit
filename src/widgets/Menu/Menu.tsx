@@ -134,7 +134,7 @@ const Menu: React.FC<NavProps> = ({
     return novaPriceUsd ? (
       <PriceLink href={priceLink} target="_blank">
         <NovaRoundIcon width="24px" mr="5px" />
-        <Text fontSize="55px" small bold marginRight="50px">{`$${novaPriceUsd.toFixed(3)}`}</Text>
+        <Text fontSize="15px" small bold marginRight="20px">{`$${novaPriceUsd.toFixed(3)}`}</Text>
       </PriceLink>
     ) : (
       <Skeleton width={80} height={24} />
