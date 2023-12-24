@@ -30,6 +30,7 @@ export { default as MinusIcon } from "./Icons/Minus";
 export { default as OpenNewIcon } from "./Icons/OpenNew";
 export { default as PancakesIcon } from "./Icons/Pancakes";
 export { default as NovaRoundIcon } from "./Icons/NovaRound";
+export { default as PhxRoundIcon } from "./Icons/PhxRound";
 export { default as GooseRoundIcon } from "./Icons/GooseRound";
 export { default as PrizeIcon } from "./Icons/Prize";
 export { default as RemoveIcon } from "./Icons/Remove";
