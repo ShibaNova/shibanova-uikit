@@ -21,7 +21,6 @@ const Wrapper = styled.div`
 `;
 
 const PriceLink = styled.a`
-  padding-left: 20px; 
   display: flex;
   align-items: center;
   svg {
@@ -133,7 +132,7 @@ const Menu: React.FC<NavProps> = ({
   const renderPrice = () => {
     return novaPriceUsd ? (
       <PriceLink href={priceLink} target="_blank">
-        <NovaRoundIcon width="24px" mr="5px" />
+        <NovaRoundIcon width="24px" mr="5px" marginRight="20" />
         <Text fontSize="15px" small bold>{`$${novaPriceUsd.toFixed(3)}`}</Text>
       </PriceLink>
     ) : (
