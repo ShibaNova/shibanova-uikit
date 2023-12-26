@@ -3055,7 +3055,7 @@ var SideBar = function (_a) {
         React.createElement(StyledCloseButton, null,
             React.createElement(Icon$$, { onClick: onDismiss })),
         React.createElement("div", { style: { marginLeft: -20 } }, price),
-        React.createElement("div", { style: { marginLeft: -20 } }, phxPrice),
+        React.createElement("div", { style: { marginLeft: -40, marginTop: 10 } }, phxPrice),
         React.createElement(StyledLinkList, null,
             React.createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "NOVADEX"),
             links.slice(0, links.length - 1).map(function (entry) { return (React.createElement(MenuEntry, { onClick: onDismiss, isMobile: true, key: entry.href, isActive: entry.href === location.pathname },

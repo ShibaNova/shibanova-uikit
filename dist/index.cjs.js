@@ -3068,7 +3068,7 @@ var SideBar = function (_a) {
         React__default['default'].createElement(StyledCloseButton, null,
             React__default['default'].createElement(Icon$$, { onClick: onDismiss })),
         React__default['default'].createElement("div", { style: { marginLeft: -20 } }, price),
-        React__default['default'].createElement("div", { style: { marginLeft: -20 } }, phxPrice),
+        React__default['default'].createElement("div", { style: { marginLeft: -40, marginTop: 10 } }, phxPrice),
         React__default['default'].createElement(StyledLinkList, null,
             React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "NOVADEX"),
             links.slice(0, links.length - 1).map(function (entry) { return (React__default['default'].createElement(MenuEntry, { onClick: onDismiss, isMobile: true, key: entry.href, isActive: entry.href === location.pathname },
