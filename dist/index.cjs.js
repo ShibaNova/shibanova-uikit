@@ -3053,7 +3053,7 @@ var StyledLinkSeparator = styled__default['default'].hr(templateObject_4$1 || (t
 });
 var SideBar = function (_a) {
     var _b;
-    var onDismiss = _a.onDismiss, links = _a.links, open = _a.open, price = _a.price;
+    var onDismiss = _a.onDismiss, links = _a.links, open = _a.open, price = _a.price, phxPrice = _a.phxPrice;
     var location = reactRouterDom.useLocation();
     var socials = links[links.length - 1];
     React.useEffect(function () {
@@ -3068,6 +3068,7 @@ var SideBar = function (_a) {
         React__default['default'].createElement(StyledCloseButton, null,
             React__default['default'].createElement(Icon$$, { onClick: onDismiss })),
         React__default['default'].createElement("div", { style: { marginLeft: -20 } }, price),
+        React__default['default'].createElement("div", { style: { marginLeft: -20 } }, phxPrice),
         React__default['default'].createElement(StyledLinkList, null,
             React__default['default'].createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "NOVADEX"),
             links.slice(0, links.length - 1).map(function (entry) { return (React__default['default'].createElement(MenuEntry, { onClick: onDismiss, isMobile: true, key: entry.href, isActive: entry.href === location.pathname },
@@ -3166,7 +3167,7 @@ var Menu = function (_a) {
     return (React__default['default'].createElement(Wrapper, null,
         React__default['default'].createElement(StyledNav, { isMobile: isMobile, showMenu: showMenu, isNovaria: isNovaria },
             React__default['default'].createElement(Logo, { isMobile: isMobile, showSideBar: function () { return setShowSideBar(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
-            React__default['default'].createElement(SideBar, { open: showSideBar, price: renderPrice(), onDismiss: function () { return setShowSideBar(false); }, links: links }),
+            React__default['default'].createElement(SideBar, { open: showSideBar, price: renderPrice(), phxPrice: renderPhxPrice(), onDismiss: function () { return setShowSideBar(false); }, links: links }),
             React__default['default'].createElement(NavBar, { isMobile: isMobile, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, novaPriceUsd: novaPriceUsd, links: links, priceLink: priceLink, phxPriceLink: phxPriceLink }),
             React__default['default'].createElement(Flex, { ml: "auto", alignItems: "center", style: { paddingTop: isMobile ? 5 : 25, paddingRight: 10 } },
                 isXs || isSm ? null : renderPrice(),

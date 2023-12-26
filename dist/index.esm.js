@@ -3040,7 +3040,7 @@ var StyledLinkSeparator = styled.hr(templateObject_4$1 || (templateObject_4$1 = 
 });
 var SideBar = function (_a) {
     var _b;
-    var onDismiss = _a.onDismiss, links = _a.links, open = _a.open, price = _a.price;
+    var onDismiss = _a.onDismiss, links = _a.links, open = _a.open, price = _a.price, phxPrice = _a.phxPrice;
     var location = useLocation();
     var socials = links[links.length - 1];
     useEffect(function () {
@@ -3055,6 +3055,7 @@ var SideBar = function (_a) {
         React.createElement(StyledCloseButton, null,
             React.createElement(Icon$$, { onClick: onDismiss })),
         React.createElement("div", { style: { marginLeft: -20 } }, price),
+        React.createElement("div", { style: { marginLeft: -20 } }, phxPrice),
         React.createElement(StyledLinkList, null,
             React.createElement(Text, { glowing: true, bold: true, style: { padding: "3px 0 3px 0" } }, "NOVADEX"),
             links.slice(0, links.length - 1).map(function (entry) { return (React.createElement(MenuEntry, { onClick: onDismiss, isMobile: true, key: entry.href, isActive: entry.href === location.pathname },
@@ -3153,7 +3154,7 @@ var Menu = function (_a) {
     return (React.createElement(Wrapper, null,
         React.createElement(StyledNav, { isMobile: isMobile, showMenu: showMenu, isNovaria: isNovaria },
             React.createElement(Logo, { isMobile: isMobile, showSideBar: function () { return setShowSideBar(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
-            React.createElement(SideBar, { open: showSideBar, price: renderPrice(), onDismiss: function () { return setShowSideBar(false); }, links: links }),
+            React.createElement(SideBar, { open: showSideBar, price: renderPrice(), phxPrice: renderPhxPrice(), onDismiss: function () { return setShowSideBar(false); }, links: links }),
             React.createElement(NavBar, { isMobile: isMobile, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, novaPriceUsd: novaPriceUsd, links: links, priceLink: priceLink, phxPriceLink: phxPriceLink }),
             React.createElement(Flex, { ml: "auto", alignItems: "center", style: { paddingTop: isMobile ? 5 : 25, paddingRight: 10 } },
                 isXs || isSm ? null : renderPrice(),

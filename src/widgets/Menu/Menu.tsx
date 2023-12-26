@@ -8,7 +8,6 @@ import NavBar from "./NavBar";
 import UserBlock from "./UserBlock";
 import { NavProps } from "./types";
 import { MENU_HEIGHT, MENU_HEIGHT_MOBILE } from "./config";
-import Avatar from "./Avatar";
 import { NovaRoundIcon } from "../../components/Svg";
 import { PhxRoundIcon } from "../../components/Svg";
 import Skeleton from "../../components/Skeleton/Skeleton";
@@ -162,7 +161,7 @@ const Menu: React.FC<NavProps> = ({
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         />
-        <SideBar open={showSideBar} price={renderPrice()} onDismiss={() => setShowSideBar(false)} links={links} />
+        <SideBar open={showSideBar} price={renderPrice()} phxPrice={renderPhxPrice()} onDismiss={() => setShowSideBar(false)} links={links} />
         <NavBar
           isMobile={isMobile}
           isDark={isDark}

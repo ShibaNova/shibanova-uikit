@@ -58,6 +58,7 @@ export interface SideBarProps {
     links: MenuEntry[];
     open: boolean;
     price: ReactElement;
+    phxPrice: ReactElement;
 }
 export interface NavProps extends PanelProps {
     account?: string;

@@ -50,7 +50,7 @@ const StyledLinkSeparator = styled.hr`
   border-color: ${({ theme }) => theme.colors.textSubtle};
 `;
 
-const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
+const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price, phxPrice }) => {
   const location = useLocation();
   const socials = links[links.length - 1];
 
@@ -69,6 +69,7 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price }) => {
       </StyledCloseButton>
 
       <div style={{ marginLeft: -20 }}>{price}</div>
+      <div style={{ marginLeft: -20 }}>{phxPrice}</div>
 
       <StyledLinkList>
         <Text glowing bold style={{ padding: "3px 0 3px 0" }}>
