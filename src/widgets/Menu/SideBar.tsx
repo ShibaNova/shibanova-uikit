@@ -69,7 +69,7 @@ const SideBar: React.FC<SideBarProps> = ({ onDismiss, links, open, price, phxPri
       </StyledCloseButton>
 
       <div style={{ marginLeft: -20 }}>{price}</div>
-      <div style={{ marginLeft: -20 }}>{phxPrice}</div>
+      <div style={{ marginLeft: -40, marginTop: 10 }}>{phxPrice}</div>
 
       <StyledLinkList>
         <Text glowing bold style={{ padding: "3px 0 3px 0" }}>
